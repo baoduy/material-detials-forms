@@ -3,6 +3,7 @@ import Typography, { TypographyProps } from '@material-ui/core/Typography';
 
 import { Omit } from '@material-ui/core';
 import { ThemeStyle } from '@material-ui/core/styles/createTypography';
+import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
 
 export type LabelVariant = 'title' | 'subtitle' | 'caption';
@@ -27,7 +28,10 @@ const getVariant = (type?: LabelVariant): ThemeStyle => {
 };
 
 const useStyle = makeStyles({
-  captionIcon: { width: 15, marginRight: 5 }
+  content: { display: 'flex', alignItems: 'center' },
+  icon: { marginRight: 5 },
+  captionIcon: { width: '14px !important' },
+  subtitleIcon: { width: '16px !important' }
 });
 
 const Label = ({ icon, children, as, variant, ...rest }: LabelFieldProps) => {
@@ -44,7 +48,11 @@ const Label = ({ icon, children, as, variant, ...rest }: LabelFieldProps) => {
   const Icon: any = icon;
 
   const typo = (
-    <Typography {...rest} variant={getVariant(variant)}>
+    <Typography
+      color={variant === 'title' ? 'secondary' : 'textSecondary'}
+      {...rest}
+      variant={getVariant(variant)}
+    >
       {children}
     </Typography>
   );
@@ -52,11 +60,17 @@ const Label = ({ icon, children, as, variant, ...rest }: LabelFieldProps) => {
   if (icon === null) return typo;
 
   return (
-    <div>
+    <div className={classes.content}>
       {Icon === undefined ? null : React.isValidElement(Icon) ? (
         Icon
       ) : (
-        <Icon className={classes.captionIcon} />
+        <Icon
+          className={classNames({
+            [classes.icon]: true,
+            [classes.captionIcon]: variant === 'caption',
+            [classes.subtitleIcon]: variant === 'subtitle'
+          })}
+        />
       )}
       {typo}
     </div>
