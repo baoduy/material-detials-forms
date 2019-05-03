@@ -1,0 +1,103 @@
+{
+  "config": {
+    "title": "Detials Form Generation For Material-UI",
+    "description": "Form and Details View generator using Material UI and Formik",
+    "menu": [],
+    "version": "1.0.0",
+    "repository": "https://github.com/baoduy/mui-formik-generator",
+    "native": false,
+    "codeSandbox": false,
+    "themeConfig": {},
+    "separator": "-",
+    "wrapper": "wrapper/index.tsx",
+    "typescript": true
+  },
+  "props": [
+    {
+      "key": "src\\components\\Label\\LabelField.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "LabelField",
+          "methods": [],
+          "props": {
+            "icon": {
+              "defaultValue": null,
+              "description": "",
+              "name": "icon",
+              "parent": {
+                "fileName": "src/components/Label/LabelField.tsx",
+                "name": "LabelFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "ReactNode"
+              }
+            },
+            "as": {
+              "defaultValue": null,
+              "description": "",
+              "name": "as",
+              "parent": {
+                "fileName": "src/components/Label/LabelField.tsx",
+                "name": "LabelFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "ComponentClass<any, any> | FunctionComponent<any> | undefined"
+              }
+            },
+            "variant": {
+              "defaultValue": null,
+              "description": "",
+              "name": "variant",
+              "parent": {
+                "fileName": "src/components/Label/LabelField.tsx",
+                "name": "LabelFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"caption\" | \"title\" | \"subtitle\" | undefined"
+              }
+            },
+            "ref": {
+              "defaultValue": null,
+              "description": "",
+              "name": "ref",
+              "required": false,
+              "type": {
+                "name": "((instance: unknown) => void) | RefObject<unknown> | null | undefined"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "key": "src/components/Label/Label.mdx",
+      "value": {
+        "name": "Label",
+        "id": "91ae321a6291e1d1001fad315e49561e",
+        "filepath": "src/components/Label/Label.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Label/Label.mdx",
+        "slug": "src-components-label-label",
+        "route": "/src-components-label-label",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "label",
+            "depth": 1,
+            "value": "Label"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          }
+        ]
+      }
+    }
+  ]
+}

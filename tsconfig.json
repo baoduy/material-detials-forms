@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@actions/*": ["src/actions/*"],
+      "@assets/*": ["src/assets/*"],
+      "@commons/*": ["src/commons/*"],
+      "@components/*": ["src/components/*"],
+      "@views/*": ["src/views/*"]
+    },
+    "lib": ["es6", "esnext", "dom"],
+    //"sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "pretty": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true,
+    //"emitDeclarationOnly": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    //"declaration": true,
+    "strict": true
+  },
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "tests/*.ts",
+    "src/applicationInsight.jsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "tests",
+    "configs",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "sample"
+  ]
+}
