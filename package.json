@@ -10,7 +10,8 @@
     "cost": "cost-of-modules --no-install",
     "update": "ncu -u -a",
     "update-g": "ncu -u -a -g",
-    "start": "docz dev"
+    "start": "docz dev",
+    "build": "docz build"
   },
   "repository": {
     "type": "git",
