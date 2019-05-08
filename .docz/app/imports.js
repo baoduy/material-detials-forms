@@ -1,6 +1,10 @@
 export const imports = {
-  'src/components/Label/Label.mdx': () =>
+  'src/index.mdx': () =>
     import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-label-label" */ 'src/components/Label/Label.mdx'
+      /* webpackPrefetch: true, webpackChunkName: "src-index" */ 'src/index.mdx'
+    ),
+  'src/components/Labels/Label.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-labels-label" */ 'src/components/Labels/Label.mdx'
     ),
 }

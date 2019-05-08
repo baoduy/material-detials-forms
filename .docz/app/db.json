@@ -14,7 +14,11 @@
   },
   "props": [
     {
-      "key": "src\\components\\Label\\LabelField.tsx",
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
+    },
+    {
+      "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
           "description": "",
@@ -26,7 +30,7 @@
               "description": "",
               "name": "icon",
               "parent": {
-                "fileName": "src/components/Label/LabelField.tsx",
+                "fileName": "src/components/Labels/LabelField.tsx",
                 "name": "LabelFieldProps"
               },
               "required": false,
@@ -34,39 +38,43 @@
                 "name": "ReactNode"
               }
             },
-            "as": {
-              "defaultValue": null,
-              "description": "",
-              "name": "as",
-              "parent": {
-                "fileName": "src/components/Label/LabelField.tsx",
-                "name": "LabelFieldProps"
-              },
-              "required": false,
-              "type": {
-                "name": "ComponentClass<any, any> | FunctionComponent<any> | undefined"
-              }
-            },
             "variant": {
               "defaultValue": null,
               "description": "",
               "name": "variant",
               "parent": {
-                "fileName": "src/components/Label/LabelField.tsx",
+                "fileName": "src/components/Labels/LabelField.tsx",
                 "name": "LabelFieldProps"
               },
               "required": false,
               "type": {
-                "name": "\"caption\" | \"title\" | \"subtitle\" | undefined"
+                "name": "\"title\" | \"subtitle\" | \"caption\" | \"body\" | \"label\" | undefined"
               }
             },
-            "ref": {
+            "bold": {
               "defaultValue": null,
               "description": "",
-              "name": "ref",
+              "name": "bold",
+              "parent": {
+                "fileName": "src/components/Labels/LabelField.tsx",
+                "name": "LabelFieldProps"
+              },
               "required": false,
               "type": {
-                "name": "((instance: unknown) => void) | RefObject<unknown> | null | undefined"
+                "name": "boolean | undefined"
+              }
+            },
+            "color": {
+              "defaultValue": null,
+              "description": "",
+              "name": "color",
+              "parent": {
+                "fileName": "src/components/Labels/LabelField.tsx",
+                "name": "LabelFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
               }
             }
           }
@@ -76,25 +84,54 @@
   ],
   "entries": [
     {
-      "key": "src/components/Label/Label.mdx",
+      "key": "src/index.mdx",
       "value": {
-        "name": "Label",
-        "id": "91ae321a6291e1d1001fad315e49561e",
-        "filepath": "src/components/Label/Label.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Label/Label.mdx",
-        "slug": "src-components-label-label",
-        "route": "/src-components-label-label",
+        "name": "Form Definition",
+        "id": "6576455a124f9aaefd860597f03a8fe4",
+        "filepath": "src/index.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/index.mdx",
+        "slug": "src-index",
+        "route": "/src-index",
         "menu": "",
         "headings": [
           {
-            "slug": "label",
+            "slug": "from-definition",
             "depth": 1,
-            "value": "Label"
+            "value": "From Definition"
           },
           {
-            "slug": "usage",
+            "slug": "i-detials-form",
             "depth": 2,
-            "value": "Usage"
+            "value": "I. Detials Form"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Labels/Label.mdx",
+      "value": {
+        "name": "Label Field",
+        "id": "a1efc69c08b450fc20bab14328403ad9",
+        "filepath": "src/components/Labels/Label.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Label.mdx",
+        "slug": "src-components-labels-label",
+        "route": "/src-components-labels-label",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "label-field",
+            "depth": 1,
+            "value": "Label Field"
+          },
+          {
+            "slug": "1-with-icon",
+            "depth": 2,
+            "value": "1. With Icon"
+          },
+          {
+            "slug": "2-without-icon",
+            "depth": 2,
+            "value": "2. Without Icon"
           }
         ]
       }

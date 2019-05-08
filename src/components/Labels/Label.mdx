@@ -1,0 +1,54 @@
+---
+name: Label Field
+---
+
+import { Playground, Props } from 'docz';
+import Label from './LabelField';
+import Icon from '@material-ui/icons/ShoppingCart';
+
+# Label Field
+
+Label Field is a Typography which had been build to provide all display stylesheets, color and font size for the Details Form generation purpose.
+Below is the properties and samples.
+
+<Props of={Label} />
+
+## **1. With Icon**
+
+The samples of **Label** with icon at left sidde.
+
+<Playground>
+  <Label variant="caption" icon={Icon}>
+    Build
+  </Label>
+  <Label icon={Icon}>Build settings</Label>
+  <Label variant="subtitle" icon={Icon}>
+    Learn more about common configuration directives in the docs
+  </Label>
+  <hr />
+   <Label variant="body" bold title="body with Bold">
+     The term build may refer to the process by which source code is converted into
+  a stand-alone form that can be run on a computer or to the form itself. One of
+  the most important steps of a software build is the compilation process, where
+  source code files are converted into executable code.
+  </Label>
+
+</Playground>
+
+## **2. Without Icon**
+
+The sample of **Label** with custom Color and Bold.
+
+<Playground>
+  <Label variant="caption">Deploy</Label>
+  <Label bold color="red" title="with Bold and Red">
+    Deploy contexts
+  </Label>
+  <Label variant="subtitle">Deployment Context Infomation</Label>
+  <hr />
+  <Label variant="body">
+    Deploy contexts are a way to tell Netlify how to build your site. They give
+    you the flexibility to configure your site’s builds depending on the context
+    they are going to be deployed to.
+  </Label>
+</Playground>
