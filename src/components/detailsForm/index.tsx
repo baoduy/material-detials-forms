@@ -1,7 +1,3 @@
-export interface DetailsFormProps {
-  header?: React.ReactNode;
-  body?: React.ReactNode;
-  footer?: React.ReactNode;
-}
+import { DetailsFormProps } from '../TypeDefinitions';
 
-export default () => {};
+export default (props: DetailsFormProps) => {};

@@ -25,12 +25,25 @@
           "displayName": "LabelField",
           "methods": [],
           "props": {
+            "className": {
+              "defaultValue": null,
+              "description": "The addition css for LabelField component",
+              "name": "className",
+              "parent": {
+                "fileName": "src/components/TypeDefinitions.ts",
+                "name": "LabelFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
             "icon": {
               "defaultValue": null,
-              "description": "",
+              "description": "The Icon of Label",
               "name": "icon",
               "parent": {
-                "fileName": "src/components/Labels/LabelField.tsx",
+                "fileName": "src/components/TypeDefinitions.ts",
                 "name": "LabelFieldProps"
               },
               "required": false,
@@ -40,10 +53,10 @@
             },
             "variant": {
               "defaultValue": null,
-              "description": "",
+              "description": "The display style of Label",
               "name": "variant",
               "parent": {
-                "fileName": "src/components/Labels/LabelField.tsx",
+                "fileName": "src/components/TypeDefinitions.ts",
                 "name": "LabelFieldProps"
               },
               "required": false,
@@ -53,10 +66,10 @@
             },
             "bold": {
               "defaultValue": null,
-              "description": "",
+              "description": "Make forntweight as Bold",
               "name": "bold",
               "parent": {
-                "fileName": "src/components/Labels/LabelField.tsx",
+                "fileName": "src/components/TypeDefinitions.ts",
                 "name": "LabelFieldProps"
               },
               "required": false,
@@ -66,15 +79,28 @@
             },
             "color": {
               "defaultValue": null,
-              "description": "",
+              "description": "Custom color of LabelField it should be a hex color value ex: #e91e63",
               "name": "color",
               "parent": {
-                "fileName": "src/components/Labels/LabelField.tsx",
+                "fileName": "src/components/TypeDefinitions.ts",
                 "name": "LabelFieldProps"
               },
               "required": false,
               "type": {
                 "name": "string | undefined"
+              }
+            },
+            "children": {
+              "defaultValue": null,
+              "description": "The child of Label normally it is a string",
+              "name": "children",
+              "parent": {
+                "fileName": "src/components/TypeDefinitions.ts",
+                "name": "LabelFieldProps"
+              },
+              "required": true,
+              "type": {
+                "name": "ReactNode"
               }
             }
           }
@@ -132,6 +158,40 @@
             "slug": "2-without-icon",
             "depth": 2,
             "value": "2. Without Icon"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Labels/Title.mdx",
+      "value": {
+        "name": "Title",
+        "id": "d1a04935cc53f054e03762af4a6ae5bd",
+        "filepath": "src/components/Labels/Title.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Title.mdx",
+        "slug": "src-components-labels-title",
+        "route": "/src-components-labels-title",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "label-field",
+            "depth": 1,
+            "value": "Label Field"
+          },
+          {
+            "slug": "1-with-icon",
+            "depth": 2,
+            "value": "1. With Icon"
+          },
+          {
+            "slug": "2-without-icon",
+            "depth": 2,
+            "value": "2. Without Icon"
+          },
+          {
+            "slug": "3-custom-color",
+            "depth": 2,
+            "value": "3. Custom Color"
           }
         ]
       }

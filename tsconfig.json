@@ -3,11 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
-      "@actions/*": ["src/actions/*"],
-      "@assets/*": ["src/assets/*"],
-      "@commons/*": ["src/commons/*"],
-      "@components/*": ["src/components/*"],
-      "@views/*": ["src/views/*"]
+      "@components/*": ["src/components/*"]
     },
     "lib": ["es6", "esnext", "dom"],
     //"sourceMap": true,
@@ -28,7 +24,7 @@
     "forceConsistentCasingInFileNames": true,
     //"emitDeclarationOnly": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": false,
     "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

@@ -1,19 +1,10 @@
+import { LabelFieldProps, LabelVariant } from '../TypeDefinitions';
 import React, { ReactNode } from 'react';
 
 import { ThemeStyle } from '@material-ui/core/styles/createTypography';
 import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
-
-export type LabelVariant = 'title' | 'subtitle' | 'caption' | 'body' | 'label';
-
-export interface LabelFieldProps {
-  icon?: ReactNode;
-  variant?: LabelVariant;
-  bold?: boolean;
-  color?: string;
-  children: ReactNode;
-}
 
 const getTypoVariant = (type?: LabelVariant): ThemeStyle => {
   switch (type) {
@@ -24,8 +15,9 @@ const getTypoVariant = (type?: LabelVariant): ThemeStyle => {
     case 'caption':
       return 'caption';
     case 'body':
-    default:
       return 'body2';
+    default:
+      return 'h5';
   }
 };
 
@@ -66,6 +58,7 @@ const Label = ({
   variant,
   bold,
   color,
+  className,
   ...rest
 }: LabelFieldProps) => {
   const classes = useStyle();
@@ -75,7 +68,10 @@ const Label = ({
     <Typography
       style={color ? { color } : undefined}
       {...rest}
-      className={classNames({ [classes.content]: true, [classes.bold]: bold })}
+      className={classNames(
+        { [classes.content]: true, [classes.bold]: bold },
+        className
+      )}
       color={getTypoColor(variant)}
       variant={getTypoVariant(variant)}
     >

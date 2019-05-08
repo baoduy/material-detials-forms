@@ -1,0 +1,51 @@
+---
+name: Title
+---
+
+import { Playground, Props } from 'docz';
+import Title from './Title';
+import Icon from '@material-ui/icons/ShoppingCart';
+
+# Label Field
+
+The Title component of the Form.
+
+<Props of={Title} />
+
+## **1. With Icon**
+
+The samples of **Title** with icon at left sidde.
+
+<Playground>
+  <Title
+    icon={Icon}
+    caption="This is Caption"
+    text="This is Title"
+    subtitle="And Here is subtitle"
+  />
+</Playground>
+
+## **2. Without Icon**
+
+The sample of **Title** with custom Color and Bold.
+
+<Playground>
+  <Title
+    caption="This is Caption"
+    text="This is Title"
+    subtitle="And Here is subtitle"
+  />
+</Playground>
+
+## **3. Custom Color**
+
+The sample of **Title** with custom Color and Bold.
+
+<Playground>
+  <Title
+    icon={Icon}
+    caption="This is Caption"
+    text="This is Title"
+    color="#e91e63"
+  />
+</Playground>
