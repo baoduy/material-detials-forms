@@ -14,10 +14,6 @@
   },
   "props": [
     {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
-    },
-    {
       "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
@@ -106,6 +102,10 @@
           }
         }
       ]
+    },
+    {
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
     }
   ],
   "entries": [
@@ -129,6 +129,30 @@
             "slug": "i-detials-form",
             "depth": 2,
             "value": "I. Detials Form"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/DetailsView/DetailsView.mdx",
+      "value": {
+        "name": "Details View",
+        "id": "d82665307a018a2aa4f0bc07e630e7b5",
+        "filepath": "src/components/DetailsView/DetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/DetailsView.mdx",
+        "slug": "src-components-details-view-details-view",
+        "route": "/src-components-details-view-details-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
           }
         ]
       }
@@ -192,6 +216,11 @@
             "slug": "3-custom-color",
             "depth": 2,
             "value": "3. Custom Color"
+          },
+          {
+            "slug": "4-with-tooltip",
+            "depth": 2,
+            "value": "4. With Tooltip"
           }
         ]
       }

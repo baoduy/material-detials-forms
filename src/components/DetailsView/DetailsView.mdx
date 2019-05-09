@@ -1,0 +1,26 @@
+---
+name: Details View
+---
+
+import { Playground, Props } from 'docz';
+import DetailsView from './index';
+import Button from '@material-ui/core/Button';
+
+# Details View
+
+DetialsView is a component allow you render the detials information which a few simple configuration
+
+<Props of={DetailsView} />
+
+## Usage
+
+<Playground>
+  <DetailsView
+    header={{ title: 'Product Infomation' }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button>Confirm</Button>
+      </div>
+    }
+  />
+</Playground>

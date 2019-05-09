@@ -1,9 +1,48 @@
-import { ReactNode } from 'react';
+import { ReactChild, ReactNode } from 'react';
 
-export interface DetailsFormProps {
-  header?: React.ReactNode;
-  body?: React.ReactNode;
-  footer?: React.ReactNode;
+import { Omit } from '@material-ui/core';
+
+export interface TitleProps {
+  className?: string;
+  icon?: ReactNode;
+  caption?: string;
+  subtitle?: string;
+  text: string;
+  tooltip?: string;
+  color?: string;
+}
+
+type OmitAs<T> = Omit<T, 'As'>;
+type AsType<T> = React.ComponentType<OmitAs<T>> | JSX.Element;
+
+interface AsComponent<TProps> {
+  As?: AsType<TProps>;
+}
+
+export interface DetaislHeaderProps extends AsComponent<DetaislHeaderProps> {
+  hr?: boolean;
+  title: TitleProps | string;
+}
+
+export interface DetaislFooterProps extends AsComponent<DetaislFooterProps> {
+  hr?: boolean;
+  children: ReactChild;
+}
+
+export interface DetaislBodyProps<TData = any>
+  extends AsComponent<DetaislBodyProps> {
+  data: TData;
+  fields: Array<DetailsField>;
+}
+
+export interface DetailsField {
+  label: Omit<LabelFieldProps, 'children'> | string;
+  value: Omit<LabelFieldProps, 'children'> | string;
+}
+
+export interface DetailsFormProps<TData> extends DetaislBodyProps<TData> {
+  header?: DetaislHeaderProps | string;
+  footer?: DetaislFooterProps;
   flat?: boolean;
 }
 

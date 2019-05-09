@@ -1,16 +1,7 @@
 import Label from './LabelField';
 import React from 'react';
-import { ReactNode } from 'react';
-
-export interface TitleProps {
-  className?: string;
-  icon?: ReactNode;
-  caption?: string;
-  subtitle?: string;
-  text: string;
-  color?: string;
-  hr?: boolean;
-}
+import { TitleProps } from '../TypeDefinitions';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const Title = ({
   className,
@@ -18,10 +9,10 @@ const Title = ({
   text,
   caption,
   subtitle,
-  color,
-  hr
+  tooltip,
+  color
 }: TitleProps) => {
-  return (
+  const content = (
     <span className={className}>
       {caption && <Label variant="caption">{caption}</Label>}
       {text && (
@@ -30,8 +21,15 @@ const Title = ({
         </Label>
       )}
       {subtitle && <Label variant="subtitle">{subtitle}</Label>}
-      {hr && <hr />}
     </span>
+  );
+
+  if (!tooltip) return content;
+
+  return (
+    <Tooltip title={tooltip} placement="bottom-start">
+      {content}
+    </Tooltip>
   );
 };
 
