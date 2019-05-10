@@ -1,5 +1,5 @@
 import * as dayjs from 'dayjs';
-import * as numeral from 'numeral';
+import * as numeral from '@elastic/numeral';
 
 const DefaultDateFormat = 'DD/MM/YYYY HH:mm:ss';
 const DefaultNumberFormat = '0,0.00';

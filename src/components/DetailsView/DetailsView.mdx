@@ -14,8 +14,30 @@ DetialsView is a component allow you render the detials information which a few 
 
 ## Usage
 
+Let's say if we have a user json as below. How could we create a Details View with minimal configuration.
+
+```json
+{
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+  },
+```
+
 <Playground>
   <DetailsView
+    data={{
+      id: 1,
+      name: 'Leanne Graham',
+      username: 'Bret',
+      email: 'Sincere@april.biz',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org'
+    }}
+    fields={['name', 'username', 'email', 'phone', 'website']}
     header={{ title: 'Product Infomation' }}
     footer={
       <div style={{ textAlign: 'right' }}>
