@@ -1,4 +1,5 @@
-import { DetaislHeaderProps } from '../TypeDefinitions';
+import { DetaislHeaderProps, TitleProps } from '../TypeDefinitions';
+
 import React from 'react';
 import Title from '../Labels/Title';
 
@@ -9,13 +10,12 @@ const DetailsHeader = ({ hr, title, As, ...rest }: DetaislHeaderProps) => {
     return <Com hr={hr} title={title} {...rest} />;
   }
 
+  const finalTitle: TitleProps =
+    typeof title === 'string' ? { text: title } : title;
+
   return (
     <>
-      {typeof title === 'string' ? (
-        <Title text={title} />
-      ) : (
-        <Title {...title} />
-      )}
+      <Title {...finalTitle} />
       {hr && <hr />}
     </>
   );

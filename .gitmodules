@@ -1,0 +1,4 @@
+[submodule "config/jest"]
+	path = config/jest
+	url = https://github.com/baoduy/sm-jest-config
+	branch = master

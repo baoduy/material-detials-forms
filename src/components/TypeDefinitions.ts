@@ -32,12 +32,25 @@ export interface DetaislFooterProps extends AsComponent<DetaislFooterProps> {
 export interface DetaislBodyProps<TData = any>
   extends AsComponent<DetaislBodyProps> {
   data: TData;
-  fields: Array<DetailsField>;
+  fields: Array<FieldOption<TData>>;
 }
 
 export interface DetailsField {
-  label: Omit<LabelFieldProps, 'children'> | string;
-  value: Omit<LabelFieldProps, 'children'> | string;
+  label: Omit<LabelFieldProps, 'children'>;
+  value: Omit<LabelFieldProps, 'children'>;
+}
+
+export interface FieldOption<TData> {
+  /** The name of property in data object */
+  name?: string;
+  /** If the value is combined from multi properties using this accessor to transform them into a string or number */
+  accessor?: (data: TData) => string | number;
+  /** The formation string to be applied to the Date or number value */
+  format?: string;
+  /** Label of file will be transformed automatically from the file name. However you can customize here */
+  label?: Omit<LabelFieldProps, 'children'> | string;
+  /** The other option for Value field */
+  displayOptions: Omit<LabelFieldProps, 'children'>;
 }
 
 export interface DetailsFormProps<TData> extends DetaislBodyProps<TData> {

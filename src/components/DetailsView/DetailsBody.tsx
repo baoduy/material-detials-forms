@@ -1,7 +1,7 @@
 import { DetaislBodyProps } from '../TypeDefinitions';
 import React from 'react';
 
-const DetailsBody = ({ As, ...rest }: DetaislBodyProps) => {
+const DetailsBody = ({ data, fields, As, ...rest }: DetaislBodyProps) => {
   if (As) {
     if (React.isValidElement(As)) return As;
     const Com: any = As;
