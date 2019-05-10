@@ -1,21 +1,16 @@
-import dayjs, { Dayjs } from 'dayjs';
+import * as dayjs from 'dayjs';
+import * as numeral from 'numeral';
 
-import numeral from 'numeral';
+export const applyFormat = (value: any, format: string): string => {
+  if (typeof value === 'number') return numeral(value).format(format);
 
-export const applyFormat = (
-  value: number | Date | Numeral | Dayjs,
-  format: string
-): string => {
-  let finalValue: any = undefined;
+  //Try with Date
+  const d = dayjs(value);
+  if (d.isValid()) return d.format(format);
 
-  if (typeof value === 'number') finalValue = numeral(value);
-  if (value instanceof Date) finalValue = dayjs(value);
-
-  //If it is NumberJs
-  if (finalValue.isNumeral) return (finalValue as Numeral).format(format);
-  //If it is DayJs
-  if (finalValue.isValid && finalValue.isValid())
-    return (finalValue as Dayjs).format(format);
+  //try with number
+  const n = numeral(value);
+  if (n.isNumeral) return n.format(format);
 
   return value.toString();
 };

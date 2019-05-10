@@ -331,3 +331,5 @@ ASALocalRun/
 
 .docz/cache
 .docz/dist
+package-lock.json
+**/__coverage__/**

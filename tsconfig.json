@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@commons/*": ["src/commons/*"]
     },
     "lib": ["es6", "esnext", "dom"],
     //"sourceMap": true,
@@ -23,7 +24,7 @@
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
     //"emitDeclarationOnly": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
