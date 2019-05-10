@@ -5,6 +5,8 @@ describe('Test applyFormat', () => {
     expect(applyFormat(123456, '0,0.00')).toBe('123,456.00');
     expect(applyFormat(123456, '0,0')).toBe('123,456');
     expect(applyFormat(1234.56, '0,0.00')).toBe('1,234.56');
+    //Use default format
+    expect(applyFormat(1234.56)).toBe('1,234.56');
   });
 
   test('applyFormat for Date', () => {
@@ -19,5 +21,8 @@ describe('Test applyFormat', () => {
         'DD/MM/YYYY HH:mm:ss'
       )
     ).toBe('12/05/2019 18:10:10'); //only pass when running in Singapore (UTC +8)
+
+    //Use default format
+    expect(applyFormat('2019/05/12')).toBe('12/05/2019 00:00:00');
   });
 });
