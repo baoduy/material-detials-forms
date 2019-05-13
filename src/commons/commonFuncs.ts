@@ -1,3 +1,7 @@
+export const isPrd = process.env.NODE_ENV === 'production';
+
+export const isBrowser = typeof window !== 'undefined';
+
 const isLowerCase = (char: string) => char === char.toLowerCase();
 const isUpperCase = (char: string) => char === char.toUpperCase();
 const isChanged = (preChar: string, char: string) =>

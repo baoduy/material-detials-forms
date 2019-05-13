@@ -35,9 +35,12 @@ export interface DetaislBodyProps<TData = any>
   fields: Array<FieldOption<TData>>;
 }
 
+export interface DisplayFieldProps extends Omit<LabelFieldProps, 'children'> {
+  text: any;
+}
 export interface DetailsField {
-  label: Omit<LabelFieldProps, 'children'>;
-  value: Omit<LabelFieldProps, 'children'>;
+  label: DisplayFieldProps;
+  value: DisplayFieldProps;
 }
 
 export interface FieldOption<TData> {
@@ -48,9 +51,9 @@ export interface FieldOption<TData> {
   /** The formation string to be applied to the Date or number value */
   format?: string;
   /** Label of file will be transformed automatically from the file name. However you can customize here */
-  label?: Omit<LabelFieldProps, 'children'> | string;
+  label?: DisplayFieldProps | string;
   /** The other option for Value field */
-  displayOptions: Omit<LabelFieldProps, 'children'>;
+  displayOptions: DisplayFieldProps;
 }
 
 export interface DetailsFormProps<TData> extends DetaislBodyProps<TData> {
