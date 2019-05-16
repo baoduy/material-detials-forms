@@ -15,7 +15,7 @@ const DetailsHeader = ({ hr, title, As, ...rest }: DetaislHeaderProps) => {
 
   return (
     <>
-      <Title {...finalTitle} />
+      <Title {...rest} {...finalTitle} />
       {hr && <hr />}
     </>
   );

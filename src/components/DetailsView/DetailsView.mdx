@@ -5,6 +5,7 @@ name: Details View
 import { Playground, Props } from 'docz';
 import DetailsView from './index';
 import Button from '@material-ui/core/Button';
+import Info from '@material-ui/icons/Info';
 
 # Details View
 
@@ -27,6 +28,8 @@ Let's say if we have a user json as below. How could we create a Details View wi
   },
 ```
 
+### Default style
+
 <Playground>
   <DetailsView
     data={{
@@ -38,7 +41,30 @@ Let's say if we have a user json as below. How could we create a Details View wi
       website: 'hildegard.org'
     }}
     fields={['name', 'username', 'email', 'phone', 'website']}
-    header={{ title: 'Product Infomation' }}
+    header={{ title: 'Product Infomation', icon: Info }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button>Confirm</Button>
+      </div>
+    }
+  />
+</Playground>
+
+### Flat style
+
+<Playground>
+  <DetailsView
+    flat
+    data={{
+      id: 1,
+      name: 'Leanne Graham',
+      username: 'Bret',
+      email: 'Sincere@april.biz',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org'
+    }}
+    fields={['name', 'username', 'email', 'phone', 'website']}
+    header={{ title: 'Product Infomation', icon: Info }}
     footer={
       <div style={{ textAlign: 'right' }}>
         <Button>Confirm</Button>

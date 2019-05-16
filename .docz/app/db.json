@@ -14,6 +14,10 @@
   },
   "props": [
     {
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
+    },
+    {
       "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
@@ -102,10 +106,6 @@
           }
         }
       ]
-    },
-    {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
     }
   ],
   "entries": [
@@ -153,6 +153,16 @@
             "slug": "usage",
             "depth": 2,
             "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
+          },
+          {
+            "slug": "flat-style",
+            "depth": 3,
+            "value": "Flat style"
           }
         ]
       }

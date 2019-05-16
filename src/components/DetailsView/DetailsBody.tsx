@@ -6,6 +6,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { Theme } from '@material-ui/core/styles';
+import classNames from 'classnames';
 import { generateDataFields } from '../../commons/renderHelper';
 import { makeStyles } from '@material-ui/styles';
 
@@ -18,7 +19,8 @@ const useStyles = makeStyles((theme: Theme) => ({
       backgroundColor: theme.palette.background.default
     }
   },
-  th: { width: '30%' }
+  th: { width: '30%' },
+  cell: { padding: '10px 30px 10px 10px' }
 }));
 
 const DetailsBody = ({ data, fields, As, ...rest }: DetaislBodyProps) => {
@@ -37,10 +39,20 @@ const DetailsBody = ({ data, fields, As, ...rest }: DetaislBodyProps) => {
       <TableBody>
         {values.map((row, i) => (
           <TableRow key={i} className={classes.row}>
-            <TableCell className={classes.th} align="right" scope="row">
-              {row.label.text}
+            <TableCell
+              className={classNames(classes.cell, classes.th)}
+              align="right"
+              scope="row"
+            >
+              <LabelField variant="caption" {...row.label}>
+                {row.label.text}
+              </LabelField>
             </TableCell>
-            <TableCell>{row.value.text}</TableCell>
+            <TableCell className={classes.cell}>
+              <LabelField variant="body" {...row.value}>
+                {row.value.text}
+              </LabelField>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

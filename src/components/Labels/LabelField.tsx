@@ -69,7 +69,7 @@ const Label = ({
       style={color ? { color } : undefined}
       {...rest}
       className={classNames(
-        { [classes.content]: true, [classes.bold]: bold },
+        { [classes.content]: Icon, [classes.bold]: bold },
         className
       )}
       color={getTypoColor(variant)}
