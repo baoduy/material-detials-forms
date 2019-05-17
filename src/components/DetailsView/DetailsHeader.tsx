@@ -1,9 +1,9 @@
-import { DetaislHeaderProps, TitleProps } from '../TypeDefinitions';
+import { DetailsHeaderProps, TitleProps } from '../TypeDefinitions';
 
 import React from 'react';
 import Title from '../Labels/Title';
 
-const DetailsHeader = ({ hr, title, As, ...rest }: DetaislHeaderProps) => {
+const DetailsHeader = ({ hr, title, As, ...rest }: DetailsHeaderProps) => {
   if (As) {
     if (React.isValidElement(As)) return As;
     const Com: any = As;

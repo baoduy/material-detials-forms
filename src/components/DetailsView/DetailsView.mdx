@@ -6,6 +6,8 @@ import { Playground, Props } from 'docz';
 import DetailsView from './index';
 import Button from '@material-ui/core/Button';
 import Info from '@material-ui/icons/Info';
+import user from '../../../static/user';
+import ReactJson from 'react-json-view';
 
 # Details View
 
@@ -17,34 +19,27 @@ DetialsView is a component allow you render the detials information which a few 
 
 Let's say if we have a user json as below. How could we create a Details View with minimal configuration.
 
-```json
-{
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "phone": "1-770-736-8031 x56442",
-    "website": "hildegard.org",
-  },
-```
+<ReactJson src={user} />
 
 ### Default style
 
 <Playground>
   <DetailsView
-    data={{
-      id: 1,
-      name: 'Leanne Graham',
-      username: 'Bret',
-      email: 'Sincere@april.biz',
-      phone: '1-770-736-8031 x56442',
-      website: 'hildegard.org'
-    }}
-    fields={['name', 'username', 'email', 'phone', 'website']}
+    data={user}
+    fields={[
+      'name',
+      'username',
+      'email',
+      'phone',
+      'website',
+      { name: 'company', accessor: i => i.company.name }
+    ]}
     header={{ title: 'Product Infomation', icon: Info }}
     footer={
       <div style={{ textAlign: 'right' }}>
-        <Button>Confirm</Button>
+        <Button variant="contained" color="primary">
+          Ok
+        </Button>
       </div>
     }
   />
@@ -55,19 +50,78 @@ Let's say if we have a user json as below. How could we create a Details View wi
 <Playground>
   <DetailsView
     flat
-    data={{
-      id: 1,
-      name: 'Leanne Graham',
-      username: 'Bret',
-      email: 'Sincere@april.biz',
-      phone: '1-770-736-8031 x56442',
-      website: 'hildegard.org'
-    }}
-    fields={['name', 'username', 'email', 'phone', 'website']}
+    data={user}
+    fields={[
+      'name',
+      'username',
+      'email',
+      'phone',
+      'website',
+      { name: 'company', accessor: i => i.company.name }
+    ]}
     header={{ title: 'Product Infomation', icon: Info }}
     footer={
       <div style={{ textAlign: 'right' }}>
-        <Button>Confirm</Button>
+        <Button variant="contained" color="secondary">
+          Ok
+        </Button>
+      </div>
+    }
+  />
+</Playground>
+
+### Alternate Row Default Style
+
+<Playground>
+  <DetailsView
+    flat
+    alternateRowColor
+    data={user}
+    fields={[
+      'name',
+      'username',
+      'email',
+      'phone',
+      'website',
+      { name: 'company', accessor: i => i.company.name }
+    ]}
+    header={{
+      title: 'Product Infomation with Default Alternate Row Style',
+      icon: Info
+    }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="outlined" color="primary">
+          Ok
+        </Button>
+      </div>
+    }
+  />
+</Playground>
+
+### Custom Alternate Row Style
+
+<Playground>
+  <DetailsView
+    alternateRowColor="#ffe6f2"
+    data={user}
+    fields={[
+      'name',
+      'username',
+      'email',
+      'phone',
+      'website',
+      { name: 'company', accessor: i => i.company.name }
+    ]}
+    header={{
+      title: 'Product Infomation with Custom Alternate Row Color',
+      icon: Info
+    }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="outlined" color="secondary">
+          Ok
+        </Button>
       </div>
     }
   />

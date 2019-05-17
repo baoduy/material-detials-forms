@@ -15,4 +15,8 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-labels-title" */ 'src/components/Labels/Title.mdx'
     ),
+  'src/components/EditForm/EditView.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-view" */ 'src/components/EditForm/EditView.mdx'
+    ),
 }

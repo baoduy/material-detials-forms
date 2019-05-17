@@ -38,9 +38,8 @@ export function generateDataFields<TData>(
     if (format) value = applyFormat(value, format);
 
     return {
-      label:
-        typeof label === 'string' ? { text: label, variant: 'caption' } : label,
-      value: { variant: 'subtitle', ...displayOptions, text: value }
+      label: typeof label === 'string' ? { text: label } : label,
+      value: { ...displayOptions, text: value }
     } as DetailsField;
   });
 }

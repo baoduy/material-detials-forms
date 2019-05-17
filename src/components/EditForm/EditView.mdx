@@ -1,0 +1,49 @@
+---
+name: Edit Form
+---
+
+import { Playground, Props } from 'docz';
+import EditForm from './index';
+import Button from '@material-ui/core/Button';
+import Info from '@material-ui/icons/Info';
+import user from '../../../static/user';
+import ReactJson from 'react-json-view';
+
+# Details View
+
+Edit From is a component allow you render the a From which a few simple configuration.
+
+<Props of={EditForm} />
+
+## Usage
+
+Let's say if we have a user json as below. How could we create a Details View with minimal configuration.
+
+<ReactJson src={user} />
+
+### Default style
+
+<Playground>
+  <EditForm
+    data={user}
+    fields={[
+      'name',
+      'username',
+      'email',
+      'phone',
+      'website',
+      { name: 'company', accessor: i => i.company.name }
+    ]}
+    header={{ title: 'Product Infomation', icon: Info }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="contained" color="default" style={{ marginRight: 10 }}>
+          Cancel
+        </Button>
+        <Button variant="contained" color="primary">
+          Submit
+        </Button>
+      </div>
+    }
+  />
+</Playground>

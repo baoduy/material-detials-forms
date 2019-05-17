@@ -19,20 +19,24 @@ interface AsComponent<TProps> {
   As?: AsType<TProps>;
 }
 
-export interface DetaislHeaderProps extends AsComponent<DetaislHeaderProps> {
+export interface DetailsHeaderProps extends AsComponent<DetailsHeaderProps> {
   hr?: boolean;
   title: TitleProps | string;
 }
 
-export interface DetaislFooterProps extends AsComponent<DetaislFooterProps> {
+export interface DetailsFooterProps extends AsComponent<DetailsFooterProps> {
   hr?: boolean;
   children: ReactChild;
 }
 
-export interface DetaislBodyProps<TData = any>
-  extends AsComponent<DetaislBodyProps> {
+export interface DetailsBodyProps<TData = any>
+  extends AsComponent<DetailsBodyProps> {
   data: TData;
   fields: Array<FieldOption<TData>>;
+  /** Flat theme without Card border and shadow */
+  flat?: boolean;
+  /** High-light color or True to use the default color for the odd row. Set false to disable the highlight */
+  alternateRowColor?: boolean | string | React.CSSProperties;
 }
 
 export interface DisplayFieldProps extends Omit<LabelFieldProps, 'children'> {
@@ -56,10 +60,14 @@ export interface FieldOption<TData> {
   displayOptions: DisplayFieldProps;
 }
 
-export interface DetailsFormProps<TData> extends DetaislBodyProps<TData> {
-  header?: DetaislHeaderProps | string;
-  footer?: DetaislFooterProps;
-  flat?: boolean;
+export interface DetailsFormProps<TData> extends DetailsBodyProps<TData> {
+  header?: DetailsHeaderProps | string;
+  footer?: DetailsFooterProps;
+}
+
+export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
+  header?: DetailsHeaderProps | string;
+  footer?: DetailsFooterProps;
 }
 
 /** The variant of LabelField */
@@ -75,7 +83,7 @@ export interface LabelFieldProps {
   icon?: ReactNode;
   /** The display style of Label */
   variant?: LabelVariant;
-  /** Make forntweight as Bold */
+  /** Make font-weight as Bold */
   bold?: boolean;
   /** Custom color of LabelField it should be a hex color value ex: #e91e63 */
   color?: string;
