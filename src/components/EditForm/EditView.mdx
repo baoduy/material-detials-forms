@@ -5,7 +5,7 @@ name: Edit Form
 import { Playground, Props } from 'docz';
 import EditForm from './index';
 import Button from '@material-ui/core/Button';
-import Info from '@material-ui/icons/Info';
+import Info from '@material-ui/icons/Waves';
 import user from '../../../static/user';
 import ReactJson from 'react-json-view';
 
@@ -34,7 +34,7 @@ Let's say if we have a user json as below. How could we create a Details View wi
       'website',
       { name: 'company', accessor: i => i.company.name }
     ]}
-    header={{ title: 'Product Infomation', icon: Info }}
+    header={{ title: 'Edit Product Infomation', icon: Info }}
     footer={
       <div style={{ textAlign: 'right' }}>
         <Button variant="contained" color="default" style={{ marginRight: 10 }}>

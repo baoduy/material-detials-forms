@@ -1,6 +1,6 @@
 import { LabelFieldProps, LabelVariant } from '../TypeDefinitions';
-import React, { ReactNode } from 'react';
 
+import React from 'react';
 import { ThemeStyle } from '@material-ui/core/styles/createTypography';
 import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
@@ -16,8 +16,9 @@ const getTypoVariant = (type?: LabelVariant): ThemeStyle => {
       return 'caption';
     case 'body':
       return 'body2';
+    case 'label':
     default:
-      return 'h5';
+      return 'overline';
   }
 };
 

@@ -22,7 +22,7 @@ function DetailsForm<TData>({
   const content = (
     <>
       {finalHeader && <DetailsHeader {...finalHeader} />}
-      <EditFormBody {...rest} />
+      <EditFormBody<TData> {...rest} />
       {footer &&
         (React.isValidElement(footer) ? (
           <DetailsFooter>{footer}</DetailsFooter>

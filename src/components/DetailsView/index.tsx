@@ -7,7 +7,7 @@ import DetailsFooter from './DetailsFooter';
 import DetailsHeader from './DetailsHeader';
 import React from 'react';
 
-function DetailsForm<TData>({
+function DetailsForm<TData = any>({
   flat,
   header,
   footer,
@@ -22,7 +22,7 @@ function DetailsForm<TData>({
   const content = (
     <>
       {finalHeader && <DetailsHeader {...finalHeader} />}
-      <DetailsBody {...rest} />
+      <DetailsBody<TData> {...rest} />
       {footer &&
         (React.isValidElement(footer) ? (
           <DetailsFooter>{footer}</DetailsFooter>

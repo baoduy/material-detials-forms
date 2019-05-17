@@ -25,10 +25,36 @@ Let's say if we have a user json as below. How could we create a Details View wi
 
 <Playground>
   <DetailsView
+    labelAlign="left"
     data={user}
     fields={[
-      'name',
-      'username',
+      { name: 'name', gridSize: { md: 6 } },
+      { name: 'username', gridSize: { md: 6 } },
+      'email',
+      'phone',
+      'website',
+      { name: 'company', accessor: i => i.company.name }
+    ]}
+    header={{ title: 'Product Infomation', icon: Info }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="contained" color="primary">
+          Ok
+        </Button>
+      </div>
+    }
+  />
+</Playground>
+
+### Table style
+
+<Playground>
+  <DetailsView
+    variant="table"
+    data={user}
+    fields={[
+      { name: 'name', gridSize: { md: 6 } },
+      { name: 'username', gridSize: { md: 6 } },
       'email',
       'phone',
       'website',

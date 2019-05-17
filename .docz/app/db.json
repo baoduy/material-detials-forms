@@ -62,7 +62,7 @@
             },
             "bold": {
               "defaultValue": null,
-              "description": "Make forntweight as Bold",
+              "description": "Make font-weight as Bold",
               "name": "bold",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
@@ -160,6 +160,11 @@
             "value": "Default style"
           },
           {
+            "slug": "table-style",
+            "depth": 3,
+            "value": "Table style"
+          },
+          {
             "slug": "flat-style",
             "depth": 3,
             "value": "Flat style"
@@ -173,6 +178,35 @@
             "slug": "custom-alternate-row-style",
             "depth": 3,
             "value": "Custom Alternate Row Style"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditView.mdx",
+      "value": {
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
           }
         ]
       }
@@ -241,35 +275,6 @@
             "slug": "4-with-tooltip",
             "depth": 2,
             "value": "4. With Tooltip"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/EditForm/EditView.mdx",
-      "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default style"
           }
         ]
       }

@@ -1,9 +1,10 @@
-import { DetailsBodyProps } from '../TypeDefinitions';
-import LabelField from '../Labels/LabelField';
+import { DetailsBodyProps, OmitAs } from '../../TypeDefinitions';
+
+import DetailsField from './DetailsField';
+import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import { Theme } from '@material-ui/core/styles';
-import classNames from 'classnames';
-import { generateDataFields } from '../../commons/renderHelper';
+import { generateDataFields } from '../../../commons/renderHelper';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = (
@@ -23,23 +24,15 @@ const useStyles = (
                 : theme.palette.background.default
           }) as any
     },
-    th: { width: '30%' },
     cell: { padding: '10px 30px 10px 10px' }
   }))();
 
-function EditFormBody<TData>({
+function GridDetailsBody<TData>({
   data,
   fields,
   alternateRowColor,
-  As,
-  ...rest
-}: DetailsBodyProps<TData>) {
-  if (As) {
-    if (React.isValidElement(As)) return As;
-    const Com: any = As;
-    return <Com {...rest} />;
-  }
-
+  labelAlign
+}: OmitAs<DetailsBodyProps<TData>>) {
   const classes = useStyles(alternateRowColor);
 
   const values = React.useMemo(() => generateDataFields(data, fields), [
@@ -47,7 +40,25 @@ function EditFormBody<TData>({
     fields
   ]);
 
-  return <div />;
+  return (
+    <Grid container className={classes.root}>
+      {values.map((v, i) => {
+        let { gridSize, ...rest } = v;
+        if (!gridSize)
+          gridSize = {
+            sm: 12,
+            md: 12,
+            xs: 12
+          };
+
+        return (
+          <Grid className={classes.cell} key={i} item {...gridSize}>
+            <DetailsField labelAlign={labelAlign} {...rest} />
+          </Grid>
+        );
+      })}
+    </Grid>
+  );
 }
 
-export default EditFormBody;
+export default GridDetailsBody;
