@@ -72,17 +72,23 @@ export interface DisplayFieldProps extends Omit<LabelFieldProps, 'children'> {
   text: any;
 }
 
-export interface EditFieldProps {
-  /** Input Type if not provided the input type will be decided automatically based on value type */
-  type?: string;
-}
-
 export interface DetailsFieldProps extends AsComponent<DetailsFieldProps> {
   label: DisplayFieldProps;
   value: DisplayFieldProps;
   labelAlign?: CellLabelAlign;
+  /** This only apply to the GridBody */
+  gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
 }
 
+export interface EditFieldProps extends AsComponent<DetailsFieldProps> {
+  name: string;
+  label: string;
+  value: string | number;
+  /** Input Type if not provided the input type will be decided automatically based on value type */
+  type?: string;
+  /** This only apply to the GridBody */
+  gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
+}
 export interface FieldOption<TData> {
   /** The name of property in data object */
   name?: string;

@@ -1,9 +1,15 @@
+import {
+  generateDataFields,
+  generateEditFields
+} from '../../commons/renderHelper';
+
 import { DetailsBodyProps } from '../TypeDefinitions';
-import LabelField from '../Labels/LabelField';
+import EditField from './EditField';
+import { Form } from 'formik';
+import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import { Theme } from '@material-ui/core/styles';
 import classNames from 'classnames';
-import { generateDataFields } from '../../commons/renderHelper';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = (
@@ -14,14 +20,14 @@ const useStyles = (
       flexShrink: 0
     },
     alternateRow: {
-      '&:nth-of-type(odd)': (typeof alternateRowColor === 'object'
+      ...(typeof alternateRowColor === 'object'
         ? alternateRowColor
         : {
             backgroundColor:
               typeof alternateRowColor === 'string'
                 ? alternateRowColor
                 : theme.palette.background.default
-          }) as any
+          })
     },
     th: { width: '30%' },
     cell: { padding: '10px 30px 10px 10px' }
@@ -42,12 +48,32 @@ function EditFormBody<TData>({
 
   const classes = useStyles(alternateRowColor);
 
-  const values = React.useMemo(() => generateDataFields(data, fields), [
+  const values = React.useMemo(() => generateEditFields(data, fields), [
     data,
     fields
   ]);
 
-  return <div />;
+  return (
+    <Form>
+      <Grid container className={classes.root}>
+        {values.map((v, i) => {
+          let { gridSize, ...rest } = v;
+          if (!gridSize)
+            gridSize = {
+              sm: 12,
+              md: 12,
+              xs: 12
+            };
+
+          return (
+            <Grid className={classes.cell} key={i} item {...gridSize}>
+              <EditField {...rest} />
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Form>
+  );
 }
 
 export default EditFormBody;

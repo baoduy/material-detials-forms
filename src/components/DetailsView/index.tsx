@@ -13,24 +13,26 @@ function DetailsForm<TData = any>({
   footer,
   ...rest
 }: DetailsFormProps<TData>) {
-  const finalHeader: DetailsHeaderProps | undefined = header
-    ? typeof header === 'string'
-      ? { title: header }
-      : header
-    : undefined;
+  const content = React.useMemo(() => {
+    const finalHeader: DetailsHeaderProps | undefined = header
+      ? typeof header === 'string'
+        ? { title: header }
+        : header
+      : undefined;
 
-  const content = (
-    <>
-      {finalHeader && <DetailsHeader {...finalHeader} />}
-      <DetailsBody<TData> {...rest} />
-      {footer &&
-        (React.isValidElement(footer) ? (
-          <DetailsFooter>{footer}</DetailsFooter>
-        ) : (
-          <DetailsFooter {...footer} />
-        ))}
-    </>
-  );
+    return (
+      <>
+        {finalHeader && <DetailsHeader {...finalHeader} />}
+        <DetailsBody<TData> {...rest} />
+        {footer &&
+          (React.isValidElement(footer) ? (
+            <DetailsFooter>{footer}</DetailsFooter>
+          ) : (
+            <DetailsFooter {...footer} />
+          ))}
+      </>
+    );
+  }, [header, footer, rest]);
 
   return flat ? (
     content

@@ -1,10 +1,13 @@
-import { DetailsField, FieldOption } from '@src/components/TypeDefinitions';
+import {
+  DetailsFieldProps,
+  EditFieldProps,
+  FieldOption
+} from '@src/components/TypeDefinitions';
 import { getDisplayName, isPrd } from './commonFuncs';
 
 import { AsComponent } from '../components/TypeDefinitions';
 import React from 'react';
 import { applyFormat } from './formatHelper';
-import { jsxAttribute } from '@babel/types';
 
 export function render<TProps>(Component: any, props?: TProps) {
   if (!Component) return null;
@@ -29,10 +32,11 @@ export function renderAsComponent<TProps>(
   return React.isValidElement(Component) ? Component : undefined;
 }
 
+/** Generate the DetailsFieldProps from FieldOption and Data */
 export function generateDataFields<TData>(
   data: TData,
   fields: Array<FieldOption<TData>>
-): Array<DetailsField> {
+): Array<DetailsFieldProps> {
   if (!data) return [];
 
   const fieldOptions: Array<FieldOption<TData> | string> = !fields
@@ -60,6 +64,43 @@ export function generateDataFields<TData>(
       ...rest,
       label: typeof label === 'string' ? { text: label } : label,
       value: { ...valueOptions, text: value }
-    } as DetailsField;
+    } as DetailsFieldProps;
+  });
+}
+
+/** Generate the EditFieldProps from FieldOption and Data */
+export function generateEditFields<TData>(
+  data: TData,
+  fields: Array<FieldOption<TData>>
+): Array<EditFieldProps> {
+  if (!data) return [];
+
+  const fieldOptions: Array<FieldOption<TData> | string> = !fields
+    ? Object.keys(data)
+    : fields;
+
+  return fieldOptions.map((f: string | FieldOption<TData>) => {
+    let { accessor, valueOptions, format, label, name, ...rest } =
+      typeof f === 'string' ? ({ name: f } as FieldOption<TData>) : f;
+
+    //Only validate in DEV mode
+    if (!name && !accessor && !isPrd)
+      throw `Either name or accessor of FieldOption should be provided ${f}`;
+
+    if (!label) {
+      if (!name && !isPrd)
+        throw `Either name or label of FieldOption should be provided ${f}`;
+      label = getDisplayName(name);
+    }
+
+    let value = accessor ? accessor(data) : name && data[name];
+    if (format) value = applyFormat(value, format);
+
+    return {
+      ...rest,
+      name: name,
+      label: label,
+      value: value
+    } as EditFieldProps;
   });
 }

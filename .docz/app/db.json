@@ -1,6 +1,6 @@
 {
   "config": {
-    "title": "Detials Form Generation For Material-UI",
+    "title": "Material-UI Form Generation",
     "description": "Form and Details View generator using Material UI and Formik",
     "menu": [],
     "version": "1.0.0",

@@ -1,6 +1,7 @@
 import { DetailsFieldProps } from '../../TypeDefinitions';
 import Grid from '@material-ui/core/Grid';
 import LabelField from '../../Labels/LabelField';
+import { Omit } from '@material-ui/core';
 import React from 'react';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
@@ -13,7 +14,7 @@ const useStyles = makeStyles({
   }
 });
 
-function DetailsField(props: DetailsFieldProps) {
+function DetailsField(props: Omit<DetailsFieldProps, 'gridSize'>) {
   const asCom = renderAsComponent(props);
   if (asCom) return asCom;
 

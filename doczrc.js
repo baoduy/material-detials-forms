@@ -1,6 +1,6 @@
 export default {
   //src: ['./src', './node_modules/@material-ui'],
-  title: 'Detials Form Generation For Material-UI',
+  title: 'Material-UI Form Generation',
   wrapper: 'wrapper/index.tsx',
   codeSandbox: false,
   typescript: true

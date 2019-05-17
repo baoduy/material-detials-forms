@@ -4,6 +4,7 @@ import DetailsField from './DetailsField';
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import { Theme } from '@material-ui/core/styles';
+import classNames from 'classnames';
 import { generateDataFields } from '../../../commons/renderHelper';
 import { makeStyles } from '@material-ui/styles';
 
@@ -15,14 +16,14 @@ const useStyles = (
       flexShrink: 0
     },
     alternateRow: {
-      '&:nth-of-type(odd)': (typeof alternateRowColor === 'object'
+      ...(typeof alternateRowColor === 'object'
         ? alternateRowColor
         : {
             backgroundColor:
               typeof alternateRowColor === 'string'
                 ? alternateRowColor
                 : theme.palette.background.default
-          }) as any
+          })
     },
     cell: { padding: '10px 30px 10px 10px' }
   }))();
@@ -40,6 +41,9 @@ function GridDetailsBody<TData>({
     fields
   ]);
 
+  let current = 0;
+  let count = 0;
+
   return (
     <Grid container className={classes.root}>
       {values.map((v, i) => {
@@ -51,8 +55,22 @@ function GridDetailsBody<TData>({
             xs: 12
           };
 
+        count += typeof gridSize.md === 'number' ? gridSize.md : 0;
+        if (count >= 12) {
+          current += 1;
+          count = 0;
+        }
+
         return (
-          <Grid className={classes.cell} key={i} item {...gridSize}>
+          <Grid
+            className={classNames({
+              [classes.cell]: true,
+              [classes.alternateRow]: current > 0 && current % 2 === 0
+            })}
+            key={i}
+            item
+            {...gridSize}
+          >
             <DetailsField labelAlign={labelAlign} {...rest} />
           </Grid>
         );
