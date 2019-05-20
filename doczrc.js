@@ -3,5 +3,9 @@ export default {
   title: 'Material-UI Form Generation',
   wrapper: 'wrapper/index.tsx',
   codeSandbox: false,
-  typescript: true
+  typescript: true,
+  onCreateWebpackChain: config => {
+    config.devServer.clientLogLevel = 'info';
+    return config;
+  }
 };
