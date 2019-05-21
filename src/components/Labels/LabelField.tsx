@@ -49,8 +49,8 @@ const useStyle = makeStyles({
   content: { display: 'flex', alignItems: 'center' },
   bold: { fontWeight: 600 },
   icon: { marginRight: 5 },
-  large: { fontSize: '120%' },
-  small: { fontSize: '85%' },
+  large: { fontSize: '170%' },
+  small: { fontSize: '80%' },
   captionIcon: { width: '14px !important' },
   subtitleIcon: { width: '16px !important' }
 });
@@ -68,35 +68,37 @@ const Label = ({
   const classes = useStyle();
   const Icon: any = icon;
 
-  return (
-    <Typography
-      style={color ? { color } : undefined}
-      {...rest}
-      className={classNames(
-        {
-          [classes.content]: Icon,
-          [classes.bold]: bold,
-          [classes.large]: size === 'large'
-        },
-        className
-      )}
-      color={getTypoColor(variant)}
-      variant={getTypoVariant(variant)}
-    >
-      {Icon === undefined ? null : React.isValidElement(Icon) ? (
-        Icon
-      ) : (
-        <Icon
-          className={classNames({
-            [classes.icon]: true,
-            [classes.captionIcon]: variant === 'caption',
-            [classes.subtitleIcon]: variant === 'subtitle'
-          })}
-        />
-      )}
-      {children}
-    </Typography>
-  );
+  if (variant === 'chip')
+    return (
+      <Typography
+        style={color ? { color } : undefined}
+        {...rest}
+        className={classNames(
+          {
+            [classes.content]: Icon,
+            [classes.bold]: bold,
+            [classes.large]: size === 'large',
+            [classes.small]: size === 'small'
+          },
+          className
+        )}
+        color={getTypoColor(variant)}
+        variant={getTypoVariant(variant)}
+      >
+        {Icon === undefined ? null : React.isValidElement(Icon) ? (
+          Icon
+        ) : (
+          <Icon
+            className={classNames({
+              [classes.icon]: true,
+              [classes.captionIcon]: variant === 'caption',
+              [classes.subtitleIcon]: variant === 'subtitle'
+            })}
+          />
+        )}
+        {children}
+      </Typography>
+    );
 };
 
 Label.defaultProps = {

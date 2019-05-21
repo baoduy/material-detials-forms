@@ -48,7 +48,13 @@ export interface MultiDetailsBodyProps<TData> extends DetailsBodyProps<TData> {
 }
 
 /** The variant of LabelField */
-export type LabelVariant = 'title' | 'subtitle' | 'caption' | 'body' | 'label';
+export type LabelVariant =
+  | 'title'
+  | 'subtitle'
+  | 'caption'
+  | 'body'
+  | 'label'
+  | 'chip';
 
 type Sizes = 'normal' | 'large' | 'small';
 /**
