@@ -22,7 +22,7 @@ function DetailsField(props: Omit<DetailsFieldProps, 'gridSize'>) {
   const { label, value, labelAlign } = props;
 
   return (
-    <Grid container>
+    <Grid container alignItems="baseline" justify="center">
       <Grid
         className={classNames({
           [classes.label]: true,

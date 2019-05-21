@@ -28,7 +28,11 @@ Let's say if we have a user json as below. How could we create a Details View wi
     labelAlign="left"
     data={user}
     fields={[
-      { name: 'name', gridSize: { md: 6 } },
+      {
+        name: 'name',
+        valueOptions: { bold: true, size: 'large' },
+        gridSize: { md: 6 }
+      },
       { name: 'username', gridSize: { md: 6 } },
       'email',
       'phone',
@@ -53,7 +57,11 @@ Let's say if we have a user json as below. How could we create a Details View wi
     variant="table"
     data={user}
     fields={[
-      { name: 'name', gridSize: { md: 6 } },
+      {
+        name: 'name',
+        valueOptions: { bold: true, size: 'large', color: '#c2185b' },
+        gridSize: { md: 6 }
+      },
       { name: 'username', gridSize: { md: 6 } },
       'email',
       'phone',

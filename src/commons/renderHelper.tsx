@@ -55,7 +55,8 @@ export function generateDataFields<TData>(
       if (!name && !isPrd)
         throw `Either name or label of FieldOption should be provided ${f}`;
       label = getDisplayName(name);
-    }
+    } else if (typeof label !== 'string' && !label.text)
+      label.text = getDisplayName(name);
 
     let value = accessor ? accessor(data) : name && data[name];
     if (format) value = applyFormat(value, format);

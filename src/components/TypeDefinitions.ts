@@ -50,6 +50,7 @@ export interface MultiDetailsBodyProps<TData> extends DetailsBodyProps<TData> {
 /** The variant of LabelField */
 export type LabelVariant = 'title' | 'subtitle' | 'caption' | 'body' | 'label';
 
+type Sizes = 'normal' | 'large' | 'small';
 /**
  * The Prop definition of LabelField.
  */
@@ -62,6 +63,8 @@ export interface LabelFieldProps {
   variant?: LabelVariant;
   /** Make font-weight as Bold */
   bold?: boolean;
+  /** Text Size: large: 16, normal: unset, small: 11 */
+  size?: Sizes;
   /** Custom color of LabelField it should be a hex color value ex: #e91e63 */
   color?: string;
   /** The child of Label normally it is a string */
@@ -69,7 +72,7 @@ export interface LabelFieldProps {
 }
 
 export interface DisplayFieldProps extends Omit<LabelFieldProps, 'children'> {
-  text: any;
+  text: ReactNode;
 }
 
 export interface DetailsFieldProps extends AsComponent<DetailsFieldProps> {

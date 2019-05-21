@@ -321,7 +321,7 @@
               },
               "required": false,
               "type": {
-                "name": "\"label\" | \"title\" | \"subtitle\" | \"caption\" | \"body\" | undefined"
+                "name": "\"title\" | \"subtitle\" | \"caption\" | \"body\" | \"label\" | undefined"
               }
             },
             "bold": {
@@ -335,6 +335,19 @@
               "required": false,
               "type": {
                 "name": "boolean | undefined"
+              }
+            },
+            "size": {
+              "defaultValue": null,
+              "description": "Text Size: large: 16, normal: unset, small: 11",
+              "name": "size",
+              "parent": {
+                "fileName": "src/components/TypeDefinitions.ts",
+                "name": "LabelFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"normal\" | \"large\" | \"small\" | undefined"
               }
             },
             "color": {
@@ -478,32 +491,6 @@
           "displayName": "DetailsField",
           "methods": [],
           "props": {
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "AsComponent"
-              },
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<DetailsFieldProps, \"labelAlign\" | \"gridSize\" | \"label\" | \"value\">, any> | FunctionComponent<Pick<DetailsFieldProps, \"labelAlign\" | \"gridSize\" | \"label\" | \"value\">> | undefined"
-              }
-            },
-            "labelAlign": {
-              "defaultValue": null,
-              "description": "",
-              "name": "labelAlign",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsFieldProps"
-              },
-              "required": false,
-              "type": {
-                "name": "\"left\" | \"right\" | undefined"
-              }
-            },
             "label": {
               "defaultValue": null,
               "description": "",
@@ -528,6 +515,32 @@
               "required": true,
               "type": {
                 "name": "DisplayFieldProps"
+              }
+            },
+            "labelAlign": {
+              "defaultValue": null,
+              "description": "",
+              "name": "labelAlign",
+              "parent": {
+                "fileName": "src/components/TypeDefinitions.ts",
+                "name": "DetailsFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"left\" | \"right\" | undefined"
+              }
+            },
+            "As": {
+              "defaultValue": null,
+              "description": "",
+              "name": "As",
+              "parent": {
+                "fileName": "src/components/TypeDefinitions.ts",
+                "name": "AsComponent"
+              },
+              "required": false,
+              "type": {
+                "name": "Element | ComponentClass<Pick<DetailsFieldProps, \"gridSize\" | \"label\" | \"value\" | \"labelAlign\">, any> | FunctionComponent<Pick<DetailsFieldProps, \"gridSize\" | \"label\" | \"value\" | \"labelAlign\">> | undefined"
               }
             }
           }
@@ -817,6 +830,11 @@
             "slug": "2-without-icon",
             "depth": 2,
             "value": "2. Without Icon"
+          },
+          {
+            "slug": "3-sizing",
+            "depth": 2,
+            "value": "3. Sizing"
           }
         ]
       }
