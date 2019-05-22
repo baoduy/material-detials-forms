@@ -55,9 +55,11 @@ function TableDetailsBody<TData>({
               align={labelAlign}
               scope="row"
             >
-              <LabelField variant="caption" {...row.label}>
-                {row.label.text}
-              </LabelField>
+              {row.label && (
+                <LabelField variant="caption" {...row.label}>
+                  {row.label.text}
+                </LabelField>
+              )}
             </TableCell>
             <TableCell className={classes.cell}>
               <LabelField variant="label" {...row.value}>

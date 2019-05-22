@@ -14,10 +14,6 @@
   },
   "props": [
     {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
-    },
-    {
       "key": "src\\components\\EditForm\\EditFormBody.tsx",
       "value": [
         {
@@ -278,102 +274,76 @@
       ]
     },
     {
-      "key": "src\\components\\Labels\\LabelField.tsx",
+      "key": "src\\components\\DetailsView\\DetailsBody\\TableBody.tsx",
       "value": [
         {
           "description": "",
-          "displayName": "LabelField",
+          "displayName": "TableDetailsBody",
           "methods": [],
           "props": {
-            "className": {
+            "data": {
               "defaultValue": null,
-              "description": "The addition css for LabelField component",
-              "name": "className",
+              "description": "",
+              "name": "data",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "LabelFieldProps"
+                "name": "DetailsBodyProps"
               },
-              "required": false,
+              "required": true,
               "type": {
-                "name": "string | undefined"
+                "name": "TData"
               }
             },
-            "icon": {
+            "fields": {
               "defaultValue": null,
-              "description": "The Icon of Label",
-              "name": "icon",
+              "description": "",
+              "name": "fields",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "LabelFieldProps"
+                "name": "DetailsBodyProps"
               },
-              "required": false,
+              "required": true,
               "type": {
-                "name": "ReactNode"
+                "name": "FieldOption<TData>[]"
               }
             },
-            "variant": {
+            "flat": {
               "defaultValue": null,
-              "description": "The display style of Label",
-              "name": "variant",
+              "description": "Flat theme without Card border and shadow",
+              "name": "flat",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "LabelFieldProps"
-              },
-              "required": false,
-              "type": {
-                "name": "\"title\" | \"subtitle\" | \"caption\" | \"body\" | \"label\" | undefined"
-              }
-            },
-            "bold": {
-              "defaultValue": null,
-              "description": "Make font-weight as Bold",
-              "name": "bold",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "LabelFieldProps"
+                "name": "DetailsBodyProps"
               },
               "required": false,
               "type": {
                 "name": "boolean | undefined"
               }
             },
-            "size": {
+            "labelAlign": {
               "defaultValue": null,
-              "description": "Text Size: large: 16, normal: unset, small: 11",
-              "name": "size",
+              "description": "Label alignment apply to all Cell",
+              "name": "labelAlign",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "LabelFieldProps"
+                "name": "DetailsBodyProps"
               },
               "required": false,
               "type": {
-                "name": "\"normal\" | \"large\" | \"small\" | undefined"
+                "name": "\"left\" | \"right\" | undefined"
               }
             },
-            "color": {
+            "alternateRowColor": {
               "defaultValue": null,
-              "description": "Custom color of LabelField it should be a hex color value ex: #e91e63",
-              "name": "color",
+              "description": "High-light color or True to use the default color for the odd row. Set false to disable the highlight",
+              "name": "alternateRowColor",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "LabelFieldProps"
+                "name": "DetailsBodyProps"
               },
               "required": false,
               "type": {
-                "name": "string | undefined"
-              }
-            },
-            "children": {
-              "defaultValue": null,
-              "description": "The child of Label normally it is a string",
-              "name": "children",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "LabelFieldProps"
-              },
-              "required": true,
-              "type": {
-                "name": "ReactNode"
+                "name": "string | boolean | CSSProperties | undefined"
               }
             }
           }
@@ -448,9 +418,9 @@
                 "fileName": "src/components/TypeDefinitions.ts",
                 "name": "TitleProps"
               },
-              "required": true,
+              "required": false,
               "type": {
-                "name": "string"
+                "name": "string | undefined"
               }
             },
             "tooltip": {
@@ -625,81 +595,98 @@
       ]
     },
     {
-      "key": "src\\components\\DetailsView\\DetailsBody\\TableBody.tsx",
+      "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
           "description": "",
-          "displayName": "TableDetailsBody",
+          "displayName": "LabelField",
           "methods": [],
           "props": {
-            "data": {
+            "className": {
               "defaultValue": null,
-              "description": "",
-              "name": "data",
+              "description": "The addition css for LabelField component",
+              "name": "className",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
+                "name": "LabelFieldProps"
               },
-              "required": true,
+              "required": false,
               "type": {
-                "name": "TData"
+                "name": "string | undefined"
               }
             },
-            "fields": {
+            "icon": {
               "defaultValue": null,
-              "description": "",
-              "name": "fields",
+              "description": "The Icon of Label",
+              "name": "icon",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
+                "name": "LabelFieldProps"
               },
-              "required": true,
+              "required": false,
               "type": {
-                "name": "FieldOption<TData>[]"
+                "name": "ReactNode"
               }
             },
-            "flat": {
+            "variant": {
               "defaultValue": null,
-              "description": "Flat theme without Card border and shadow",
-              "name": "flat",
+              "description": "The display style of Label",
+              "name": "variant",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
+                "name": "LabelFieldProps"
+              },
+              "required": false,
+              "type": {
+                "name": "\"title\" | \"subtitle\" | \"caption\" | \"body\" | \"label\" | \"chip\" | undefined"
+              }
+            },
+            "bold": {
+              "defaultValue": null,
+              "description": "Make font-weight as Bold",
+              "name": "bold",
+              "parent": {
+                "fileName": "src/components/TypeDefinitions.ts",
+                "name": "LabelFieldProps"
               },
               "required": false,
               "type": {
                 "name": "boolean | undefined"
               }
             },
-            "labelAlign": {
+            "color": {
               "defaultValue": null,
-              "description": "Label alignment apply to all Cell",
-              "name": "labelAlign",
+              "description": "Custom color of LabelField it should be a hex color value ex: #e91e63",
+              "name": "color",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
+                "name": "LabelFieldProps"
               },
               "required": false,
               "type": {
-                "name": "\"left\" | \"right\" | undefined"
+                "name": "string | undefined"
               }
             },
-            "alternateRowColor": {
+            "children": {
               "defaultValue": null,
-              "description": "High-light color or True to use the default color for the odd row. Set false to disable the highlight",
-              "name": "alternateRowColor",
+              "description": "The child of Label normally it is a string",
+              "name": "children",
               "parent": {
                 "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
+                "name": "LabelFieldProps"
               },
-              "required": false,
+              "required": true,
               "type": {
-                "name": "string | boolean | CSSProperties | undefined"
+                "name": "ReactNode"
               }
             }
           }
         }
       ]
+    },
+    {
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
     }
   ],
   "entries": [
@@ -728,20 +715,83 @@
       }
     },
     {
-      "key": "src/components/DetailsView/DetailsView.mdx",
+      "key": "src/components/EditForm/EditView.mdx",
       "value": {
-        "name": "Details View",
-        "id": "d82665307a018a2aa4f0bc07e630e7b5",
-        "filepath": "src/components/DetailsView/DetailsView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/DetailsView.mdx",
-        "slug": "src-components-details-view-details-view",
-        "route": "/src-components-details-view-details-view",
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
         "menu": "",
         "headings": [
           {
             "slug": "details-view",
             "depth": 1,
             "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/DetailsView/MultiSectionDetailsView.mdx",
+      "value": {
+        "name": "Multi Section Details View",
+        "id": "6737e2b48ec8a7e68c51c2cc9e13213c",
+        "filepath": "src/components/DetailsView/MultiSectionDetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/MultiSectionDetailsView.mdx",
+        "slug": "src-components-details-view-multi-section-details-view",
+        "route": "/src-components-details-view-multi-section-details-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "multi-section-details-view",
+            "depth": 1,
+            "value": "Multi Section Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
+          },
+          {
+            "slug": "table-style",
+            "depth": 3,
+            "value": "Table style"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/DetailsView/SimpleDetailsView.mdx",
+      "value": {
+        "name": "Simple Details View",
+        "id": "28b83a1f4b2beae6022b66173e63d8e0",
+        "filepath": "src/components/DetailsView/SimpleDetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SimpleDetailsView.mdx",
+        "slug": "src-components-details-view-simple-details-view",
+        "route": "/src-components-details-view-simple-details-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "simple-details-view",
+            "depth": 1,
+            "value": "Simple Details View"
           },
           {
             "slug": "usage",
@@ -777,35 +827,6 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditView.mdx",
-      "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default style"
-          }
-        ]
-      }
-    },
-    {
       "key": "src/components/Labels/Label.mdx",
       "value": {
         "name": "Label Field",
@@ -830,11 +851,6 @@
             "slug": "2-without-icon",
             "depth": 2,
             "value": "2. Without Icon"
-          },
-          {
-            "slug": "3-sizing",
-            "depth": 2,
-            "value": "3. Sizing"
           }
         ]
       }

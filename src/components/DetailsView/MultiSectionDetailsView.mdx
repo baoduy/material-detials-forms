@@ -1,0 +1,76 @@
+---
+name: Multi Section Details View
+---
+
+import { Playground, Props } from 'docz';
+import DetailsView from './MultiDetailsView';
+import Button from '@material-ui/core/Button';
+import Info from '@material-ui/icons/Info';
+import user from '../../../static/user';
+import ReactJson from 'react-json-view';
+import PhoneIcon from '@material-ui/icons/Phone';
+
+# Multi Section Details View
+
+DetialsView is a component allow you render the detials information which a few simple configuration
+
+<Props of={DetailsView} />
+
+## Usage
+
+Let's say if we have a user json as below. How could we create a Details View with minimal configuration.
+
+<ReactJson src={user} />
+
+### Default style
+
+<DetailsView
+  labelAlign="left"
+  data={user}
+  fields={[
+    {
+      title: 'User Info',
+      fields: [
+        {
+          name: 'name',
+          valueOptions: { bold: true },
+          gridSize: { md: 6 }
+        },
+        { name: 'username', gridSize: { md: 6 } },
+        'email',
+        'phone',
+        'website'
+      ]
+    },
+    {
+      title: 'Compay Info',
+      fields: [
+        {
+          name: 'name',
+          accessor: i => i.company.name,
+          valueOptions: { bold: true }
+        },
+        {
+          name: 'Catch Phrase',
+          accessor: i => i.company.catchPhrase
+        },
+        {
+          name: 'Bs',
+          accessor: i => i.company.bs
+        }
+      ]
+    }
+  ]}
+  header={{ title: 'Product Infomation', icon: Info }}
+  footer={
+    <div style={{ textAlign: 'right' }}>
+      <Button variant="contained" color="primary">
+        Ok
+      </Button>
+    </div>
+  }
+/>
+
+### Table style
+
+<Playground />

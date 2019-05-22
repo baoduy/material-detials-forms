@@ -8,7 +8,7 @@ export interface TitleProps {
   icon?: ReactNode;
   caption?: string;
   subtitle?: string;
-  text: string;
+  text?: string;
   tooltip?: string;
   color?: string;
 }
@@ -31,6 +31,7 @@ export interface DetailsFooterProps extends AsComponent<DetailsFooterProps> {
 }
 
 type CellLabelAlign = 'left' | 'right';
+
 export interface DetailsBodyProps<TData>
   extends AsComponent<DetailsBodyProps<TData>> {
   data: TData;
@@ -43,7 +44,14 @@ export interface DetailsBodyProps<TData>
   alternateRowColor?: boolean | string | React.CSSProperties;
 }
 
-export interface MultiDetailsBodyProps<TData> extends DetailsBodyProps<TData> {
+export interface SectionDetailsBodyProps<TData>
+  extends Omit<DetailsBodyProps<TData>, 'fields'> {
+  sectionPerRow?: 1 | 2 | 3 | 4;
+  fields: Array<SectionFieldOption<TData>>;
+}
+
+export interface MultiDetailsBodyProps<TData>
+  extends SectionDetailsBodyProps<TData> {
   variant?: 'table' | 'grid';
 }
 
@@ -56,7 +64,6 @@ export type LabelVariant =
   | 'label'
   | 'chip';
 
-type Sizes = 'normal' | 'large' | 'small';
 /**
  * The Prop definition of LabelField.
  */
@@ -69,8 +76,6 @@ export interface LabelFieldProps {
   variant?: LabelVariant;
   /** Make font-weight as Bold */
   bold?: boolean;
-  /** Text Size: large: 16, normal: unset, small: 11 */
-  size?: Sizes;
   /** Custom color of LabelField it should be a hex color value ex: #e91e63 */
   color?: string;
   /** The child of Label normally it is a string */
@@ -98,6 +103,7 @@ export interface EditFieldProps extends AsComponent<DetailsFieldProps> {
   /** This only apply to the GridBody */
   gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
 }
+
 export interface FieldOption<TData> {
   /** The name of property in data object */
   name?: string;
@@ -113,11 +119,29 @@ export interface FieldOption<TData> {
   gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
 }
 
-export interface DetailsFormProps<TData> extends DetailsBodyProps<TData> {
+export interface SectionFieldOption<TData> {
+  title: DetailsHeaderProps | string;
+  fields: Array<FieldOption<TData>>;
+}
+/**
+ * The Props of Single Details View
+ */
+export interface SingleDetailsViewProps<TData> extends DetailsBodyProps<TData> {
   header?: DetailsHeaderProps | string;
   footer?: DetailsFooterProps;
 }
 
+/**
+ * The Props of Single Details View
+ */
+export interface DetailsViewProps<TData>
+  extends Omit<SingleDetailsViewProps<TData>, 'fields'> {
+  fields: Array<SectionFieldOption<TData>>;
+}
+
+/**
+ * The Props of Single Edit Form
+ */
 export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
   header?: DetailsHeaderProps | string;
   footer?: DetailsFooterProps;

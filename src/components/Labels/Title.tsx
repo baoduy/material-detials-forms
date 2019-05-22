@@ -14,13 +14,33 @@ const Title = ({
 }: TitleProps) => {
   const content = (
     <span className={className}>
-      {caption && <Label variant="caption">{caption}</Label>}
+      {caption && (
+        <Label
+          variant="caption"
+          color={!text && !subtitle ? color : undefined}
+          icon={!text && !subtitle ? icon : undefined}
+          bold={!text && !subtitle ? true : false}
+        >
+          {caption}
+        </Label>
+      )}
+
       {text && (
         <Label color={color} icon={icon} bold>
           {text}
         </Label>
       )}
-      {subtitle && <Label variant="subtitle">{subtitle}</Label>}
+
+      {subtitle && (
+        <Label
+          variant="subtitle"
+          color={!text && !caption ? color : undefined}
+          icon={!text && !caption ? icon : undefined}
+          bold={!text && !caption ? true : false}
+        >
+          {subtitle}
+        </Label>
+      )}
     </span>
   );
 

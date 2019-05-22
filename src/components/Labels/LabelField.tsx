@@ -1,5 +1,6 @@
 import { LabelFieldProps, LabelVariant } from '../TypeDefinitions';
 
+import Chip from '@material-ui/core/Chip';
 import React from 'react';
 import { ThemeStyle } from '@material-ui/core/styles/createTypography';
 import Typography from '@material-ui/core/Typography';
@@ -49,8 +50,6 @@ const useStyle = makeStyles({
   content: { display: 'flex', alignItems: 'center' },
   bold: { fontWeight: 600 },
   icon: { marginRight: 5 },
-  large: { fontSize: '170%' },
-  small: { fontSize: '80%' },
   captionIcon: { width: '14px !important' },
   subtitleIcon: { width: '16px !important' }
 });
@@ -60,7 +59,6 @@ const Label = ({
   children,
   variant,
   bold,
-  size,
   color,
   className,
   ...rest
@@ -70,35 +68,49 @@ const Label = ({
 
   if (variant === 'chip')
     return (
-      <Typography
+      <Chip
+        color="secondary"
         style={color ? { color } : undefined}
         {...rest}
         className={classNames(
           {
-            [classes.content]: Icon,
-            [classes.bold]: bold,
-            [classes.large]: size === 'large',
-            [classes.small]: size === 'small'
+            [classes.bold]: bold
           },
           className
         )}
-        color={getTypoColor(variant)}
-        variant={getTypoVariant(variant)}
-      >
-        {Icon === undefined ? null : React.isValidElement(Icon) ? (
-          Icon
-        ) : (
-          <Icon
-            className={classNames({
-              [classes.icon]: true,
-              [classes.captionIcon]: variant === 'caption',
-              [classes.subtitleIcon]: variant === 'subtitle'
-            })}
-          />
-        )}
-        {children}
-      </Typography>
+        icon={icon ? React.isValidElement(icon) ? icon : <Icon /> : undefined}
+        label={children}
+      />
     );
+
+  return (
+    <Typography
+      style={color ? { color } : undefined}
+      {...rest}
+      className={classNames(
+        {
+          [classes.content]: Icon,
+          [classes.bold]: bold
+        },
+        className
+      )}
+      color={getTypoColor(variant)}
+      variant={getTypoVariant(variant)}
+    >
+      {Icon === undefined ? null : React.isValidElement(Icon) ? (
+        Icon
+      ) : (
+        <Icon
+          className={classNames({
+            [classes.icon]: true,
+            [classes.captionIcon]: variant === 'caption',
+            [classes.subtitleIcon]: variant === 'subtitle'
+          })}
+        />
+      )}
+      {children}
+    </Typography>
+  );
 };
 
 Label.defaultProps = {

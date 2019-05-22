@@ -1,4 +1,4 @@
-import { DetailsFormProps, DetailsHeaderProps } from '../TypeDefinitions';
+import { DetailsHeaderProps, SingleDetailsViewProps } from '../TypeDefinitions';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,7 +12,7 @@ function DetailsForm<TData = any>({
   header,
   footer,
   ...rest
-}: DetailsFormProps<TData>) {
+}: SingleDetailsViewProps<TData>) {
   const content = React.useMemo(() => {
     const finalHeader: DetailsHeaderProps | undefined = header
       ? typeof header === 'string'

@@ -1,15 +1,16 @@
 ---
-name: Details View
+name: Simple Details View
 ---
 
 import { Playground, Props } from 'docz';
-import DetailsView from './index';
+import DetailsView from './SingleDetailsView';
 import Button from '@material-ui/core/Button';
 import Info from '@material-ui/icons/Info';
 import user from '../../../static/user';
 import ReactJson from 'react-json-view';
+import PhoneIcon from '@material-ui/icons/Phone';
 
-# Details View
+# Simple Details View
 
 DetialsView is a component allow you render the detials information which a few simple configuration
 
@@ -30,7 +31,7 @@ Let's say if we have a user json as below. How could we create a Details View wi
     fields={[
       {
         name: 'name',
-        valueOptions: { bold: true, size: 'large' },
+        valueOptions: { bold: true },
         gridSize: { md: 6 }
       },
       { name: 'username', gridSize: { md: 6 } },
@@ -59,12 +60,16 @@ Let's say if we have a user json as below. How could we create a Details View wi
     fields={[
       {
         name: 'name',
-        valueOptions: { bold: true, size: 'large', color: '#c2185b' },
+        valueOptions: { bold: true, color: '#c2185b' },
         gridSize: { md: 6 }
       },
       { name: 'username', gridSize: { md: 6 } },
       'email',
-      'phone',
+      {
+        name: 'phone',
+        label: null,
+        valueOptions: { variant: 'chip', icon: PhoneIcon }
+      },
       'website',
       { name: 'company', accessor: i => i.company.name }
     ]}
@@ -89,7 +94,11 @@ Let's say if we have a user json as below. How could we create a Details View wi
       'name',
       'username',
       'email',
-      'phone',
+      {
+        name: 'phone',
+        label: null,
+        valueOptions: { variant: 'chip', icon: PhoneIcon }
+      },
       'website',
       { name: 'company', accessor: i => i.company.name }
     ]}

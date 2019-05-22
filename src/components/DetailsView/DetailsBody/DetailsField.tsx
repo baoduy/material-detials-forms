@@ -32,14 +32,18 @@ function DetailsField(props: Omit<DetailsFieldProps, 'gridSize'>) {
         md={4}
         sm={12}
       >
-        <LabelField variant="caption" {...label}>
-          {label.text}
-        </LabelField>
+        {label && (
+          <LabelField variant="caption" {...label}>
+            {label.text}
+          </LabelField>
+        )}
       </Grid>
       <Grid item md={8} sm={12}>
-        <LabelField variant="label" {...value}>
-          {value.text}
-        </LabelField>
+        {value && (
+          <LabelField variant="label" {...value}>
+            {value.text}
+          </LabelField>
+        )}
       </Grid>
     </Grid>
   );
