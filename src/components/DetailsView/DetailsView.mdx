@@ -1,0 +1,112 @@
+---
+name: Details View
+---
+
+import { Playground, Props } from 'docz';
+import DetailsView from './index';
+import Button from '@material-ui/core/Button';
+import Info from '@material-ui/icons/Info';
+import user from '../../../static/user';
+import ReactJson from 'react-json-view';
+import PhoneIcon from '@material-ui/icons/Phone';
+
+# Details View
+
+DetialsView is a wrapper of both Single Details View and Section Details View allow you render the detials page based on configuration.
+
+## Props
+
+<Props of={DetailsView} />
+
+## Usage
+
+Json Data Object
+
+<ReactJson src={user} />
+
+### Single View
+
+<Playground>
+  <DetailsView
+    labelAlign="left"
+    data={user}
+    fields={[
+      {
+        name: 'name',
+        valueOptions: { bold: true },
+        gridSize: { md: 6 }
+      },
+      { name: 'username', gridSize: { md: 6 } },
+      'email',
+      'phone',
+      'website'
+    ]}
+    header={{
+      title: 'User Infomation',
+      caption: 'The single section view',
+      icon: Info
+    }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="contained" color="primary">
+          Ok
+        </Button>
+      </div>
+    }
+  />
+</Playground>
+
+### Multi Section View
+
+<Playground>
+  <DetailsView
+    labelAlign="left"
+    data={user}
+    fields={[
+      {
+        title: { subtitle: 'User Info', icon: Info, color: '#FF5733' },
+        fields: [
+          {
+            name: 'name',
+            valueOptions: { bold: true },
+            gridSize: { md: 6 }
+          },
+          { name: 'username', gridSize: { md: 6 } },
+          { name: 'email', gridSize: { md: 6 } },
+          { name: 'phone', gridSize: { md: 6 } },
+          'website'
+        ]
+      },
+      {
+        title: { subtitle: 'Company Info', icon: Info, color: '#FF5733' },
+        fields: [
+          {
+            name: 'name',
+            accessor: i => i.company.name,
+            valueOptions: { bold: true }
+          },
+          {
+            name: 'Catch Phrase',
+            accessor: i => i.company.catchPhrase
+          },
+          {
+            name: 'Bs',
+            accessor: i => i.company.bs
+          }
+        ]
+      }
+    ]}
+    header={{
+      title: 'Product Infomation',
+      caption: 'Multi section view',
+      icon: Info
+    }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="contained" color="secondary">
+          Ok
+        </Button>
+      </div>
+    }
+  />
+</Playground>

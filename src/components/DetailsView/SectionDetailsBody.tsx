@@ -27,7 +27,7 @@ function SectionDetailsBody<TData>(
     <Grid
       className={classes.root}
       container
-      alignItems="baseline"
+      alignItems="flex-start"
       justify="space-around"
     >
       {fields.map((f, i) => {

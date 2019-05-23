@@ -3,6 +3,10 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-index" */ 'src/index.mdx'
     ),
+  'src/components/DetailsView/DetailsView.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-details-view" */ 'src/components/DetailsView/DetailsView.mdx'
+    ),
   'src/components/DetailsView/SectionDetailsView.mdx': () =>
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-section-details-view" */ 'src/components/DetailsView/SectionDetailsView.mdx'

@@ -137,6 +137,45 @@
       }
     },
     {
+      "key": "src/components/DetailsView/DetailsView.mdx",
+      "value": {
+        "name": "Details View",
+        "id": "d82665307a018a2aa4f0bc07e630e7b5",
+        "filepath": "src/components/DetailsView/DetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/DetailsView.mdx",
+        "slug": "src-components-details-view-details-view",
+        "route": "/src-components-details-view-details-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "single-view",
+            "depth": 3,
+            "value": "Single View"
+          },
+          {
+            "slug": "multi-section-view",
+            "depth": 3,
+            "value": "Multi Section View"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/components/DetailsView/SectionDetailsView.mdx",
       "value": {
         "name": "Section Details View",
