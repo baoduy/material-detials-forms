@@ -1,18 +1,19 @@
-import { EditFieldProps } from '../TypeDefinitions';
+import { EditFieldProps } from '../../TypeDefinitions';
 import { Field } from 'formik';
 import { Omit } from '@material-ui/core';
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { renderAsComponent } from '../../commons/renderHelper';
+import { renderAsComponent } from '../../../commons/renderHelper';
 
 function EditField(props: Omit<EditFieldProps, 'gridSize'>) {
   const asCom = renderAsComponent(props);
   if (asCom) return asCom;
 
-  const { name, label, value } = props;
+  const { name, label, value, ...rest } = props;
 
   return (
     <Field
+      {...rest}
       id={name}
       name={name}
       label={label}

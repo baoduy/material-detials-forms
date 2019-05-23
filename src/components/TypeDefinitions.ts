@@ -98,6 +98,7 @@ export interface EditFieldProps extends AsComponent<DetailsFieldProps> {
   name: string;
   label: string;
   value: string | number;
+  variant?: 'standard' | '' | '';
   /** Input Type if not provided the input type will be decided automatically based on value type */
   type?: string;
   /** This only apply to the GridBody */

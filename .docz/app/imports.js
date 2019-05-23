@@ -11,9 +11,9 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-section-details-view" */ 'src/components/DetailsView/SectionDetailsView.mdx'
     ),
-  'src/components/DetailsView/SimpleDetailsView.mdx': () =>
+  'src/components/DetailsView/SingleDetailsView.mdx': () =>
     import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-simple-details-view" */ 'src/components/DetailsView/SimpleDetailsView.mdx'
+      /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-single-details-view" */ 'src/components/DetailsView/SingleDetailsView.mdx'
     ),
   'src/components/EditForm/EditView.mdx': () =>
     import(
