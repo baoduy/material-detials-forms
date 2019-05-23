@@ -14,6 +14,8 @@ import PhoneIcon from '@material-ui/icons/Phone';
 
 DetialsView is a component allow you render the detials information which a few simple configuration
 
+## Props
+
 <Props of={DetailsView} />
 
 ## Usage
@@ -24,111 +26,175 @@ Let's say if we have a user json as below. How could we create a Details View wi
 
 ### Default Style
 
-<DetailsView
-  labelAlign="left"
-  data={user}
-  fields={[
-    {
-      title: 'User Info',
-      fields: [
-        {
-          name: 'name',
-          valueOptions: { bold: true },
-          gridSize: { md: 6 }
-        },
-        { name: 'username', gridSize: { md: 6 } },
-        'email',
-        'phone',
-        'website'
-      ]
-    },
-    {
-      title: 'Compay Info',
-      fields: [
-        {
-          name: 'name',
-          accessor: i => i.company.name,
-          valueOptions: { bold: true }
-        },
-        {
-          name: 'Catch Phrase',
-          accessor: i => i.company.catchPhrase
-        },
-        {
-          name: 'Bs',
-          accessor: i => i.company.bs
-        }
-      ]
+<Playground>
+  <DetailsView
+    labelAlign="left"
+    data={user}
+    fields={[
+      {
+        title: 'User Info',
+        fields: [
+          {
+            name: 'name',
+            valueOptions: { bold: true },
+            gridSize: { md: 6 }
+          },
+          { name: 'username', gridSize: { md: 6 } },
+          'email',
+          'phone',
+          'website'
+        ]
+      },
+      {
+        title: 'Compay Info',
+        fields: [
+          {
+            name: 'name',
+            accessor: i => i.company.name,
+            valueOptions: { bold: true }
+          },
+          {
+            name: 'Catch Phrase',
+            accessor: i => i.company.catchPhrase
+          },
+          {
+            name: 'Bs',
+            accessor: i => i.company.bs
+          }
+        ]
+      }
+    ]}
+    header={{
+      title: 'Product Infomation',
+      caption: 'The multi section view',
+      subtitle:
+        'This will help you to generate multi detials view from single data object with less configuration',
+      icon: Info
+    }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="contained" color="primary">
+          Ok
+        </Button>
+      </div>
     }
-  ]}
-  header={{
-    title: 'Product Infomation',
-    caption: 'The multi section view',
-    subtitle:
-      'This will help you to generate multi detials view from single data object with less configuration',
-    icon: Info
-  }}
-  footer={
-    <div style={{ textAlign: 'right' }}>
-      <Button variant="contained" color="primary">
-        Ok
-      </Button>
-    </div>
-  }
-/>
+  />
+</Playground>
 
 ### Table Style With Single Section Per Row
 
-<DetailsView
-  labelAlign="left"
-  data={user}
-  sectionPerRow={1}
-  fields={[
-    {
-      title: 'User Info',
-      fields: [
-        {
-          name: 'name',
-          valueOptions: { bold: true },
-          gridSize: { md: 6 }
-        },
-        { name: 'username', gridSize: { md: 6 } },
-        'email',
-        'phone',
-        'website'
-      ]
-    },
-    {
-      title: 'Compay Info',
-      fields: [
-        {
-          name: 'name',
-          accessor: i => i.company.name,
-          valueOptions: { bold: true }
-        },
-        {
-          name: 'Catch Phrase',
-          accessor: i => i.company.catchPhrase
-        },
-        {
-          name: 'Bs',
-          accessor: i => i.company.bs
-        }
-      ]
+<Playground>
+  <DetailsView
+    variant="table"
+    labelAlign="left"
+    data={user}
+    sectionPerRow={1}
+    fields={[
+      {
+        title: 'User Info',
+        fields: [
+          {
+            name: 'name',
+            valueOptions: { bold: true },
+            gridSize: { md: 6 }
+          },
+          { name: 'username', gridSize: { md: 6 } },
+          'email',
+          'phone',
+          'website'
+        ]
+      },
+      {
+        title: 'Compay Info',
+        fields: [
+          {
+            name: 'name',
+            accessor: i => i.company.name,
+            valueOptions: { bold: true }
+          },
+          {
+            name: 'Catch Phrase',
+            accessor: i => i.company.catchPhrase
+          },
+          {
+            name: 'Bs',
+            accessor: i => i.company.bs
+          }
+        ]
+      }
+    ]}
+    header={{
+      title: 'Product Infomation',
+      caption: 'The multi section view',
+      subtitle:
+        'This will help you to generate multi detials view from single data object with less configuration',
+      icon: Info
+    }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="contained" color="primary">
+          Ok
+        </Button>
+      </div>
     }
-  ]}
-  header={{
-    title: 'Product Infomation',
-    caption: 'The multi section view',
-    subtitle:
-      'This will help you to generate multi detials view from single data object with less configuration',
-    icon: Info
-  }}
-  footer={
-    <div style={{ textAlign: 'right' }}>
-      <Button variant="contained" color="primary">
-        Ok
-      </Button>
-    </div>
-  }
-/>
+  />
+</Playground>
+
+### Flat Style
+
+<Playground>
+  <DetailsView
+    flat
+    labelAlign="left"
+    data={user}
+    sectionPerRow={1}
+    fields={[
+      {
+        title: { subtitle: 'User Info', icon: Info },
+        fields: [
+          {
+            name: 'name',
+            valueOptions: { bold: true },
+            gridSize: { md: 6 }
+          },
+          { name: 'username', gridSize: { md: 6 } },
+          'email',
+          'phone',
+          'website'
+        ]
+      },
+      {
+        title: { subtitle: 'Company Info', icon: Info },
+        fields: [
+          {
+            name: 'name',
+            accessor: i => i.company.name,
+            valueOptions: { bold: true }
+          },
+          {
+            name: 'Catch Phrase',
+            accessor: i => i.company.catchPhrase
+          },
+          {
+            name: 'Bs',
+            accessor: i => i.company.bs
+          }
+        ]
+      }
+    ]}
+    header={{
+      title: 'Product Infomation',
+      caption: 'The multi section view',
+      subtitle:
+        'This will help you to generate multi detials view from single data object with less configuration',
+      icon: Info
+    }}
+    footer={
+      <div style={{ textAlign: 'right' }}>
+        <Button variant="contained" color="primary">
+          Ok
+        </Button>
+      </div>
+    }
+  />
+</Playground>

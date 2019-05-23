@@ -4,7 +4,7 @@ export default {
   //src: ['./src', './node_modules/@material-ui'],
   title: 'Material-UI Form Generation',
   wrapper: '.docz/wrapper/index.tsx',
-  codeSandbox: true,
+  codeSandbox: false,
   typescript: true,
   plugins: [
     css({

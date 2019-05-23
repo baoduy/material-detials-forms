@@ -11,7 +11,7 @@ import { renderAsComponent } from '../../commons/renderHelper';
 
 const useStyles = makeStyles({
   root: { marginTop: 20 },
-  item: { padding: 10 }
+  item: { padding: 10, marginBottom: 10 }
 });
 
 function SectionDetailsBody<TData>(
