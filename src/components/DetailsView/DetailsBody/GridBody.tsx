@@ -34,7 +34,6 @@ function GridDetailsBody<TData>({
   alternateRowColor,
   labelAlign
 }: OmitAs<DetailsBodyProps<TData>>) {
-  debugger;
   const classes = useStyles(alternateRowColor);
   const values = React.useMemo(() => generateDataFields(data, fields), [
     data,

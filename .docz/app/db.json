@@ -6,593 +6,19 @@
     "version": "1.0.0",
     "repository": "https://github.com/baoduy/mui-formik-generator",
     "native": false,
-    "codeSandbox": false,
+    "codeSandbox": true,
     "themeConfig": {},
     "separator": "-",
-    "wrapper": "wrapper/index.tsx",
-    "typescript": true
+    "wrapper": ".docz/wrapper/index.tsx",
+    "typescript": true,
+    "plugins": [
+      {}
+    ]
   },
   "props": [
     {
-      "key": "src\\components\\EditForm\\EditFormBody.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "EditFormBody",
-          "methods": [],
-          "props": {
-            "data": {
-              "defaultValue": null,
-              "description": "",
-              "name": "data",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": true,
-              "type": {
-                "name": "TData"
-              }
-            },
-            "fields": {
-              "defaultValue": null,
-              "description": "",
-              "name": "fields",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": true,
-              "type": {
-                "name": "FieldOption<TData>[]"
-              }
-            },
-            "flat": {
-              "defaultValue": null,
-              "description": "Flat theme without Card border and shadow",
-              "name": "flat",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "labelAlign": {
-              "defaultValue": null,
-              "description": "Label alignment apply to all Cell",
-              "name": "labelAlign",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "\"left\" | \"right\" | undefined"
-              }
-            },
-            "alternateRowColor": {
-              "defaultValue": null,
-              "description": "High-light color or True to use the default color for the odd row. Set false to disable the highlight",
-              "name": "alternateRowColor",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | boolean | CSSProperties | undefined"
-              }
-            },
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "AsComponent"
-              },
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<DetailsBodyProps<TData>, \"data\" | \"fields\" | \"flat\" | \"labelAlign\" | \"alternateRowColor\">, any> | FunctionComponent<Pick<DetailsBodyProps<TData>, \"data\" | ... 3 more ... | \"alternateRowColor\">> | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src\\components\\EditForm\\EditField.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "EditField",
-          "methods": [],
-          "props": {
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "AsComponent"
-              },
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<DetailsFieldProps, \"labelAlign\" | \"gridSize\" | \"label\" | \"value\">, any> | FunctionComponent<Pick<DetailsFieldProps, \"labelAlign\" | \"gridSize\" | \"label\" | \"value\">> | undefined"
-              }
-            },
-            "name": {
-              "defaultValue": null,
-              "description": "",
-              "name": "name",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "EditFieldProps"
-              },
-              "required": true,
-              "type": {
-                "name": "string"
-              }
-            },
-            "label": {
-              "defaultValue": null,
-              "description": "",
-              "name": "label",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "EditFieldProps"
-              },
-              "required": true,
-              "type": {
-                "name": "string"
-              }
-            },
-            "value": {
-              "defaultValue": null,
-              "description": "",
-              "name": "value",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "EditFieldProps"
-              },
-              "required": true,
-              "type": {
-                "name": "string | number"
-              }
-            },
-            "type": {
-              "defaultValue": null,
-              "description": "Input Type if not provided the input type will be decided automatically based on value type",
-              "name": "type",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "EditFieldProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src\\components\\DetailsView\\DetailsFooter.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "DetailsFooter",
-          "methods": [],
-          "props": {
-            "hr": {
-              "defaultValue": {
-                "value": "false"
-              },
-              "description": "",
-              "name": "hr",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsFooterProps"
-              },
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "AsComponent"
-              },
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<DetailsFooterProps, \"hr\" | \"children\">, any> | FunctionComponent<Pick<DetailsFooterProps, \"hr\" | \"children\">> | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src\\components\\DetailsView\\DetailsHeader.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "DetailsHeader",
-          "methods": [],
-          "props": {
-            "hr": {
-              "defaultValue": {
-                "value": "true"
-              },
-              "description": "",
-              "name": "hr",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsHeaderProps"
-              },
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "title": {
-              "defaultValue": null,
-              "description": "",
-              "name": "title",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsHeaderProps"
-              },
-              "required": true,
-              "type": {
-                "name": "string | TitleProps"
-              }
-            },
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "AsComponent"
-              },
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<DetailsHeaderProps, \"hr\" | \"title\">, any> | FunctionComponent<Pick<DetailsHeaderProps, \"hr\" | \"title\">> | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src\\components\\DetailsView\\DetailsBody\\TableBody.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "TableDetailsBody",
-          "methods": [],
-          "props": {
-            "data": {
-              "defaultValue": null,
-              "description": "",
-              "name": "data",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": true,
-              "type": {
-                "name": "TData"
-              }
-            },
-            "fields": {
-              "defaultValue": null,
-              "description": "",
-              "name": "fields",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": true,
-              "type": {
-                "name": "FieldOption<TData>[]"
-              }
-            },
-            "flat": {
-              "defaultValue": null,
-              "description": "Flat theme without Card border and shadow",
-              "name": "flat",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "labelAlign": {
-              "defaultValue": null,
-              "description": "Label alignment apply to all Cell",
-              "name": "labelAlign",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "\"left\" | \"right\" | undefined"
-              }
-            },
-            "alternateRowColor": {
-              "defaultValue": null,
-              "description": "High-light color or True to use the default color for the odd row. Set false to disable the highlight",
-              "name": "alternateRowColor",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | boolean | CSSProperties | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src\\components\\Labels\\Title.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "Title",
-          "methods": [],
-          "props": {
-            "className": {
-              "defaultValue": null,
-              "description": "",
-              "name": "className",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "TitleProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "icon": {
-              "defaultValue": null,
-              "description": "",
-              "name": "icon",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "TitleProps"
-              },
-              "required": false,
-              "type": {
-                "name": "ReactNode"
-              }
-            },
-            "caption": {
-              "defaultValue": null,
-              "description": "",
-              "name": "caption",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "TitleProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "subtitle": {
-              "defaultValue": null,
-              "description": "",
-              "name": "subtitle",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "TitleProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "text": {
-              "defaultValue": null,
-              "description": "",
-              "name": "text",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "TitleProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "tooltip": {
-              "defaultValue": null,
-              "description": "",
-              "name": "tooltip",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "TitleProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "color": {
-              "defaultValue": null,
-              "description": "",
-              "name": "color",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "TitleProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src\\components\\DetailsView\\DetailsBody\\DetailsField.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "DetailsField",
-          "methods": [],
-          "props": {
-            "label": {
-              "defaultValue": null,
-              "description": "",
-              "name": "label",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsFieldProps"
-              },
-              "required": true,
-              "type": {
-                "name": "DisplayFieldProps"
-              }
-            },
-            "value": {
-              "defaultValue": null,
-              "description": "",
-              "name": "value",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsFieldProps"
-              },
-              "required": true,
-              "type": {
-                "name": "DisplayFieldProps"
-              }
-            },
-            "labelAlign": {
-              "defaultValue": null,
-              "description": "",
-              "name": "labelAlign",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsFieldProps"
-              },
-              "required": false,
-              "type": {
-                "name": "\"left\" | \"right\" | undefined"
-              }
-            },
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "AsComponent"
-              },
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<DetailsFieldProps, \"gridSize\" | \"label\" | \"value\" | \"labelAlign\">, any> | FunctionComponent<Pick<DetailsFieldProps, \"gridSize\" | \"label\" | \"value\" | \"labelAlign\">> | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src\\components\\DetailsView\\DetailsBody\\GridBody.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "GridDetailsBody",
-          "methods": [],
-          "props": {
-            "data": {
-              "defaultValue": null,
-              "description": "",
-              "name": "data",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": true,
-              "type": {
-                "name": "TData"
-              }
-            },
-            "fields": {
-              "defaultValue": null,
-              "description": "",
-              "name": "fields",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": true,
-              "type": {
-                "name": "FieldOption<TData>[]"
-              }
-            },
-            "flat": {
-              "defaultValue": null,
-              "description": "Flat theme without Card border and shadow",
-              "name": "flat",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "labelAlign": {
-              "defaultValue": null,
-              "description": "Label alignment apply to all Cell",
-              "name": "labelAlign",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "\"left\" | \"right\" | undefined"
-              }
-            },
-            "alternateRowColor": {
-              "defaultValue": null,
-              "description": "High-light color or True to use the default color for the odd row. Set false to disable the highlight",
-              "name": "alternateRowColor",
-              "parent": {
-                "fileName": "src/components/TypeDefinitions.ts",
-                "name": "DetailsBodyProps"
-              },
-              "required": false,
-              "type": {
-                "name": "string | boolean | CSSProperties | undefined"
-              }
-            }
-          }
-        }
-      ]
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
     },
     {
       "key": "src\\components\\Labels\\LabelField.tsx",
@@ -683,10 +109,6 @@
           }
         }
       ]
-    },
-    {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
     }
   ],
   "entries": [
@@ -715,20 +137,20 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditView.mdx",
+      "key": "src/components/DetailsView/SectionDetailsView.mdx",
       "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
+        "name": "Section Details View",
+        "id": "b54e0918ef0999536d304175768de9e4",
+        "filepath": "src/components/DetailsView/SectionDetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SectionDetailsView.mdx",
+        "slug": "src-components-details-view-section-details-view",
+        "route": "/src-components-details-view-section-details-view",
         "menu": "",
         "headings": [
           {
-            "slug": "details-view",
+            "slug": "section-details-view",
             "depth": 1,
-            "value": "Details View"
+            "value": "Section Details View"
           },
           {
             "slug": "usage",
@@ -738,41 +160,12 @@
           {
             "slug": "default-style",
             "depth": 3,
-            "value": "Default style"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/DetailsView/MultiSectionDetailsView.mdx",
-      "value": {
-        "name": "Multi Section Details View",
-        "id": "6737e2b48ec8a7e68c51c2cc9e13213c",
-        "filepath": "src/components/DetailsView/MultiSectionDetailsView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/MultiSectionDetailsView.mdx",
-        "slug": "src-components-details-view-multi-section-details-view",
-        "route": "/src-components-details-view-multi-section-details-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "multi-section-details-view",
-            "depth": 1,
-            "value": "Multi Section Details View"
+            "value": "Default Style"
           },
           {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
+            "slug": "table-style-with-single-section-per-row",
             "depth": 3,
-            "value": "Default style"
-          },
-          {
-            "slug": "table-style",
-            "depth": 3,
-            "value": "Table style"
+            "value": "Table Style With Single Section Per Row"
           }
         ]
       }
@@ -890,6 +283,35 @@
             "slug": "4-with-tooltip",
             "depth": 2,
             "value": "4. With Tooltip"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditView.mdx",
+      "value": {
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
           }
         ]
       }

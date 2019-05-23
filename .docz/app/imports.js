@@ -3,13 +3,9 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-index" */ 'src/index.mdx'
     ),
-  'src/components/EditForm/EditView.mdx': () =>
+  'src/components/DetailsView/SectionDetailsView.mdx': () =>
     import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-view" */ 'src/components/EditForm/EditView.mdx'
-    ),
-  'src/components/DetailsView/MultiSectionDetailsView.mdx': () =>
-    import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-multi-section-details-view" */ 'src/components/DetailsView/MultiSectionDetailsView.mdx'
+      /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-section-details-view" */ 'src/components/DetailsView/SectionDetailsView.mdx'
     ),
   'src/components/DetailsView/SimpleDetailsView.mdx': () =>
     import(
@@ -22,5 +18,9 @@ export const imports = {
   'src/components/Labels/Title.mdx': () =>
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-labels-title" */ 'src/components/Labels/Title.mdx'
+    ),
+  'src/components/EditForm/EditView.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-view" */ 'src/components/EditForm/EditView.mdx'
     ),
 }

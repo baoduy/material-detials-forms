@@ -6,7 +6,13 @@ import {
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import SingleDetailsView from './SingleDetailsView';
+import { makeStyles } from '@material-ui/core/styles';
 import { renderAsComponent } from '../../commons/renderHelper';
+
+const useStyles = makeStyles({
+  root: { marginTop: 20 },
+  item: { padding: 10 }
+});
 
 function SectionDetailsBody<TData>(
   props: SectionDetailsBodyProps<TData>
@@ -14,10 +20,16 @@ function SectionDetailsBody<TData>(
   const com = renderAsComponent(props);
   if (com) return com;
 
+  const classes = useStyles();
   const { fields, sectionPerRow, ...rest } = props;
 
   return (
-    <Grid container alignItems="baseline" justify="space-around">
+    <Grid
+      className={classes.root}
+      container
+      alignItems="baseline"
+      justify="space-around"
+    >
       {fields.map((f, i) => {
         const header: DetailsHeaderProps =
           typeof f.title === 'string'
@@ -26,6 +38,7 @@ function SectionDetailsBody<TData>(
 
         return (
           <Grid
+            className={classes.item}
             key={i}
             item
             md={(sectionPerRow ? 12 / sectionPerRow : 6) as any}

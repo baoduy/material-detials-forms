@@ -1,11 +1,15 @@
+import { css } from 'docz-plugin-css';
+
 export default {
   //src: ['./src', './node_modules/@material-ui'],
   title: 'Material-UI Form Generation',
-  wrapper: 'wrapper/index.tsx',
-  codeSandbox: false,
+  wrapper: '.docz/wrapper/index.tsx',
+  codeSandbox: true,
   typescript: true,
-  onCreateWebpackChain: config => {
-    config.devServer.clientLogLevel = 'info';
-    return config;
-  }
+  plugins: [
+    css({
+      preprocessor: 'less',
+      cssmodules: true
+    })
+  ]
 };
