@@ -1,5 +1,6 @@
 import { ReactChild, ReactNode } from 'react';
 
+import { FieldProps } from 'formik/dist/Field';
 import { GridSize } from '@material-ui/core/Grid';
 import { Omit } from '@material-ui/core';
 
@@ -94,13 +95,33 @@ export interface DetailsFieldProps extends AsComponent<DetailsFieldProps> {
   gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
 }
 
+/** Input Type if not provided the input type will be decided automatically based on value type
+ * https://www.w3schools.com/tags/att_input_type.asp
+ */
+export type EditFieldTypes =
+  | 'url'
+  | 'password'
+  | 'image'
+  | 'file'
+  | 'email'
+  | 'color'
+  | 'radio'
+  | 'checkbox'
+  | 'date'
+  | 'datetime'
+  | 'time'
+  | 'week'
+  | 'number'
+  | 'text'
+  | string;
+
 export interface EditFieldProps extends AsComponent<DetailsFieldProps> {
   name: string;
   label: string;
   value: string | number;
-  variant?: 'standard' | '' | '';
-  /** Input Type if not provided the input type will be decided automatically based on value type */
-  type?: string;
+  variant?: 'standard' | 'filled' | 'outlined';
+  /** Input Type if not provided the input type will be decided automatically based on value type   */
+  type?: EditFieldTypes;
   /** This only apply to the GridBody */
   gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
 }
@@ -146,4 +167,12 @@ export interface DetailsViewProps<TData>
 export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
   header?: DetailsHeaderProps | string;
   footer?: DetailsFooterProps;
+}
+
+export interface FieldWrapperProps<TValue>
+  extends FieldProps<TValue>,
+    AsComponent<FieldProps<TValue>> {
+  variant?: 'standard' | 'filled' | 'outlined';
+  /** Input Type if not provided the input type will be decided automatically based on value type   */
+  type?: EditFieldTypes;
 }

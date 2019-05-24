@@ -1,16 +1,15 @@
 import { EditFieldProps } from '../../TypeDefinitions';
 import { Field } from 'formik';
+import FieldWrapper from './FieldWrapper';
 import { Omit } from '@material-ui/core';
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { renderAsComponent } from '../../../commons/renderHelper';
 
-function EditField(props: Omit<EditFieldProps, 'gridSize'>) {
-  const asCom = renderAsComponent(props);
-  if (asCom) return asCom;
-
-  const { name, label, value, ...rest } = props;
-
+function EditField({
+  name,
+  label,
+  value,
+  ...rest
+}: Omit<EditFieldProps, 'gridSize'>) {
   return (
     <Field
       {...rest}
@@ -18,7 +17,7 @@ function EditField(props: Omit<EditFieldProps, 'gridSize'>) {
       name={name}
       label={label}
       value={value}
-      component={TextField}
+      component={FieldWrapper}
     />
   );
 }
