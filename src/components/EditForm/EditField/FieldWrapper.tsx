@@ -21,11 +21,7 @@ function FieldWrapper<TValue = number | string | undefined>(
   if (asCom) return asCom;
 
   const { field, type, ...rest } = props;
-
   const Field = getFieldByType(type as EditFieldTypes);
-
-  debugger;
-
   return <Field {...rest} type={type} {...field} />;
 }
 
