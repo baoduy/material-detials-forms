@@ -22,7 +22,7 @@ function FieldWrapper<TValue = number | string | undefined>(
 
   const { field, type, ...rest } = props;
   const Field = getFieldByType(type as EditFieldTypes);
-  return <Field {...rest} type={type} {...field} />;
+  return <Field fullWidth {...field} {...rest} type={type} />;
 }
 
 export default FieldWrapper;
