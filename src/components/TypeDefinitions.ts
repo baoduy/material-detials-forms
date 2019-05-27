@@ -1,5 +1,6 @@
 import { ReactChild, ReactNode } from 'react';
 
+import { BaseTextFieldProps } from '@material-ui/core/TextField/TextField';
 import { FieldProps } from 'formik/dist/Field';
 import { GridSize } from '@material-ui/core/Grid';
 import { Omit } from '@material-ui/core';
@@ -171,6 +172,7 @@ export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
 
 export interface FieldWrapperProps<TValue>
   extends FieldProps<TValue>,
+    BaseTextFieldProps,
     AsComponent<FieldProps<TValue>> {
   variant?: 'standard' | 'filled' | 'outlined';
   /** Input Type if not provided the input type will be decided automatically based on value type   */

@@ -176,50 +176,6 @@
       }
     },
     {
-      "key": "src/components/DetailsView/SectionDetailsView.mdx",
-      "value": {
-        "name": "2. Section Details View",
-        "id": "b54e0918ef0999536d304175768de9e4",
-        "filepath": "src/components/DetailsView/SectionDetailsView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SectionDetailsView.mdx",
-        "slug": "src-components-details-view-section-details-view",
-        "route": "/src-components-details-view-section-details-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "section-details-view",
-            "depth": 1,
-            "value": "Section Details View"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default Style"
-          },
-          {
-            "slug": "table-style-with-single-section-per-row",
-            "depth": 3,
-            "value": "Table Style With Single Section Per Row"
-          },
-          {
-            "slug": "flat-style",
-            "depth": 3,
-            "value": "Flat Style"
-          }
-        ]
-      }
-    },
-    {
       "key": "src/components/DetailsView/SingleDetailsView.mdx",
       "value": {
         "name": "3. Single Details View",
@@ -274,20 +230,25 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditView.mdx",
+      "key": "src/components/DetailsView/SectionDetailsView.mdx",
       "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
+        "name": "2. Section Details View",
+        "id": "b54e0918ef0999536d304175768de9e4",
+        "filepath": "src/components/DetailsView/SectionDetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SectionDetailsView.mdx",
+        "slug": "src-components-details-view-section-details-view",
+        "route": "/src-components-details-view-section-details-view",
         "menu": "",
         "headings": [
           {
-            "slug": "details-view",
+            "slug": "section-details-view",
             "depth": 1,
-            "value": "Details View"
+            "value": "Section Details View"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
           },
           {
             "slug": "usage",
@@ -297,7 +258,17 @@
           {
             "slug": "default-style",
             "depth": 3,
-            "value": "Default style"
+            "value": "Default Style"
+          },
+          {
+            "slug": "table-style-with-single-section-per-row",
+            "depth": 3,
+            "value": "Table Style With Single Section Per Row"
+          },
+          {
+            "slug": "flat-style",
+            "depth": 3,
+            "value": "Flat Style"
           }
         ]
       }
@@ -376,6 +347,69 @@
             "slug": "4-with-tooltip",
             "depth": 2,
             "value": "4. With Tooltip"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditView.mdx",
+      "value": {
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditField/EditView.mdx",
+      "value": {
+        "name": "Edit Fields",
+        "id": "4c70bdc522c25af113fc297d121bce26",
+        "filepath": "src/components/EditForm/EditField/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/EditView.mdx",
+        "slug": "src-components-edit-form-edit-field-edit-view",
+        "route": "/src-components-edit-form-edit-field-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "predefined-edit-fields",
+            "depth": 1,
+            "value": "Predefined Edit Fields"
+          },
+          {
+            "slug": "basic-fields",
+            "depth": 2,
+            "value": "Basic fields"
+          },
+          {
+            "slug": "outline-fields",
+            "depth": 2,
+            "value": "Outline fields"
+          },
+          {
+            "slug": "filled-fields",
+            "depth": 2,
+            "value": "Filled fields"
           }
         ]
       }

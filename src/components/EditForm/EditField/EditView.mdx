@@ -1,0 +1,134 @@
+---
+name: Edit Fields
+---
+
+import { Playground, Props } from 'docz';
+import EditField from './FieldWrapper';
+import Button from '@material-ui/core/Button';
+
+# Predefined Edit Fields
+
+Below is the list of Pre-defined Edit Fileds in this library.
+
+<Props of={EditField} />
+
+## Basic fields
+
+<Playground>
+  <form>
+    <div style={{ margin: 10 }}>
+      <EditField id="text" value="Basic Edit Field" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField id="text" placeholder="Edit Field with Placeholder" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField
+        id="text"
+        label="Name"
+        placeholder="Edit Field with Placeholder and Label"
+      />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField
+        id="text"
+        label="Multi-line field"
+        multiline
+        rows={3}
+        rowsMax={10}
+      />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField id="text" label="Password" type="password" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField id="text" label="Required Filed" required />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField id="text" label="Email" type="email" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <Button color="primary" variant="contained" type="submit">
+        Submit
+      </Button>
+    </div>
+  </form>
+</Playground>
+
+## Outline fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" variant="outlined" value="Basic Edit Field" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      variant="outlined"
+      placeholder="Edit Field with Placeholder"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      label="Name"
+      variant="outlined"
+      placeholder="Edit Field with Placeholder and Label"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      label="Multi-line field"
+      variant="outlined"
+      multiline
+      rows={3}
+      rowsMax={10}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" label="Password" variant="outlined" type="password" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" label="Required Filed" variant="outlined" required />
+  </div>
+</Playground>
+
+## Filled fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" variant="filled" value="Basic Edit Field" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      variant="filled"
+      placeholder="Edit Field with Placeholder"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      label="Name"
+      variant="filled"
+      placeholder="Edit Field with Placeholder and Label"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      label="Multi-line field"
+      variant="filled"
+      multiline
+      rows={3}
+      rowsMax={10}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" label="Password" variant="filled" type="password" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" label="Required Filed" variant="filled" required />
+  </div>
+</Playground>
