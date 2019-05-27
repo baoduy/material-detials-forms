@@ -17,6 +17,10 @@
   },
   "props": [
     {
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
+    },
+    {
       "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
@@ -105,10 +109,6 @@
           }
         }
       ]
-    },
-    {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
     }
   ],
   "entries": [
@@ -303,40 +303,6 @@
       }
     },
     {
-      "key": "src/components/Labels/Label.mdx",
-      "value": {
-        "name": "Label Field",
-        "id": "a1efc69c08b450fc20bab14328403ad9",
-        "filepath": "src/components/Labels/Label.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Label.mdx",
-        "slug": "src-components-labels-label",
-        "route": "/src-components-labels-label",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "label-field",
-            "depth": 1,
-            "value": "Label Field"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          },
-          {
-            "slug": "1-with-icon",
-            "depth": 2,
-            "value": "1. With Icon"
-          },
-          {
-            "slug": "2-without-icon",
-            "depth": 2,
-            "value": "2. Without Icon"
-          }
-        ]
-      }
-    },
-    {
       "key": "src/components/Labels/Title.mdx",
       "value": {
         "name": "Title Component",
@@ -376,6 +342,40 @@
             "slug": "4-with-tooltip",
             "depth": 2,
             "value": "4. With Tooltip"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Labels/Label.mdx",
+      "value": {
+        "name": "Label Field",
+        "id": "a1efc69c08b450fc20bab14328403ad9",
+        "filepath": "src/components/Labels/Label.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Label.mdx",
+        "slug": "src-components-labels-label",
+        "route": "/src-components-labels-label",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "label-field",
+            "depth": 1,
+            "value": "Label Field"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          },
+          {
+            "slug": "1-with-icon",
+            "depth": 2,
+            "value": "1. With Icon"
+          },
+          {
+            "slug": "2-without-icon",
+            "depth": 2,
+            "value": "2. Without Icon"
           }
         ]
       }
