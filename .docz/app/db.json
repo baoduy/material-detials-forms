@@ -17,10 +17,6 @@
   },
   "props": [
     {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
-    },
-    {
       "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
@@ -109,6 +105,10 @@
           }
         }
       ]
+    },
+    {
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
     }
   ],
   "entries": [
@@ -132,45 +132,6 @@
             "slug": "i-detials-form",
             "depth": 2,
             "value": "I. Detials Form"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/DetailsView/DetailsView.mdx",
-      "value": {
-        "name": "1. Details View",
-        "id": "d82665307a018a2aa4f0bc07e630e7b5",
-        "filepath": "src/components/DetailsView/DetailsView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/DetailsView.mdx",
-        "slug": "src-components-details-view-details-view",
-        "route": "/src-components-details-view-details-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "single-view",
-            "depth": 3,
-            "value": "Single View"
-          },
-          {
-            "slug": "multi-section-view",
-            "depth": 3,
-            "value": "Multi Section View"
           }
         ]
       }
@@ -274,14 +235,14 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditView.mdx",
+      "key": "src/components/DetailsView/DetailsView.mdx",
       "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
+        "name": "1. Details View",
+        "id": "d82665307a018a2aa4f0bc07e630e7b5",
+        "filepath": "src/components/DetailsView/DetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/DetailsView.mdx",
+        "slug": "src-components-details-view-details-view",
+        "route": "/src-components-details-view-details-view",
         "menu": "",
         "headings": [
           {
@@ -290,14 +251,24 @@
             "value": "Details View"
           },
           {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          },
+          {
             "slug": "usage",
             "depth": 2,
             "value": "Usage"
           },
           {
-            "slug": "default-style",
+            "slug": "single-view",
             "depth": 3,
-            "value": "Default style"
+            "value": "Single View"
+          },
+          {
+            "slug": "multi-section-view",
+            "depth": 3,
+            "value": "Multi Section View"
           }
         ]
       }
@@ -381,20 +352,49 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditField/EditView.mdx",
+      "key": "src/components/EditForm/EditView.mdx",
       "value": {
-        "name": "Edit Fields",
-        "id": "4c70bdc522c25af113fc297d121bce26",
-        "filepath": "src/components/EditForm/EditField/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/EditView.mdx",
-        "slug": "src-components-edit-form-edit-field-edit-view",
-        "route": "/src-components-edit-form-edit-field-edit-view",
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
         "menu": "",
         "headings": [
           {
-            "slug": "predefined-edit-fields",
+            "slug": "details-view",
             "depth": 1,
-            "value": "Predefined Edit Fields"
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditField/EditField.mdx",
+      "value": {
+        "name": "Edit Fields",
+        "id": "4152f2b7dbc0796d86c6895d3ba22fd1",
+        "filepath": "src/components/EditForm/EditField/EditField.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/EditField.mdx",
+        "slug": "src-components-edit-form-edit-field-edit-field",
+        "route": "/src-components-edit-form-edit-field-edit-field",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "pre-defined-edit-fields",
+            "depth": 1,
+            "value": "Pre-defined Edit Fields"
           },
           {
             "slug": "standard-fields",

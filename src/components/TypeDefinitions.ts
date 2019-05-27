@@ -1,6 +1,5 @@
 import { ReactChild, ReactNode } from 'react';
 
-import { BaseTextFieldProps } from '@material-ui/core/TextField/TextField';
 import { FieldProps } from 'formik/dist/Field';
 import { GridSize } from '@material-ui/core/Grid';
 import { Omit } from '@material-ui/core';
@@ -113,10 +112,10 @@ export type EditFieldTypes =
   | 'time'
   | 'week'
   | 'number'
-  | 'text'
-  | string;
+  | 'text';
 
 type EditFieldVariants = 'standard' | 'filled' | 'outlined' | 'labeled';
+
 export interface EditFieldProps extends AsComponent<DetailsFieldProps> {
   name: string;
   label: string;
@@ -171,13 +170,30 @@ export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
   footer?: DetailsFooterProps;
 }
 
-export interface FieldWrapperProps<TValue>
-  extends FieldProps<TValue>,
-    Omit<BaseTextFieldProps, 'variant'>,
-    AsComponent<FieldProps<TValue>> {
+export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
+  autoFocus?: boolean;
+  defaultValue?: unknown;
+  disabled?: boolean;
+  error?: boolean;
+  fullWidth?: boolean;
+  helperText?: React.ReactNode;
+  inputRef?: React.Ref<any> | React.RefObject<any>;
+  label?: React.ReactNode;
+  multiline?: boolean;
+  name?: string;
+  onChange?: React.ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >;
+  placeholder?: string;
+  required?: boolean;
+  rows?: string | number;
+  rowsMax?: string | number;
+  value?: unknown;
   variant?: EditFieldVariants;
   /** Input Type if not provided the input type will be decided automatically based on value type   */
   type?: EditFieldTypes;
   /** only apply for labeled field */
   labelAlign?: CellLabelAlign;
+  /** Using for DateTime picker only */
+  dateFormat?: string;
 }

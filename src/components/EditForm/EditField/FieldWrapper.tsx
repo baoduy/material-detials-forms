@@ -3,10 +3,12 @@ import {
   FieldWrapperProps
 } from '@src/components/TypeDefinitions';
 
+import DateField from './DateTimeField';
 import Grid from '@material-ui/core/Grid/Grid';
+import InputLabel from '@material-ui/core/InputLabel/InputLabel';
 import LabelField from '../../Labels/LabelField';
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import TextField from './TextField';
 import classNames from 'classnames';
 import makeStyles from '@material-ui/styles/makeStyles/makeStyles';
 import { renderAsComponent } from '../../../commons/renderHelper';
@@ -20,36 +22,31 @@ const useStyles = makeStyles({
 
 function getFieldByType(type: EditFieldTypes) {
   switch (type) {
+    case 'date':
+    case 'datetime':
+    case 'time':
+      return DateField;
     default:
       return TextField;
   }
 }
 
-function FieldWrapper<TValue = number | string | undefined>(
-  props: FieldWrapperProps<TValue>
-) {
+function FieldWrapper(props: FieldWrapperProps) {
   const asCom = renderAsComponent(props);
   if (asCom) return asCom;
 
   const {
-    field,
     label,
     labelAlign,
     type,
-    placeholder,
+    name,
+    disabled,
+    required,
     variant,
     ...rest
   } = props;
   const classes = useStyles();
   const Field = getFieldByType(type as EditFieldTypes);
-  const pattern =
-    type === 'email' ? '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$' : undefined;
-  const title =
-    type === 'email' ? 'The entered value is not a valid email.' : undefined;
-  const finalPlaceholder =
-    type === 'email' && !placeholder
-      ? 'Please enter a valid email'
-      : placeholder;
 
   if (variant === 'labeled') {
     return (
@@ -63,20 +60,21 @@ function FieldWrapper<TValue = number | string | undefined>(
             [classes.alignRight]: labelAlign === 'right'
           })}
         >
-          {label && <LabelField variant="subtitle">{label}</LabelField>}
+          {label && (
+            <InputLabel htmlFor={name} disabled={disabled} required={required}>
+              {label}
+            </InputLabel>
+          )}
         </Grid>
         <Grid item md={8} sm={12}>
           <Field
             fullWidth
-            {...field}
+            name={name}
+            disabled={disabled}
+            required={required}
             {...rest}
-            type={type}
+            type={type as any}
             variant="outlined"
-            inputProps={{
-              pattern,
-              title
-            }}
-            placeholder={finalPlaceholder}
           />
         </Grid>
       </Grid>
@@ -85,16 +83,13 @@ function FieldWrapper<TValue = number | string | undefined>(
     return (
       <Field
         fullWidth
-        {...field}
+        name={name}
+        disabled={disabled}
+        required={required}
         {...rest}
         label={label}
-        type={type}
+        type={type as any}
         variant={variant as any}
-        inputProps={{
-          pattern,
-          title
-        }}
-        placeholder={finalPlaceholder}
       />
     );
 }

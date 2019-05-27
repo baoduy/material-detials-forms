@@ -12,6 +12,9 @@ export interface MuiFormProviderProps<Theme> {
   theme?: Theme | ((outerTheme: Theme) => Theme);
 }
 
+/**
+ * This provider is wrapper of MuiPickersUtilsProvider and ThemeProvider into a single provider.
+ */
 function MuiFormProvider<Theme>({
   children,
   utils,

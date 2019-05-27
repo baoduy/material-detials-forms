@@ -6,7 +6,7 @@ import { Playground, Props } from 'docz';
 import EditField from './FieldWrapper';
 import Button from '@material-ui/core/Button';
 
-# Predefined Edit Fields
+# Pre-defined Edit Fields
 
 Below is the list of Pre-defined Edit Fileds in this library.
 
@@ -39,6 +39,19 @@ Below is the list of Pre-defined Edit Fileds in this library.
     </div>
     <div style={{ margin: 10 }}>
       <EditField label="Email" type="email" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField label="Date Picker" type="date" defaultValue={new Date()} />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField label="Time Picker" type="time" defaultValue={new Date()} />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField
+        label="Date & Time Picker"
+        type="datetime"
+        defaultValue={new Date()}
+      />
     </div>
     <div style={{ margin: 10 }}>
       <Button color="primary" variant="contained" type="submit">
@@ -125,6 +138,7 @@ Below is the list of Pre-defined Edit Fileds in this library.
   </div>
   <div style={{ margin: 10 }}>
     <EditField
+      name="labeledEditField1"
       label="Name"
       variant="labeled"
       placeholder="Edit Field with Placeholder and Label"
@@ -132,6 +146,7 @@ Below is the list of Pre-defined Edit Fileds in this library.
   </div>
   <div style={{ margin: 10 }}>
     <EditField
+      name="labeledEditField2"
       label="Multi-line field"
       variant="labeled"
       multiline
@@ -140,9 +155,21 @@ Below is the list of Pre-defined Edit Fileds in this library.
     />
   </div>
   <div style={{ margin: 10 }}>
-    <EditField label="Password" variant="labeled" type="password" />
+    <EditField
+      disabled
+      name="labeledEditField3"
+      label="Password"
+      variant="labeled"
+      type="password"
+    />
   </div>
   <div style={{ margin: 10 }}>
-    <EditField label="Required Filed" variant="labeled" required />
+    <EditField
+      required
+      name="labeledEditField4"
+      label="Required Filed"
+      variant="labeled"
+      required
+    />
   </div>
 </Playground>
