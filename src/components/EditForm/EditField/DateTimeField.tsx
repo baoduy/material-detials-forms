@@ -66,6 +66,7 @@ function CustomDateTimeField({
       initialFocusedDate={(value || defaultValue) as ParsableDate}
       value={value as ParsableDate}
       autoOk
+      ampm
       variant="inline"
       inputVariant={variant}
       format={dateFormat || getDefaultDateFormat(type)}
