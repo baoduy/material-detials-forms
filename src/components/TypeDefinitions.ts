@@ -116,11 +116,12 @@ export type EditFieldTypes =
   | 'text'
   | string;
 
+type EditFieldVariants = 'standard' | 'filled' | 'outlined' | 'labeled';
 export interface EditFieldProps extends AsComponent<DetailsFieldProps> {
   name: string;
   label: string;
   value: string | number;
-  variant?: 'standard' | 'filled' | 'outlined';
+  variant?: EditFieldVariants;
   /** Input Type if not provided the input type will be decided automatically based on value type   */
   type?: EditFieldTypes;
   /** This only apply to the GridBody */
@@ -172,9 +173,11 @@ export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
 
 export interface FieldWrapperProps<TValue>
   extends FieldProps<TValue>,
-    BaseTextFieldProps,
+    Omit<BaseTextFieldProps, 'variant'>,
     AsComponent<FieldProps<TValue>> {
-  variant?: 'standard' | 'filled' | 'outlined';
+  variant?: EditFieldVariants;
   /** Input Type if not provided the input type will be decided automatically based on value type   */
   type?: EditFieldTypes;
+  /** only apply for labeled field */
+  labelAlign?: CellLabelAlign;
 }

@@ -12,7 +12,7 @@ Below is the list of Pre-defined Edit Fileds in this library.
 
 <Props of={EditField} />
 
-## Basic fields
+## Standard Fields
 
 <Playground>
   <form>
@@ -55,7 +55,7 @@ Below is the list of Pre-defined Edit Fileds in this library.
   </form>
 </Playground>
 
-## Outline fields
+## Outline Fields
 
 <Playground>
   <div style={{ margin: 10 }}>
@@ -94,7 +94,7 @@ Below is the list of Pre-defined Edit Fileds in this library.
   </div>
 </Playground>
 
-## Filled fields
+## Filled Fields
 
 <Playground>
   <div style={{ margin: 10 }}>
@@ -130,5 +130,44 @@ Below is the list of Pre-defined Edit Fileds in this library.
   </div>
   <div style={{ margin: 10 }}>
     <EditField id="text" label="Required Filed" variant="filled" required />
+  </div>
+</Playground>
+
+## Labeled Fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" variant="labeled" value="Basic Edit Field" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      variant="labeled"
+      placeholder="Edit Field with Placeholder"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      label="Name"
+      variant="labeled"
+      placeholder="Edit Field with Placeholder and Label"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      id="text"
+      label="Multi-line field"
+      variant="labeled"
+      multiline
+      rows={3}
+      rowsMax={10}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" label="Password" variant="labeled" type="password" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField id="text" label="Required Filed" variant="labeled" required />
   </div>
 </Playground>

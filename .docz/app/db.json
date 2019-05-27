@@ -137,143 +137,6 @@
       }
     },
     {
-      "key": "src/components/DetailsView/DetailsView.mdx",
-      "value": {
-        "name": "1. Details View",
-        "id": "d82665307a018a2aa4f0bc07e630e7b5",
-        "filepath": "src/components/DetailsView/DetailsView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/DetailsView.mdx",
-        "slug": "src-components-details-view-details-view",
-        "route": "/src-components-details-view-details-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "single-view",
-            "depth": 3,
-            "value": "Single View"
-          },
-          {
-            "slug": "multi-section-view",
-            "depth": 3,
-            "value": "Multi Section View"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/DetailsView/SingleDetailsView.mdx",
-      "value": {
-        "name": "3. Single Details View",
-        "id": "67ed92a57781d11d59a9fbc3bca8ac35",
-        "filepath": "src/components/DetailsView/SingleDetailsView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SingleDetailsView.mdx",
-        "slug": "src-components-details-view-single-details-view",
-        "route": "/src-components-details-view-single-details-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "simple-details-view",
-            "depth": 1,
-            "value": "Simple Details View"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default style"
-          },
-          {
-            "slug": "table-style",
-            "depth": 3,
-            "value": "Table style"
-          },
-          {
-            "slug": "flat-style",
-            "depth": 3,
-            "value": "Flat style"
-          },
-          {
-            "slug": "alternate-row-default-style",
-            "depth": 3,
-            "value": "Alternate Row Default Style"
-          },
-          {
-            "slug": "custom-alternate-row-style",
-            "depth": 3,
-            "value": "Custom Alternate Row Style"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/DetailsView/SectionDetailsView.mdx",
-      "value": {
-        "name": "2. Section Details View",
-        "id": "b54e0918ef0999536d304175768de9e4",
-        "filepath": "src/components/DetailsView/SectionDetailsView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SectionDetailsView.mdx",
-        "slug": "src-components-details-view-section-details-view",
-        "route": "/src-components-details-view-section-details-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "section-details-view",
-            "depth": 1,
-            "value": "Section Details View"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default Style"
-          },
-          {
-            "slug": "table-style-with-single-section-per-row",
-            "depth": 3,
-            "value": "Table Style With Single Section Per Row"
-          },
-          {
-            "slug": "flat-style",
-            "depth": 3,
-            "value": "Flat Style"
-          }
-        ]
-      }
-    },
-    {
       "key": "src/components/Labels/Label.mdx",
       "value": {
         "name": "Label Field",
@@ -381,6 +244,143 @@
       }
     },
     {
+      "key": "src/components/DetailsView/DetailsView.mdx",
+      "value": {
+        "name": "1. Details View",
+        "id": "d82665307a018a2aa4f0bc07e630e7b5",
+        "filepath": "src/components/DetailsView/DetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/DetailsView.mdx",
+        "slug": "src-components-details-view-details-view",
+        "route": "/src-components-details-view-details-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "single-view",
+            "depth": 3,
+            "value": "Single View"
+          },
+          {
+            "slug": "multi-section-view",
+            "depth": 3,
+            "value": "Multi Section View"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/DetailsView/SectionDetailsView.mdx",
+      "value": {
+        "name": "2. Section Details View",
+        "id": "b54e0918ef0999536d304175768de9e4",
+        "filepath": "src/components/DetailsView/SectionDetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SectionDetailsView.mdx",
+        "slug": "src-components-details-view-section-details-view",
+        "route": "/src-components-details-view-section-details-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "section-details-view",
+            "depth": 1,
+            "value": "Section Details View"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default Style"
+          },
+          {
+            "slug": "table-style-with-single-section-per-row",
+            "depth": 3,
+            "value": "Table Style With Single Section Per Row"
+          },
+          {
+            "slug": "flat-style",
+            "depth": 3,
+            "value": "Flat Style"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/DetailsView/SingleDetailsView.mdx",
+      "value": {
+        "name": "3. Single Details View",
+        "id": "67ed92a57781d11d59a9fbc3bca8ac35",
+        "filepath": "src/components/DetailsView/SingleDetailsView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/DetailsView/SingleDetailsView.mdx",
+        "slug": "src-components-details-view-single-details-view",
+        "route": "/src-components-details-view-single-details-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "simple-details-view",
+            "depth": 1,
+            "value": "Simple Details View"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
+          },
+          {
+            "slug": "table-style",
+            "depth": 3,
+            "value": "Table style"
+          },
+          {
+            "slug": "flat-style",
+            "depth": 3,
+            "value": "Flat style"
+          },
+          {
+            "slug": "alternate-row-default-style",
+            "depth": 3,
+            "value": "Alternate Row Default Style"
+          },
+          {
+            "slug": "custom-alternate-row-style",
+            "depth": 3,
+            "value": "Custom Alternate Row Style"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/components/EditForm/EditField/EditView.mdx",
       "value": {
         "name": "Edit Fields",
@@ -397,19 +397,24 @@
             "value": "Predefined Edit Fields"
           },
           {
-            "slug": "basic-fields",
+            "slug": "standard-fields",
             "depth": 2,
-            "value": "Basic fields"
+            "value": "Standard Fields"
           },
           {
             "slug": "outline-fields",
             "depth": 2,
-            "value": "Outline fields"
+            "value": "Outline Fields"
           },
           {
             "slug": "filled-fields",
             "depth": 2,
-            "value": "Filled fields"
+            "value": "Filled Fields"
+          },
+          {
+            "slug": "labeled-fields",
+            "depth": 2,
+            "value": "Labeled Fields"
           }
         ]
       }
