@@ -197,3 +197,9 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   /** Using for DateTime picker only */
   dateFormat?: string;
 }
+
+export interface SelectOption {
+  text: ReactNode;
+  value: unknown;
+  group?: string;
+}
