@@ -63,7 +63,7 @@ function FieldWrapper<TValue = number | string | undefined>(
             [classes.alignRight]: labelAlign === 'right'
           })}
         >
-          {label && <LabelField variant="caption">{label}</LabelField>}
+          {label && <LabelField variant="subtitle">{label}</LabelField>}
         </Grid>
         <Grid item md={8} sm={12}>
           <Field
