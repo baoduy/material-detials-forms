@@ -27,8 +27,16 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-labels-title" */ 'src/components/Labels/Title.mdx'
     ),
-  'src/components/EditForm/EditField/EditField.mdx': () =>
+  'src/components/EditForm/EditField/DateTimeField.mdx': () =>
     import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-edit-field" */ 'src/components/EditForm/EditField/EditField.mdx'
+      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-date-time-field" */ 'src/components/EditForm/EditField/DateTimeField.mdx'
+    ),
+  'src/components/EditForm/EditField/SelectField.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-select-field" */ 'src/components/EditForm/EditField/SelectField.mdx'
+    ),
+  'src/components/EditForm/EditField/TextField.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-text-field" */ 'src/components/EditForm/EditField/TextField.mdx'
     ),
 }

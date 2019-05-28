@@ -1,14 +1,14 @@
 ---
-name: Edit Fields
+name: Text Field
 ---
 
 import { Playground, Props } from 'docz';
 import EditField from './FieldWrapper';
 import Button from '@material-ui/core/Button';
 
-# Pre-defined Edit Fields
+# Text Field
 
-Below is the list of Pre-defined Edit Fileds in this library.
+Below is the list of build-in Edit Fileds in this which supported by TextField.
 
 <Props of={EditField} />
 
@@ -17,15 +17,15 @@ Below is the list of Pre-defined Edit Fileds in this library.
 <Playground>
   <form>
     <div style={{ margin: 10 }}>
-      <EditField value="Basic Edit Field" />
+      <EditField value="Basic Text Field" />
     </div>
     <div style={{ margin: 10 }}>
-      <EditField placeholder="Edit Field with Placeholder" />
+      <EditField placeholder="Text Field with Placeholder" />
     </div>
     <div style={{ margin: 10 }}>
       <EditField
         label="Name"
-        placeholder="Edit Field with Placeholder and Label"
+        placeholder="Text Field with Placeholder and Label"
       />
     </div>
     <div style={{ margin: 10 }}>
@@ -41,19 +41,6 @@ Below is the list of Pre-defined Edit Fileds in this library.
       <EditField label="Email" type="email" />
     </div>
     <div style={{ margin: 10 }}>
-      <EditField label="Date Picker" type="date" defaultValue={new Date()} />
-    </div>
-    <div style={{ margin: 10 }}>
-      <EditField label="Time Picker" type="time" defaultValue={new Date()} />
-    </div>
-    <div style={{ margin: 10 }}>
-      <EditField
-        label="Date & Time Picker"
-        type="datetime"
-        defaultValue={new Date()}
-      />
-    </div>
-    <div style={{ margin: 10 }}>
       <Button color="primary" variant="contained" type="submit">
         Submit
       </Button>
@@ -65,16 +52,16 @@ Below is the list of Pre-defined Edit Fileds in this library.
 
 <Playground>
   <div style={{ margin: 10 }}>
-    <EditField variant="outlined" value="Basic Edit Field" />
+    <EditField variant="outlined" value="Basic Text Field" />
   </div>
   <div style={{ margin: 10 }}>
-    <EditField variant="outlined" placeholder="Edit Field with Placeholder" />
+    <EditField variant="outlined" placeholder="Text Field with Placeholder" />
   </div>
   <div style={{ margin: 10 }}>
     <EditField
       label="Name"
       variant="outlined"
-      placeholder="Edit Field with Placeholder and Label"
+      placeholder="Text Field with Placeholder and Label"
     />
   </div>
   <div style={{ margin: 10 }}>
@@ -98,16 +85,16 @@ Below is the list of Pre-defined Edit Fileds in this library.
 
 <Playground>
   <div style={{ margin: 10 }}>
-    <EditField variant="filled" value="Basic Edit Field" />
+    <EditField variant="filled" value="Basic Text Field" />
   </div>
   <div style={{ margin: 10 }}>
-    <EditField variant="filled" placeholder="Edit Field with Placeholder" />
+    <EditField variant="filled" placeholder="Text Field with Placeholder" />
   </div>
   <div style={{ margin: 10 }}>
     <EditField
       label="Name"
       variant="filled"
-      placeholder="Edit Field with Placeholder and Label"
+      placeholder="Text Field with Placeholder and Label"
     />
   </div>
   <div style={{ margin: 10 }}>
@@ -131,17 +118,17 @@ Below is the list of Pre-defined Edit Fileds in this library.
 
 <Playground>
   <div style={{ margin: 10 }}>
-    <EditField variant="labeled" value="Basic Edit Field" />
+    <EditField variant="labeled" value="Basic Text Field" />
   </div>
   <div style={{ margin: 10 }}>
-    <EditField variant="labeled" placeholder="Edit Field with Placeholder" />
+    <EditField variant="labeled" placeholder="Text Field with Placeholder" />
   </div>
   <div style={{ margin: 10 }}>
     <EditField
       name="labeledEditField1"
       label="Name"
       variant="labeled"
-      placeholder="Edit Field with Placeholder and Label"
+      placeholder="Text Field with Placeholder and Label"
     />
   </div>
   <div style={{ margin: 10 }}>
