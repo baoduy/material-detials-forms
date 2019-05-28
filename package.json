@@ -40,6 +40,7 @@
     "dayjs": "^1.8.14",
     "docz-plugin-css": "^0.11.0",
     "formik": "^1.5.7",
+    "linq": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-jss": "^8.6.1",

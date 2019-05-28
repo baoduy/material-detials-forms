@@ -17,10 +17,6 @@
   },
   "props": [
     {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
-    },
-    {
       "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
@@ -109,6 +105,10 @@
           }
         }
       ]
+    },
+    {
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
     }
   ],
   "entries": [
@@ -132,6 +132,35 @@
             "slug": "i-detials-form",
             "depth": 2,
             "value": "I. Detials Form"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditView.mdx",
+      "value": {
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
           }
         ]
       }
@@ -269,35 +298,6 @@
             "slug": "custom-alternate-row-style",
             "depth": 3,
             "value": "Custom Alternate Row Style"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/EditForm/EditView.mdx",
-      "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default style"
           }
         ]
       }

@@ -1,45 +1,68 @@
+import React, { useCallback } from 'react';
+
 import { FieldWrapperProps } from '@src/components/TypeDefinitions';
+import InputLabel from '@material-ui/core/InputLabel/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem/MenuItem';
 import { Omit } from '@material-ui/types';
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select/Select';
 
 interface CustomTextFieldProps extends Omit<FieldWrapperProps, 'variant'> {
   variant?: 'standard' | 'filled' | 'outlined';
 }
 
-function CustomTextField({
+function SelectField({
   name,
-  type,
-  placeholder,
   field,
-  variant,
+  type,
+  label,
+  defaultValue,
+  value,
+  options,
   ...rest
 }: CustomTextFieldProps) {
-  const pattern =
-    type === 'email' ? '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$' : undefined;
-  const title =
-    type === 'email' ? 'The entered value is not a valid email.' : undefined;
-  const finalPlaceholder =
-    type === 'email' && !placeholder
-      ? 'Please enter a valid email'
-      : placeholder;
+  const handleChange = useCallback(event => {
+    console.log(event.target.value);
+  }, []);
+
+  if (!options) options = [];
+
+  const hasgroup = options.findIndex(o => o.group !== undefined) >= 0;
 
   return (
-    <TextField
-      fullWidth
-      id={name}
-      name={name}
-      {...field}
-      {...rest}
-      variant={variant as any}
-      type={type}
-      inputProps={{
-        pattern,
-        title
-      }}
-      placeholder={finalPlaceholder}
-    />
+    <div>
+      <InputLabel htmlFor={name}>{label}</InputLabel>
+      <Select
+        {...field}
+        {...rest}
+        id={name}
+        name={name}
+        value={value || defaultValue || ''}
+        onChange={handleChange}
+        inputProps={{
+          id: name,
+          name
+        }}
+        MenuProps={{
+          anchorOrigin: {
+            vertical: 'bottom',
+            horizontal: 'center'
+          },
+          transformOrigin: {
+            vertical: 'top',
+            horizontal: 'center'
+          },
+          getContentAnchorEl: null
+        }}
+      >
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </div>
   );
 }
 
-export default CustomTextField;
+export default SelectField;

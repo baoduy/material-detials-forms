@@ -44,7 +44,7 @@ function getDefaultDateFormat(type: FieldType) {
  * Refer here for Date format convention: https://github.com/iamkun/dayjs/blob/dev/docs/en/API-reference.md#displaying
  * @param param0 Date Value
  */
-function CustomDateTimeField({
+function DateTimeField({
   name,
   type,
   field,
@@ -76,4 +76,4 @@ function CustomDateTimeField({
   );
 }
 
-export default CustomDateTimeField;
+export default DateTimeField;

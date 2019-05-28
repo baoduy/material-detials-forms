@@ -112,7 +112,8 @@ export type EditFieldTypes =
   | 'time'
   | 'week'
   | 'number'
-  | 'text';
+  | 'text'
+  | 'select';
 
 type EditFieldVariants = 'standard' | 'filled' | 'outlined' | 'labeled';
 
@@ -196,10 +197,18 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   labelAlign?: CellLabelAlign;
   /** Using for DateTime picker only */
   dateFormat?: string;
+  /** The options for select field */
+  options?: Array<SelectOption>;
 }
 
 export interface SelectOption {
   text: ReactNode;
   value: unknown;
   group?: string;
+  divide?: boolean;
+}
+
+export interface SelectGroupOption {
+  title: string;
+  options: Array<SelectOption>;
 }

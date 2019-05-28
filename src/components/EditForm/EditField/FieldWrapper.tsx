@@ -6,8 +6,8 @@ import {
 import DateField from './DateTimeField';
 import Grid from '@material-ui/core/Grid/Grid';
 import InputLabel from '@material-ui/core/InputLabel/InputLabel';
-import LabelField from '../../Labels/LabelField';
 import React from 'react';
+import SelectField from './SelectField';
 import TextField from './TextField';
 import classNames from 'classnames';
 import makeStyles from '@material-ui/styles/makeStyles/makeStyles';
@@ -26,6 +26,8 @@ function getFieldByType(type: EditFieldTypes) {
     case 'datetime':
     case 'time':
       return DateField;
+    case 'select':
+      return SelectField;
     default:
       return TextField;
   }
