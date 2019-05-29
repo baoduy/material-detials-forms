@@ -38,12 +38,12 @@
     "@material-ui/pickers": "^3.0.0",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.14",
-    "docz-plugin-css": "^0.11.0",
     "formik": "^1.5.7",
     "linq": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-jss": "^8.6.1",
+    "react-select": "^3.0.3",
     "yup": "^0.27.0"
   },
   "devDependencies": {
@@ -84,6 +84,7 @@
     "babel-runtime": "^6.26.0",
     "docz": "^1.2.0",
     "docz-theme-default": "^1.2.0",
+    "docz-plugin-css": "^0.11.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
     "enzyme-to-json": "^3.3.5",
