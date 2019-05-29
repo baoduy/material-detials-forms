@@ -3,10 +3,6 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-index" */ 'src/index.mdx'
     ),
-  'src/components/EditForm/EditView.mdx': () =>
-    import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-view" */ 'src/components/EditForm/EditView.mdx'
-    ),
   'src/components/DetailsView/DetailsView.mdx': () =>
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-details-view" */ 'src/components/DetailsView/DetailsView.mdx'
@@ -18,6 +14,10 @@ export const imports = {
   'src/components/DetailsView/SingleDetailsView.mdx': () =>
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-details-view-single-details-view" */ 'src/components/DetailsView/SingleDetailsView.mdx'
+    ),
+  'src/components/EditForm/EditView.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-view" */ 'src/components/EditForm/EditView.mdx'
     ),
   'src/components/Labels/Label.mdx': () =>
     import(
@@ -31,12 +31,12 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-date-time-field" */ 'src/components/EditForm/EditField/DateTimeField.mdx'
     ),
-  'src/components/EditForm/EditField/SelectField.mdx': () =>
-    import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-select-field" */ 'src/components/EditForm/EditField/SelectField.mdx'
-    ),
   'src/components/EditForm/EditField/TextField.mdx': () =>
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-text-field" */ 'src/components/EditForm/EditField/TextField.mdx'
+    ),
+  'src/components/EditForm/EditField/SelectField.mdx': () =>
+    import(
+      /* webpackPrefetch: true, webpackChunkName: "src-components-edit-form-edit-field-select-field" */ 'src/components/EditForm/EditField/SelectField.mdx'
     ),
 }
