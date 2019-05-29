@@ -12,7 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import { PlaceholderProps } from 'react-select/lib/components/Placeholder';
 import { SelectOption } from '@src/components/TypeDefinitions';
 import { SingleValueProps } from 'react-select/lib/components/SingleValue';
-import { TextField } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { ValueContainerProps } from 'react-select/lib/components/containers';
 import clsx from 'clsx';

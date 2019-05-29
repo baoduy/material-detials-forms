@@ -18,6 +18,7 @@ import { ValueType } from 'react-select/lib/types';
 import { emphasize } from '@material-ui/core/styles/colorManipulator';
 
 const suggestions: SelectOption[] = [
+  {},
   { label: 'Afghanistan' },
   { label: 'Aland Islands' },
   { label: 'Albania' },
@@ -117,7 +118,13 @@ interface SelectFieldProps extends Omit<FieldWrapperProps, 'variant'> {
   variant?: VariantType;
 }
 
-function SelectField(props: SelectFieldProps) {
+function SelectField({
+  label,
+  placeholder,
+  field,
+  form,
+  ...rest
+}: SelectFieldProps) {
   const classes = useStyles();
   const theme = useTheme();
   const [single, setSingle] = React.useState<ValueType<SelectOption>>(null);
@@ -142,36 +149,40 @@ function SelectField(props: SelectFieldProps) {
   };
 
   return (
-    <div className={classes.root}>
-      <NoSsr>
-        <Select
-          classes={classes}
-          styles={selectStyles}
-          options={suggestions}
-          components={Components}
-          value={single}
-          onChange={handleChangeSingle}
-          placeholder="Search a country (start with a)"
-        />
-        <div className={classes.divider} />
-        <Select
-          classes={classes}
-          styles={selectStyles}
-          TextFieldProps={{
-            label: 'Label',
-            InputLabelProps: {
-              shrink: true
-            }
-          }}
-          options={suggestions}
-          components={Components}
-          value={multi}
-          onChange={handleChangeMulti}
-          placeholder="Select multiple countries"
-          isMulti
-        />
-      </NoSsr>
-    </div>
+    <NoSsr>
+      <Select
+        classes={classes}
+        styles={selectStyles}
+        options={suggestions}
+        components={Components}
+        value={single}
+        TextFieldProps={{
+          label: label,
+          InputLabelProps: {
+            shrink: true
+          }
+        }}
+        onChange={handleChangeSingle}
+        placeholder={placeholder}
+      />
+      <div className={classes.divider} />
+      <Select
+        classes={classes}
+        styles={selectStyles}
+        TextFieldProps={{
+          label: 'Label',
+          InputLabelProps: {
+            shrink: true
+          }
+        }}
+        options={suggestions}
+        components={Components}
+        value={multi}
+        onChange={handleChangeMulti}
+        placeholder={placeholder}
+        isMulti
+      />
+    </NoSsr>
   );
 }
 
