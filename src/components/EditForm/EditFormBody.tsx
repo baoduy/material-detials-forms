@@ -1,15 +1,10 @@
-import {
-  generateDataFields,
-  generateEditFields
-} from '../../commons/renderHelper';
-
 import { DetailsBodyProps } from '../TypeDefinitions';
 import EditField from './EditField';
 import { Form } from 'formik';
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import { Theme } from '@material-ui/core/styles';
-import classNames from 'classnames';
+import { generateEditFields } from '../../commons/renderHelper';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = (

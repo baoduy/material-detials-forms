@@ -11,7 +11,7 @@ import React from 'react';
 
 type FieldType = 'date' | 'datetime' | 'time';
 
-interface CustomTextFieldProps
+interface DateTimeFieldProps
   extends Omit<Omit<FieldWrapperProps, 'variant'>, 'type'> {
   variant?: 'standard' | 'filled' | 'outlined';
   type: FieldType;
@@ -53,7 +53,7 @@ function DateTimeField({
   defaultValue,
   value,
   ...rest
-}: CustomTextFieldProps) {
+}: DateTimeFieldProps) {
   const handleDateChange = React.useCallback(() => {}, []);
   const Field = getField(type);
 

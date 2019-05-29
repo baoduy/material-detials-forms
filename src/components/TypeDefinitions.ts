@@ -52,8 +52,9 @@ export interface SectionDetailsBodyProps<TData>
 }
 
 export interface MultiDetailsBodyProps<TData>
-  extends SectionDetailsBodyProps<TData> {
+  extends Omit<SectionDetailsBodyProps<TData>, 'fields'> {
   variant?: 'table' | 'grid';
+  fields: Array<SectionFieldOption<TData>> | Array<FieldOption<TData>>;
 }
 
 /** The variant of LabelField */
@@ -202,13 +203,13 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
 }
 
 export interface SelectOption {
-  text: ReactNode;
+  label: ReactNode;
   value: unknown;
   group?: string;
   divide?: boolean;
 }
 
 export interface SelectGroupOption {
-  title: string;
-  options: Array<SelectOption>;
+  label: string;
+  options: Array<Omit<SelectOption, 'group'>>;
 }

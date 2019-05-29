@@ -44,8 +44,8 @@ const renderGroup = (options: Array<SelectOption>, classes: any) => {
   const groups = linq
     .from(options)
     .groupBy(i => i.group || ' ')
-    .select<SelectGroupOption>(g => ({ title: g.key(), options: g.toArray() }))
-    .orderBy(i => i.title)
+    .select<SelectGroupOption>(g => ({ label: g.key(), options: g.toArray() }))
+    .orderBy(i => i.label)
     .toArray();
 
   return groups.map((g, i) => [
@@ -55,7 +55,7 @@ const renderGroup = (options: Array<SelectOption>, classes: any) => {
       variant="caption"
       color="textSecondary"
     >
-      {g.title}
+      {g.label}
     </Typography>,
     ...renderOptions(g.options, classes, `g_${i}`)
   ]);
@@ -71,7 +71,7 @@ const renderOptions = (
       <hr key={`${prefixKey}_op_${i}`} className={classes.hr} />
     ) : (
       <MenuItem key={`${prefixKey}_op_${i}`} value={o.value as any}>
-        {o.text}
+        {o.label}
       </MenuItem>
     )
   );
