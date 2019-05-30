@@ -200,6 +200,8 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   dateFormat?: string;
   /** The options for select field */
   options?: Array<SelectOption>;
+  /** Apply multi Selection to Select Control */
+  multiSelection?: boolean;
 }
 
 export interface SelectOption {

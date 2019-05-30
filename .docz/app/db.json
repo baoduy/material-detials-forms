@@ -17,10 +17,6 @@
   },
   "props": [
     {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
-    },
-    {
       "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
@@ -109,6 +105,10 @@
           }
         }
       ]
+    },
+    {
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
     }
   ],
   "entries": [
@@ -274,6 +274,35 @@
       }
     },
     {
+      "key": "src/components/EditForm/EditView.mdx",
+      "value": {
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/components/Labels/Title.mdx",
       "value": {
         "name": "Title Component",
@@ -352,35 +381,6 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditView.mdx",
-      "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default style"
-          }
-        ]
-      }
-    },
-    {
       "key": "src/components/EditForm/EditField/DateTimeField.mdx",
       "value": {
         "name": "Date Time Picker",
@@ -420,20 +420,20 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditField/TextField.mdx",
+      "key": "src/components/EditForm/EditField/SelectField.mdx",
       "value": {
-        "name": "Text Field",
-        "id": "fb27dce2497c77b66f76a9d9f238ea8a",
-        "filepath": "src/components/EditForm/EditField/TextField.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/TextField.mdx",
-        "slug": "src-components-edit-form-edit-field-text-field",
-        "route": "/src-components-edit-form-edit-field-text-field",
+        "name": "Select Field",
+        "id": "0edcc33b7a0827c04f867eef243e9f44",
+        "filepath": "src/components/EditForm/EditField/SelectField.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/SelectField.mdx",
+        "slug": "src-components-edit-form-edit-field-select-field",
+        "route": "/src-components-edit-form-edit-field-select-field",
         "menu": "",
         "headings": [
           {
-            "slug": "text-field",
+            "slug": "select-field",
             "depth": 1,
-            "value": "Text Field"
+            "value": "Select Field"
           },
           {
             "slug": "standard-fields",
@@ -459,20 +459,20 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditField/SelectField.mdx",
+      "key": "src/components/EditForm/EditField/TextField.mdx",
       "value": {
-        "name": "Select Field",
-        "id": "0edcc33b7a0827c04f867eef243e9f44",
-        "filepath": "src/components/EditForm/EditField/SelectField.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/SelectField.mdx",
-        "slug": "src-components-edit-form-edit-field-select-field",
-        "route": "/src-components-edit-form-edit-field-select-field",
+        "name": "Text Field",
+        "id": "fb27dce2497c77b66f76a9d9f238ea8a",
+        "filepath": "src/components/EditForm/EditField/TextField.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/TextField.mdx",
+        "slug": "src-components-edit-form-edit-field-text-field",
+        "route": "/src-components-edit-form-edit-field-text-field",
         "menu": "",
         "headings": [
           {
-            "slug": "select-field",
+            "slug": "text-field",
             "depth": 1,
-            "value": "Select Field"
+            "value": "Text Field"
           },
           {
             "slug": "standard-fields",
