@@ -1,0 +1,250 @@
+---
+name: React Select Field
+---
+
+import { Playground, Props } from 'docz';
+import ReactSelectField from './index';
+import Button from '@material-ui/core/Button';
+
+# Select Field
+
+Below is the list of build-in Selection Fileds in this library.
+
+<Props of={ReactSelectField} />
+
+## Standard Fields
+
+<Playground>
+  <form>
+    <div style={{ margin: 10 }}>
+      <ReactSelectField
+        label="Select Field"
+        type="select"
+        required
+        options={[
+          {
+            label: 'Option 1',
+            value: 1
+          },
+          {
+            label: 'Option 2',
+            value: 2
+          },
+          { divide: true },
+          {
+            label: 'Option 3',
+            value: 3
+          }
+        ]}
+      />
+    </div>
+    <div style={{ margin: 10 }}>
+      <ReactSelectField
+        label="Select Field"
+        type="select"
+        options={[
+          {
+            label: 'Option 1',
+            value: 1,
+            group: 'Group 1'
+          },
+          {
+            label: 'Option 2',
+            value: 2,
+            group: 'Group 1'
+          },
+          { divide: true, group: 'Group 1' },
+          {
+            label: 'Option 3',
+            value: 3,
+            group: 'Group 2'
+          },
+          {
+            label: 'Option 4',
+            value: 4,
+            group: 'Group 2'
+          }
+        ]}
+      />
+    </div>
+    <div style={{ margin: 10 }}>
+      <Button color="primary" variant="contained" type="submit">
+        Submit
+      </Button>
+    </div>
+  </form>
+</Playground>
+
+## Outline Fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <ReactSelectField
+      label="Select Field"
+      variant="outlined"
+      type="select"
+      required
+      options={[
+        {
+          label: 'Option 1',
+          value: 1
+        },
+        {
+          label: 'Option 2',
+          value: 2
+        },
+        { divide: true },
+        {
+          label: 'Option 3',
+          value: 3
+        }
+      ]}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <ReactSelectField
+      label="Select Field"
+      variant="outlined"
+      type="select"
+      options={[
+        {
+          label: 'Option 1',
+          value: 1,
+          group: 'Group 1'
+        },
+        {
+          label: 'Option 2',
+          value: 2,
+          group: 'Group 1'
+        },
+        { divide: true, group: 'Group 1' },
+        {
+          label: 'Option 3',
+          value: 3,
+          group: 'Group 2'
+        },
+        {
+          label: 'Option 4',
+          value: 4,
+          group: 'Group 2'
+        }
+      ]}
+    />
+  </div>
+</Playground>
+
+## Filled Fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <ReactSelectField
+      label="Select Field"
+      variant="filled"
+      type="select"
+      required
+      options={[
+        {
+          label: 'Option 1',
+          value: 1
+        },
+        {
+          label: 'Option 2',
+          value: 2
+        },
+        { divide: true },
+        {
+          label: 'Option 3',
+          value: 3
+        }
+      ]}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <ReactSelectField
+      label="Select Field"
+      variant="filled"
+      type="select"
+      options={[
+        {
+          label: 'Option 1',
+          value: 1,
+          group: 'Group 1'
+        },
+        {
+          label: 'Option 2',
+          value: 2,
+          group: 'Group 1'
+        },
+        { divide: true, group: 'Group 1' },
+        {
+          label: 'Option 3',
+          value: 3,
+          group: 'Group 2'
+        },
+        {
+          label: 'Option 4',
+          value: 4,
+          group: 'Group 2'
+        }
+      ]}
+    />
+  </div>
+</Playground>
+
+## Labeled Fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <ReactSelectField
+      label="Select Field"
+      variant="labeled"
+      type="select"
+      required
+      options={[
+        {
+          label: 'Option 1',
+          value: 1
+        },
+        {
+          label: 'Option 2',
+          value: 2
+        },
+        { divide: true },
+        {
+          label: 'Option 3',
+          value: 3
+        }
+      ]}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <ReactSelectField
+      label="Select Field"
+      variant="labeled"
+      type="select"
+      options={[
+        {
+          label: 'Option 1',
+          value: 1,
+          group: 'Group 1'
+        },
+        {
+          label: 'Option 2',
+          value: 2,
+          group: 'Group 1'
+        },
+        { divide: true, group: 'Group 1' },
+        {
+          label: 'Option 3',
+          value: 3,
+          group: 'Group 2'
+        },
+        {
+          label: 'Option 4',
+          value: 4,
+          group: 'Group 2'
+        }
+      ]}
+    />
+  </div>
+</Playground>

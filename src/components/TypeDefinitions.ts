@@ -1,5 +1,6 @@
 import { ReactChild, ReactNode } from 'react';
 
+import { FieldProps } from 'formik/dist/Field';
 import { GridSize } from '@material-ui/core/Grid';
 import { Omit } from '@material-ui/core';
 
@@ -51,8 +52,9 @@ export interface SectionDetailsBodyProps<TData>
 }
 
 export interface MultiDetailsBodyProps<TData>
-  extends SectionDetailsBodyProps<TData> {
+  extends Omit<SectionDetailsBodyProps<TData>, 'fields'> {
   variant?: 'table' | 'grid';
+  fields: Array<SectionFieldOption<TData>> | Array<FieldOption<TData>>;
 }
 
 /** The variant of LabelField */
@@ -94,12 +96,35 @@ export interface DetailsFieldProps extends AsComponent<DetailsFieldProps> {
   gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
 }
 
+/** Input Type if not provided the input type will be decided automatically based on value type
+ * https://www.w3schools.com/tags/att_input_type.asp
+ */
+export type EditFieldTypes =
+  | 'url'
+  | 'password'
+  | 'image'
+  | 'file'
+  | 'email'
+  | 'color'
+  | 'radio'
+  | 'checkbox'
+  | 'date'
+  | 'datetime'
+  | 'time'
+  | 'week'
+  | 'number'
+  | 'text'
+  | 'select';
+
+type EditFieldVariants = 'standard' | 'filled' | 'outlined' | 'labeled';
+
 export interface EditFieldProps extends AsComponent<DetailsFieldProps> {
   name: string;
   label: string;
   value: string | number;
-  /** Input Type if not provided the input type will be decided automatically based on value type */
-  type?: string;
+  variant?: EditFieldVariants;
+  /** Input Type if not provided the input type will be decided automatically based on value type   */
+  type?: EditFieldTypes;
   /** This only apply to the GridBody */
   gridSize: { sm?: GridSize; md?: GridSize; xs?: GridSize };
 }
@@ -145,4 +170,46 @@ export interface DetailsViewProps<TData>
 export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
   header?: DetailsHeaderProps | string;
   footer?: DetailsFooterProps;
+}
+
+export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
+  autoFocus?: boolean;
+  defaultValue?: unknown;
+  disabled?: boolean;
+  error?: boolean;
+  fullWidth?: boolean;
+  helperText?: React.ReactNode;
+  inputRef?: React.Ref<any> | React.RefObject<any>;
+  label?: React.ReactNode;
+  multiline?: boolean;
+  name?: string;
+  onChange?: React.ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >;
+  placeholder?: string;
+  required?: boolean;
+  rows?: string | number;
+  rowsMax?: string | number;
+  value?: unknown;
+  variant?: EditFieldVariants;
+  /** Input Type if not provided the input type will be decided automatically based on value type   */
+  type?: EditFieldTypes;
+  /** only apply for labeled field */
+  labelAlign?: CellLabelAlign;
+  /** Using for DateTime picker only */
+  dateFormat?: string;
+  /** The options for select field */
+  options?: Array<SelectOption>;
+}
+
+export interface SelectOption {
+  label: ReactNode;
+  value: unknown;
+  group?: string;
+  divide?: boolean;
+}
+
+export interface SelectGroupOption {
+  label: string;
+  options: Array<Omit<SelectOption, 'group'>>;
 }

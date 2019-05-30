@@ -1,4 +1,4 @@
-import { DetailsFormProps, DetailsHeaderProps } from '../TypeDefinitions';
+import { DetailsHeaderProps, SingleDetailsViewProps } from '../TypeDefinitions';
 import {
   Field,
   FieldProps,
@@ -21,7 +21,7 @@ function DetailsForm<TData>({
   footer,
   data,
   ...rest
-}: DetailsFormProps<TData>) {
+}: SingleDetailsViewProps<TData>) {
   const content = React.useMemo(() => {
     const finalHeader: DetailsHeaderProps | undefined = header
       ? typeof header === 'string'
@@ -43,14 +43,17 @@ function DetailsForm<TData>({
     );
   }, [header, footer, data]);
 
-  const Render = (formikBag: FormikProps<TData>) =>
-    flat ? (
-      content
-    ) : (
-      <Card>
-        <CardContent>{content}</CardContent>
-      </Card>
-    );
+  const Render = useCallback(
+    (formikBag: FormikProps<TData>) =>
+      flat ? (
+        content
+      ) : (
+        <Card>
+          <CardContent>{content}</CardContent>
+        </Card>
+      ),
+    [content, flat]
+  );
 
   const onSubmit = useCallback(
     (values: TData, actions: FormikActions<TData>) => {

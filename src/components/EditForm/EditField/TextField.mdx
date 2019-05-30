@@ -1,0 +1,162 @@
+---
+name: Text Field
+---
+
+import { Playground, Props } from 'docz';
+import EditField from './FieldWrapper';
+import Button from '@material-ui/core/Button';
+
+# Text Field
+
+Below is the list of build-in Edit Fileds in this which supported by TextField.
+
+<Props of={EditField} />
+
+## Standard Fields
+
+<Playground>
+  <form>
+    <div style={{ margin: 10 }}>
+      <EditField value="Basic Text Field" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField placeholder="Text Field with Placeholder" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField
+        label="Name"
+        placeholder="Text Field with Placeholder and Label"
+      />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField label="Multi-line field" multiline rows={3} rowsMax={10} />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField label="Password" type="password" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField label="Required Filed" required />
+    </div>
+    <div style={{ margin: 10 }}>
+      <EditField label="Email" type="email" />
+    </div>
+    <div style={{ margin: 10 }}>
+      <Button color="primary" variant="contained" type="submit">
+        Submit
+      </Button>
+    </div>
+  </form>
+</Playground>
+
+## Outline Fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <EditField variant="outlined" value="Basic Text Field" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField variant="outlined" placeholder="Text Field with Placeholder" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      label="Name"
+      variant="outlined"
+      placeholder="Text Field with Placeholder and Label"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      label="Multi-line field"
+      variant="outlined"
+      multiline
+      rows={3}
+      rowsMax={10}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField label="Password" variant="outlined" type="password" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField label="Required Filed" variant="outlined" required />
+  </div>
+</Playground>
+
+## Filled Fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <EditField variant="filled" value="Basic Text Field" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField variant="filled" placeholder="Text Field with Placeholder" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      label="Name"
+      variant="filled"
+      placeholder="Text Field with Placeholder and Label"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      label="Multi-line field"
+      variant="filled"
+      multiline
+      rows={3}
+      rowsMax={10}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField label="Password" variant="filled" type="password" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField label="Required Filed" variant="filled" required />
+  </div>
+</Playground>
+
+## Labeled Fields
+
+<Playground>
+  <div style={{ margin: 10 }}>
+    <EditField variant="labeled" value="Basic Text Field" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField variant="labeled" placeholder="Text Field with Placeholder" />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      name="labeledEditField1"
+      label="Name"
+      variant="labeled"
+      placeholder="Text Field with Placeholder and Label"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      name="labeledEditField2"
+      label="Multi-line field"
+      variant="labeled"
+      multiline
+      rows={3}
+      rowsMax={10}
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      disabled
+      name="labeledEditField3"
+      label="Password"
+      variant="labeled"
+      type="password"
+    />
+  </div>
+  <div style={{ margin: 10 }}>
+    <EditField
+      required
+      name="labeledEditField4"
+      label="Required Filed"
+      variant="labeled"
+      required
+    />
+  </div>
+</Playground>

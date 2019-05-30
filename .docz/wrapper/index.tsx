@@ -1,11 +1,14 @@
 import '../asset/style.less';
 
+import { MuiFormProvider } from '../../src';
 import React from 'react';
-import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({});
+const theme = createMuiTheme({
+  typography: { fontSize: 12 }
+  //overrides: { MuiOutlinedInput: { input: { padding: '12px' } } }
+});
 
 export default ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  <MuiFormProvider theme={theme}>{children}</MuiFormProvider>
 );
