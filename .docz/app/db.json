@@ -274,69 +274,6 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditView.mdx",
-      "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default style"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/Labels/Label.mdx",
-      "value": {
-        "name": "Label Field",
-        "id": "a1efc69c08b450fc20bab14328403ad9",
-        "filepath": "src/components/Labels/Label.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Label.mdx",
-        "slug": "src-components-labels-label",
-        "route": "/src-components-labels-label",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "label-field",
-            "depth": 1,
-            "value": "Label Field"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          },
-          {
-            "slug": "1-with-icon",
-            "depth": 2,
-            "value": "1. With Icon"
-          },
-          {
-            "slug": "2-without-icon",
-            "depth": 2,
-            "value": "2. Without Icon"
-          }
-        ]
-      }
-    },
-    {
       "key": "src/components/Labels/Title.mdx",
       "value": {
         "name": "Title Component",
@@ -376,6 +313,69 @@
             "slug": "4-with-tooltip",
             "depth": 2,
             "value": "4. With Tooltip"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Labels/Label.mdx",
+      "value": {
+        "name": "Label Field",
+        "id": "a1efc69c08b450fc20bab14328403ad9",
+        "filepath": "src/components/Labels/Label.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Label.mdx",
+        "slug": "src-components-labels-label",
+        "route": "/src-components-labels-label",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "label-field",
+            "depth": 1,
+            "value": "Label Field"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          },
+          {
+            "slug": "1-with-icon",
+            "depth": 2,
+            "value": "1. With Icon"
+          },
+          {
+            "slug": "2-without-icon",
+            "depth": 2,
+            "value": "2. Without Icon"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditView.mdx",
+      "value": {
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
           }
         ]
       }

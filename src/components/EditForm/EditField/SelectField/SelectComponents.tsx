@@ -21,23 +21,34 @@ type InputComponentProps = Pick<BaseTextFieldProps, 'inputRef'> &
   HTMLAttributes<HTMLDivElement>;
 
 export default {
-  Control: (props: ControlProps<SelectOption>) => (
-    <TextField
-      fullWidth
-      InputProps={{
-        inputComponent: ({ inputRef, ...props }: InputComponentProps) => (
-          <div ref={inputRef} {...props} />
-        ),
-        inputProps: {
-          className: props.selectProps.classes.input,
-          inputRef: props.innerRef,
-          children: props.children,
-          ...props.innerProps
-        }
-      }}
-      {...props.selectProps.TextFieldProps}
-    />
-  ),
+  Control: ({
+    selectProps,
+    innerRef,
+    children,
+    innerProps,
+    ...others
+  }: ControlProps<SelectOption>) => {
+    return (
+      <TextField
+        fullWidth
+        InputProps={{
+          inputComponent: ({ inputRef, ...rest }: InputComponentProps) => (
+            <div ref={inputRef} {...rest} />
+          ),
+          inputProps: {
+            className: clsx({
+              [selectProps.classes.input]: true,
+              [selectProps.classes[selectProps.TextFieldProps.variant]]: true
+            }),
+            inputRef: innerRef,
+            children,
+            ...innerProps
+          }
+        }}
+        {...selectProps.TextFieldProps}
+      />
+    );
+  },
   Menu: (props: MenuProps<SelectOption>) => (
     <Paper
       square

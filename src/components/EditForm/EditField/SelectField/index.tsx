@@ -18,7 +18,6 @@ import { ValueType } from 'react-select/lib/types';
 import { emphasize } from '@material-ui/core/styles/colorManipulator';
 
 const suggestions: SelectOption[] = [
-  {},
   { label: 'Afghanistan' },
   { label: 'Aland Islands' },
   { label: 'Albania' },
@@ -60,14 +59,23 @@ const suggestions: SelectOption[] = [
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
-      height: 250
-    },
     input: {
       display: 'flex',
       padding: 0,
-      height: 'auto'
+      height: 'auto',
+      cursor: 'point'
+    },
+    outlined: {
+      marginTop: 5,
+      marginLeft: 12,
+      marginRight: 5,
+      marginBottom: 5
+    },
+    filled: {
+      marginTop: 20,
+      marginLeft: 12,
+      marginRight: 5,
+      marginBottom: 0
     },
     valueContainer: {
       display: 'flex',
@@ -91,23 +99,21 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(1, 2)
     },
     singleValue: {
-      fontSize: 16
+      //fontSize: 16
     },
     placeholder: {
-      position: 'absolute',
-      left: 2,
-      bottom: 6,
-      fontSize: 16
+      position: 'absolute'
+      //fontSize: 16
     },
     paper: {
       position: 'absolute',
-      zIndex: 1,
+      zIndex: 10000,
       marginTop: theme.spacing(1),
       left: 0,
       right: 0
     },
     divider: {
-      height: theme.spacing(2)
+      height: theme.spacing(1)
     }
   })
 );
@@ -123,6 +129,7 @@ function SelectField({
   placeholder,
   field,
   form,
+  variant,
   ...rest
 }: SelectFieldProps) {
   const classes = useStyles();
@@ -151,36 +158,22 @@ function SelectField({
   return (
     <NoSsr>
       <Select
+        isSearchable
+        isClearable
         classes={classes}
         styles={selectStyles}
         options={suggestions}
         components={Components}
         value={single}
         TextFieldProps={{
-          label: label,
+          label: (variant as any) === 'labeled' ? undefined : label,
+          variant: (variant as any) === 'labeled' ? 'outlined' : variant,
           InputLabelProps: {
             shrink: true
           }
         }}
         onChange={handleChangeSingle}
         placeholder={placeholder}
-      />
-      <div className={classes.divider} />
-      <Select
-        classes={classes}
-        styles={selectStyles}
-        TextFieldProps={{
-          label: 'Label',
-          InputLabelProps: {
-            shrink: true
-          }
-        }}
-        options={suggestions}
-        components={Components}
-        value={multi}
-        onChange={handleChangeMulti}
-        placeholder={placeholder}
-        isMulti
       />
     </NoSsr>
   );
