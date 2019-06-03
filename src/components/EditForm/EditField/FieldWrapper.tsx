@@ -7,7 +7,7 @@ import DateField from './DateTimeField';
 import Grid from '@material-ui/core/Grid/Grid';
 import InputLabel from '@material-ui/core/InputLabel/InputLabel';
 import React from 'react';
-import SelectField from './SelectField/MaterialSelectField';
+import SelectField from './SelectField/index';
 import TextField from './TextField';
 import classNames from 'classnames';
 import makeStyles from '@material-ui/styles/makeStyles/makeStyles';
