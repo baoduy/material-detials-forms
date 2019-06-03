@@ -4,6 +4,7 @@ import {
 } from '@src/components/TypeDefinitions';
 
 import DateField from './DateTimeField';
+import { Field } from 'formik';
 import Grid from '@material-ui/core/Grid/Grid';
 import InputLabel from '@material-ui/core/InputLabel/InputLabel';
 import React from 'react';
@@ -48,7 +49,7 @@ function FieldWrapper(props: FieldWrapperProps) {
     ...rest
   } = props;
   const classes = useStyles();
-  const Field = getFieldByType(type as EditFieldTypes);
+  const FieldComponent = getFieldByType(type as EditFieldTypes);
 
   if (variant === 'labeled') {
     return (
@@ -77,6 +78,7 @@ function FieldWrapper(props: FieldWrapperProps) {
             {...rest}
             type={type as any}
             variant="outlined"
+            component={FieldComponent}
           />
         </Grid>
       </Grid>
@@ -92,6 +94,7 @@ function FieldWrapper(props: FieldWrapperProps) {
         label={label}
         type={type as any}
         variant={variant as any}
+        component={FieldComponent}
       />
     );
 }

@@ -151,6 +151,7 @@ function SelectField({
     <NoSsr>
       <Select
         {...rest}
+        {...field}
         isClearable
         isSearchable
         id={name}

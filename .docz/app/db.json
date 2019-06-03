@@ -137,35 +137,6 @@
       }
     },
     {
-      "key": "src/components/EditForm/EditView.mdx",
-      "value": {
-        "name": "Edit Form",
-        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
-        "filepath": "src/components/EditForm/EditView.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
-        "slug": "src-components-edit-form-edit-view",
-        "route": "/src-components-edit-form-edit-view",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "details-view",
-            "depth": 1,
-            "value": "Details View"
-          },
-          {
-            "slug": "usage",
-            "depth": 2,
-            "value": "Usage"
-          },
-          {
-            "slug": "default-style",
-            "depth": 3,
-            "value": "Default style"
-          }
-        ]
-      }
-    },
-    {
       "key": "src/components/DetailsView/DetailsView.mdx",
       "value": {
         "name": "1. Details View",
@@ -298,6 +269,35 @@
             "slug": "custom-alternate-row-style",
             "depth": 3,
             "value": "Custom Alternate Row Style"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/EditForm/EditView.mdx",
+      "value": {
+        "name": "Edit Form",
+        "id": "a40558d1a415c07b9b2e19baf1e8ebd8",
+        "filepath": "src/components/EditForm/EditView.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditView.mdx",
+        "slug": "src-components-edit-form-edit-view",
+        "route": "/src-components-edit-form-edit-view",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "details-view",
+            "depth": 1,
+            "value": "Details View"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "default-style",
+            "depth": 3,
+            "value": "Default style"
           }
         ]
       }
@@ -473,45 +473,6 @@
             "slug": "text-field",
             "depth": 1,
             "value": "Text Field"
-          },
-          {
-            "slug": "standard-fields",
-            "depth": 2,
-            "value": "Standard Fields"
-          },
-          {
-            "slug": "outline-fields",
-            "depth": 2,
-            "value": "Outline Fields"
-          },
-          {
-            "slug": "filled-fields",
-            "depth": 2,
-            "value": "Filled Fields"
-          },
-          {
-            "slug": "labeled-fields",
-            "depth": 2,
-            "value": "Labeled Fields"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/EditForm/EditField/SelectField/ReactSelectField.mdx",
-      "value": {
-        "name": "React Select Field",
-        "id": "576867bc1ef05b7d7c0f4d1917cc8687",
-        "filepath": "src/components/EditForm/EditField/SelectField/ReactSelectField.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/EditForm/EditField/SelectField/ReactSelectField.mdx",
-        "slug": "src-components-edit-form-edit-field-select-field-react-select-field",
-        "route": "/src-components-edit-form-edit-field-select-field-react-select-field",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "select-field",
-            "depth": 1,
-            "value": "Select Field"
           },
           {
             "slug": "standard-fields",

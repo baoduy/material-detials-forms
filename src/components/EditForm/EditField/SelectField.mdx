@@ -5,6 +5,7 @@ name: Select Field
 import { Playground, Props } from 'docz';
 import EditField from './FieldWrapper';
 import Button from '@material-ui/core/Button';
+import { Formik, Form } from 'formik';
 
 # Select Field
 
@@ -15,64 +16,76 @@ Below is the list of build-in Selection Fileds in this library.
 ## Standard Fields
 
 <Playground>
-  <form>
-    <div style={{ margin: 10 }}>
-      <EditField
-        label="Select Field"
-        type="select"
-        required
-        options={[
-          {
-            label: 'Option 1',
-            value: 1
-          },
-          {
-            label: 'Option 2',
-            value: 2
-          },
-          { divide: true },
-          {
-            label: 'Option 3',
-            value: 3
-          }
-        ]}
-      />
-    </div>
-    <div style={{ margin: 10 }}>
-      <EditField
-        label="Select Field"
-        type="select"
-        options={[
-          {
-            label: 'Option 1',
-            value: 1,
-            group: 'Group 1'
-          },
-          {
-            label: 'Option 2',
-            value: 2,
-            group: 'Group 1'
-          },
-          { divide: true, group: 'Group 1' },
-          {
-            label: 'Option 3',
-            value: 3,
-            group: 'Group 2'
-          },
-          {
-            label: 'Option 4',
-            value: 4,
-            group: 'Group 2'
-          }
-        ]}
-      />
-    </div>
-    <div style={{ margin: 10 }}>
-      <Button color="primary" variant="contained" type="submit">
-        Submit
-      </Button>
-    </div>
-  </form>
+   <Formik
+      initialValues={{}}
+      onSubmit={(values, actions) => {
+          alert(JSON.stringify(values, null, 2));
+          actions.setSubmitting(false);
+      }}
+      render={() => (
+        <Form>
+          <div style={{ margin: 10 }}>
+          <EditField
+            name="option1"
+            label="Select Field"
+            type="select"
+            required
+            options={[
+              {
+                label: 'Option 1',
+                value: 1
+              },
+              {
+                label: 'Option 2',
+                value: 2
+              },
+              { divide: true },
+              {
+                label: 'Option 3',
+                value: 3
+              }
+            ]}
+          />
+          </div>
+          <div style={{ margin: 10 }}>
+            <EditField
+              label="Select Field"
+              type="select"
+              name="option2"
+              options={[
+                {
+                  label: 'Option 1',
+                  value: 1,
+                  group: 'Group 1'
+                },
+                {
+                  label: 'Option 2',
+                  value: 2,
+                  group: 'Group 1'
+                },
+                { divide: true, group: 'Group 1' },
+                {
+                  label: 'Option 3',
+                  value: 3,
+                  group: 'Group 2'
+                },
+                {
+                  label: 'Option 4',
+                  value: 4,
+                  group: 'Group 2'
+                }
+              ]}
+            />
+          </div>
+          <div style={{ margin: 10 }}>
+            <Button color="primary" variant="contained" type="submit">
+              Submit
+            </Button>
+          </div>
+        </Form>
+      )}
+    />
+
 </Playground>
 
 ## Outline Fields
