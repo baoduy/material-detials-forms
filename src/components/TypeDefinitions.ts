@@ -174,7 +174,7 @@ export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
 
 export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   autoFocus?: boolean;
-  defaultValue?: unknown;
+  defaultValue?: any;
   disabled?: boolean;
   error?: boolean;
   fullWidth?: boolean;
@@ -190,7 +190,7 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   required?: boolean;
   rows?: string | number;
   rowsMax?: string | number;
-  value?: unknown;
+  value?: any;
   variant?: EditFieldVariants;
   /** Input Type if not provided the input type will be decided automatically based on value type   */
   type?: EditFieldTypes;
@@ -206,7 +206,7 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
 
 export interface SelectOption {
   label: ReactNode;
-  value: unknown;
+  value: any;
   group?: string;
   divide?: boolean;
 }
