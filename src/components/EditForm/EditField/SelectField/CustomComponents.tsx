@@ -44,24 +44,26 @@ const Control = ({
   innerRef,
   children,
   innerProps
-}: ControlProps<SelectOption>) => (
-  <TextField
-    fullWidth
-    InputProps={{
-      inputComponent,
-      inputProps: {
-        className: clsx({
-          [selectProps.classes.input]: true,
-          [selectProps.classes[selectProps.TextFieldProps.variant]]: true
-        }),
-        inputRef: innerRef,
-        children: children,
-        ...innerProps
-      }
-    }}
-    {...selectProps.TextFieldProps}
-  />
-);
+}: ControlProps<SelectOption>) => {
+  return (
+    <TextField
+      {...selectProps.TextFieldProps}
+      fullWidth
+      InputProps={{
+        inputComponent,
+        inputProps: {
+          className: clsx({
+            [selectProps.classes.input]: true,
+            [selectProps.classes[selectProps.TextFieldProps.variant]]: true
+          }),
+          inputRef: innerRef,
+          children: children,
+          ...innerProps
+        }
+      }}
+    />
+  );
+};
 
 const Option = ({
   innerRef,
@@ -128,6 +130,7 @@ const MultiValue = ({
   const index = options.findIndex(o => o.value === children) % 3;
   return (
     <Chip
+      size="small"
       color={index === 0 ? 'primary' : index === 1 ? 'secondary' : 'default'}
       tabIndex={-1}
       label={children}

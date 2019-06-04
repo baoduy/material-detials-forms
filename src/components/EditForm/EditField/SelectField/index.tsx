@@ -1,9 +1,9 @@
+import { ActionMeta, GroupType, ValueType } from 'react-select/lib/types';
 import {
   FieldWrapperProps,
-  SelectGroupOption,
   SelectOption
 } from '@src/components/TypeDefinitions';
-import React, { CSSProperties, useMemo } from 'react';
+import React, { CSSProperties, useCallback, useMemo } from 'react';
 import {
   Theme,
   createStyles,
@@ -15,7 +15,6 @@ import NoSsr from '@material-ui/core/NoSsr';
 import { Omit } from '@material-ui/types';
 import Select from 'react-select';
 import { StylesConfig } from 'react-select/lib/styles';
-import { ValueType } from 'react-select/lib/types';
 import components from './CustomComponents';
 import { emphasize } from '@material-ui/core/styles/colorManipulator';
 import linq from 'linq';
@@ -51,8 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
       overflow: 'hidden'
     },
     chip: {
-      margin: theme.spacing(0.5, 0.25),
-      height: 25
+      margin: theme.spacing(0.5, 0.25)
     },
     chipFocused: {
       backgroundColor: emphasize(
@@ -91,14 +89,14 @@ type VariantType = 'standard' | 'filled' | 'outlined';
 
 const getGroupOptions = (
   options: Array<SelectOption>
-): Array<SelectOption> | Array<SelectGroupOption> => {
+): GroupType<SelectOption>[] | SelectOption[] => {
   const query = linq.from(options);
   const hasGroup = query.any(i => i.group !== undefined);
   return hasGroup
     ? query
         .groupBy(i => i.group || '')
         .orderBy(g => g.key())
-        .select(g => ({
+        .select<GroupType<SelectOption>>(g => ({
           label: g.key(),
           options: g.toArray()
         }))
@@ -116,6 +114,7 @@ function SelectField({
   field,
   form,
   name,
+  value,
   variant,
   required,
   multiSelection,
@@ -124,11 +123,14 @@ function SelectField({
 }: SelectFieldProps) {
   const classes = useStyles();
   const theme = useTheme();
-  const [single, setSingle] = React.useState<ValueType<SelectOption>>(null);
 
-  function handleChangeSingle(value: ValueType<SelectOption>) {
-    setSingle(value);
-  }
+  const handleChange = useCallback(
+    (value: ValueType<SelectOption>, _action: ActionMeta) => {
+      if (field.onChange)
+        field.onChange({ target: { name: field.name, value } });
+    },
+    []
+  );
 
   const selectStyles = useMemo(
     (): StylesConfig => ({
@@ -152,26 +154,22 @@ function SelectField({
       <Select
         {...rest}
         {...field}
+        onChange={handleChange}
         isClearable
         isSearchable
-        id={name}
-        name={name}
         classes={classes}
         styles={selectStyles}
         options={getGroupOptions(options || [])}
         components={components}
-        value={single}
         isMulti={multiSelection}
         closeMenuOnSelect={!multiSelection}
-        onChange={handleChangeSingle}
         placeholder={placeholder || ''}
         TextFieldProps={{
           label: (variant as any) === 'labeled' ? undefined : label,
           variant: (variant as any) === 'labeled' ? 'outlined' : variant,
           required,
-
           InputLabelProps: {
-            shrink: placeholder || single ? true : undefined
+            shrink: placeholder || field.value ? true : undefined
           }
         }}
       />

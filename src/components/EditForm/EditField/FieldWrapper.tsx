@@ -73,6 +73,7 @@ function FieldWrapper(props: FieldWrapperProps) {
           <Field
             fullWidth
             name={name}
+            id={name}
             disabled={disabled}
             required={required}
             {...rest}
@@ -88,6 +89,7 @@ function FieldWrapper(props: FieldWrapperProps) {
       <Field
         fullWidth
         name={name}
+        id={name}
         disabled={disabled}
         required={required}
         {...rest}
