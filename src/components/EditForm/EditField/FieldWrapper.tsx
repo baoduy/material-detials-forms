@@ -4,6 +4,7 @@ import {
 } from '@src/components/TypeDefinitions';
 
 import DateField from './DateTimeField';
+import ErrorField from '../ErrorField';
 import { Field } from 'formik';
 import Grid from '@material-ui/core/Grid/Grid';
 import InputLabel from '@material-ui/core/InputLabel/InputLabel';
@@ -81,23 +82,27 @@ function FieldWrapper(props: FieldWrapperProps) {
             variant="outlined"
             component={FieldComponent}
           />
+          <ErrorField name={name} />
         </Grid>
       </Grid>
     );
   } else
     return (
-      <Field
-        fullWidth
-        name={name}
-        id={name}
-        disabled={disabled}
-        required={required}
-        {...rest}
-        label={label}
-        type={type as any}
-        variant={variant as any}
-        component={FieldComponent}
-      />
+      <>
+        <Field
+          fullWidth
+          name={name}
+          id={name}
+          disabled={disabled}
+          required={required}
+          {...rest}
+          label={label}
+          type={type as any}
+          variant={variant as any}
+          component={FieldComponent}
+        />
+        <ErrorField name={name} />
+      </>
     );
 }
 
