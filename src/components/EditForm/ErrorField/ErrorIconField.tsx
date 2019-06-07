@@ -1,12 +1,8 @@
 import { FormikContext, connect, getIn } from 'formik';
 import { InputLabel, Typography } from '@material-ui/core';
 
+import { ErrorFieldProps } from '@src/components/TypeDefinitions';
 import React from 'react';
-
-/** The Error field will display the message for a input Field automatically based on the Field name */
-export interface ErrorFieldProps {
-  name?: string;
-}
 
 export default connect<ErrorFieldProps>(
   ({

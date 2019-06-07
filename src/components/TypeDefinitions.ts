@@ -215,3 +215,8 @@ export interface SelectGroupOption {
   label: string;
   options: Array<Omit<SelectOption, 'group'>>;
 }
+
+/** The Error field will display the message for a input Field automatically based on the Field name */
+export interface ErrorFieldProps {
+  name?: string;
+}
