@@ -218,5 +218,6 @@ export interface SelectGroupOption {
 
 /** The Error field will display the message for a input Field automatically based on the Field name */
 export interface ErrorFieldProps {
+  className?: string;
   name?: string;
 }
