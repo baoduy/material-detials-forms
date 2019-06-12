@@ -11,7 +11,7 @@
     "update": "ncu -u && npm install",
     "update-g": "ncu -u -a -g",
     "start": "docz dev",
-    "build": "docz build"
+    "build-doc": "docz build"
   },
   "repository": {
     "type": "git",

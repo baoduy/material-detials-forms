@@ -1,8 +1,9 @@
+import { ActionMeta, GroupType, ValueType } from 'react-select/lib/types';
 import {
   FieldWrapperProps,
   SelectOption
 } from '@src/components/TypeDefinitions';
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useCallback, useMemo } from 'react';
 import {
   Theme,
   createStyles,
@@ -10,60 +11,24 @@ import {
   useTheme
 } from '@material-ui/core/styles';
 
-import Components from './SelectComponents';
 import NoSsr from '@material-ui/core/NoSsr';
-import { Omit } from '@material-ui/core';
+import { Omit } from '@material-ui/types';
 import Select from 'react-select';
-import { ValueType } from 'react-select/lib/types';
+import { StylesConfig } from 'react-select/lib/styles';
+import components from './CustomComponents';
 import { emphasize } from '@material-ui/core/styles/colorManipulator';
-
-const suggestions: SelectOption[] = [
-  { label: 'Afghanistan' },
-  { label: 'Aland Islands' },
-  { label: 'Albania' },
-  { label: 'Algeria' },
-  { label: 'American Samoa' },
-  { label: 'Andorra' },
-  { label: 'Angola' },
-  { label: 'Anguilla' },
-  { label: 'Antarctica' },
-  { label: 'Antigua and Barbuda' },
-  { label: 'Argentina' },
-  { label: 'Armenia' },
-  { label: 'Aruba' },
-  { label: 'Australia' },
-  { label: 'Austria' },
-  { label: 'Azerbaijan' },
-  { label: 'Bahamas' },
-  { label: 'Bahrain' },
-  { label: 'Bangladesh' },
-  { label: 'Barbados' },
-  { label: 'Belarus' },
-  { label: 'Belgium' },
-  { label: 'Belize' },
-  { label: 'Benin' },
-  { label: 'Bermuda' },
-  { label: 'Bhutan' },
-  { label: 'Bolivia, Plurinational State of' },
-  { label: 'Bonaire, Sint Eustatius and Saba' },
-  { label: 'Bosnia and Herzegovina' },
-  { label: 'Botswana' },
-  { label: 'Bouvet Island' },
-  { label: 'Brazil' },
-  { label: 'British Indian Ocean Territory' },
-  { label: 'Brunei Darussalam' }
-].map(suggestion => ({
-  value: suggestion.label,
-  label: suggestion.label
-}));
+import linq from 'linq';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    root: {
+      flexGrow: 1,
+      height: 250
+    },
     input: {
       display: 'flex',
       padding: 0,
-      height: 'auto',
-      cursor: 'point'
+      height: 'auto'
     },
     outlined: {
       marginTop: 5,
@@ -103,6 +68,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     placeholder: {
       position: 'absolute'
+      //left: 2,
+      //bottom: 6,
       //fontSize: 16
     },
     paper: {
@@ -113,12 +80,29 @@ const useStyles = makeStyles((theme: Theme) =>
       right: 0
     },
     divider: {
-      height: theme.spacing(1)
+      height: theme.spacing(2)
     }
   })
 );
 
 type VariantType = 'standard' | 'filled' | 'outlined';
+
+const getGroupOptions = (
+  options: Array<SelectOption>
+): GroupType<SelectOption>[] | SelectOption[] => {
+  const query = linq.from(options);
+  const hasGroup = query.any(i => i.group !== undefined);
+  return hasGroup
+    ? query
+        .groupBy(i => i.group || '')
+        .orderBy(g => g.key())
+        .select<GroupType<SelectOption>>(g => ({
+          label: g.key(),
+          options: g.toArray()
+        }))
+        .toArray()
+    : options;
+};
 
 interface SelectFieldProps extends Omit<FieldWrapperProps, 'variant'> {
   variant?: VariantType;
@@ -129,51 +113,65 @@ function SelectField({
   placeholder,
   field,
   form,
+  name,
+  value,
   variant,
+  required,
+  multiSelection,
+  options,
   ...rest
 }: SelectFieldProps) {
   const classes = useStyles();
   const theme = useTheme();
-  const [single, setSingle] = React.useState<ValueType<SelectOption>>(null);
-  const [multi, setMulti] = React.useState<ValueType<SelectOption>>(null);
 
-  function handleChangeSingle(value: ValueType<SelectOption>) {
-    setSingle(value);
-  }
+  const handleChange = useCallback(
+    (value: ValueType<SelectOption>, _action: ActionMeta) => {
+      if (field.onChange)
+        field.onChange({ target: { name: field.name, value } });
+    },
+    []
+  );
 
-  function handleChangeMulti(value: ValueType<SelectOption>) {
-    setMulti(value);
-  }
-
-  const selectStyles = {
-    input: (base: CSSProperties) => ({
-      ...base,
-      color: theme.palette.text.primary,
-      '& input': {
-        font: 'inherit'
-      }
-    })
-  };
+  const selectStyles = useMemo(
+    (): StylesConfig => ({
+      indicatorsContainer: (base: CSSProperties) => ({
+        ...base,
+        cursor: 'pointer'
+      }),
+      input: (base: CSSProperties) => ({
+        ...base,
+        color: theme.palette.text.primary,
+        '& input': {
+          font: 'inherit'
+        }
+      })
+    }),
+    [theme.palette.text.primary]
+  );
 
   return (
     <NoSsr>
       <Select
-        isSearchable
+        {...rest}
+        {...field}
+        onChange={handleChange}
         isClearable
+        isSearchable
         classes={classes}
         styles={selectStyles}
-        options={suggestions}
-        components={Components}
-        value={single}
+        options={getGroupOptions(options || [])}
+        components={components}
+        isMulti={multiSelection}
+        closeMenuOnSelect={!multiSelection}
+        placeholder={placeholder || ''}
         TextFieldProps={{
           label: (variant as any) === 'labeled' ? undefined : label,
           variant: (variant as any) === 'labeled' ? 'outlined' : variant,
+          required,
           InputLabelProps: {
-            shrink: true
+            shrink: placeholder || field.value ? true : undefined
           }
         }}
-        onChange={handleChangeSingle}
-        placeholder={placeholder}
       />
     </NoSsr>
   );

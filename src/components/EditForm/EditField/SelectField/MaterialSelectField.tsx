@@ -30,7 +30,7 @@ const getInput = (variant?: VariantType) => {
 };
 
 const useStyle = makeStyles({
-  group: { paddingLeft: 5 },
+  group: { paddingLeft: 8 },
   hr: {
     height: '1px !important',
     margin: 0,
@@ -44,7 +44,10 @@ const renderGroup = (options: Array<SelectOption>, classes: any) => {
   const groups = linq
     .from(options)
     .groupBy(i => i.group || ' ')
-    .select<SelectGroupOption>(g => ({ label: g.key(), options: g.toArray() }))
+    .select<SelectGroupOption>(g => ({
+      label: g.key().toLocaleUpperCase(),
+      options: g.toArray()
+    }))
     .orderBy(i => i.label)
     .toArray();
 

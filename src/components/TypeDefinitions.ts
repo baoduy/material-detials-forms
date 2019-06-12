@@ -174,7 +174,7 @@ export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
 
 export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   autoFocus?: boolean;
-  defaultValue?: unknown;
+  defaultValue?: any;
   disabled?: boolean;
   error?: boolean;
   fullWidth?: boolean;
@@ -190,7 +190,7 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   required?: boolean;
   rows?: string | number;
   rowsMax?: string | number;
-  value?: unknown;
+  value?: any;
   variant?: EditFieldVariants;
   /** Input Type if not provided the input type will be decided automatically based on value type   */
   type?: EditFieldTypes;
@@ -200,11 +200,13 @@ export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   dateFormat?: string;
   /** The options for select field */
   options?: Array<SelectOption>;
+  /** Apply multi Selection to Select Control */
+  multiSelection?: boolean;
 }
 
 export interface SelectOption {
   label: ReactNode;
-  value: unknown;
+  value: any;
   group?: string;
   divide?: boolean;
 }
@@ -212,4 +214,10 @@ export interface SelectOption {
 export interface SelectGroupOption {
   label: string;
   options: Array<Omit<SelectOption, 'group'>>;
+}
+
+/** The Error field will display the message for a input Field automatically based on the Field name */
+export interface ErrorFieldProps {
+  className?: string;
+  name?: string;
 }

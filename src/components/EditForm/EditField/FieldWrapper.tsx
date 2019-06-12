@@ -4,10 +4,12 @@ import {
 } from '@src/components/TypeDefinitions';
 
 import DateField from './DateTimeField';
+import ErrorField from '../ErrorField';
+import { Field } from 'formik';
 import Grid from '@material-ui/core/Grid/Grid';
 import InputLabel from '@material-ui/core/InputLabel/InputLabel';
 import React from 'react';
-import SelectField from './SelectField/MaterialSelectField';
+import SelectField from './SelectField/index';
 import TextField from './TextField';
 import classNames from 'classnames';
 import makeStyles from '@material-ui/styles/makeStyles/makeStyles';
@@ -48,7 +50,7 @@ function FieldWrapper(props: FieldWrapperProps) {
     ...rest
   } = props;
   const classes = useStyles();
-  const Field = getFieldByType(type as EditFieldTypes);
+  const FieldComponent = getFieldByType(type as EditFieldTypes);
 
   if (variant === 'labeled') {
     return (
@@ -72,27 +74,35 @@ function FieldWrapper(props: FieldWrapperProps) {
           <Field
             fullWidth
             name={name}
+            id={name}
             disabled={disabled}
             required={required}
             {...rest}
             type={type as any}
             variant="outlined"
+            component={FieldComponent}
           />
+          <ErrorField name={name} />
         </Grid>
       </Grid>
     );
   } else
     return (
-      <Field
-        fullWidth
-        name={name}
-        disabled={disabled}
-        required={required}
-        {...rest}
-        label={label}
-        type={type as any}
-        variant={variant as any}
-      />
+      <>
+        <Field
+          fullWidth
+          name={name}
+          id={name}
+          disabled={disabled}
+          required={required}
+          {...rest}
+          label={label}
+          type={type as any}
+          variant={variant as any}
+          component={FieldComponent}
+        />
+        <ErrorField name={name} />
+      </>
     );
 }
 
