@@ -1,8 +1,11 @@
 import { FormikContext, connect, getIn } from 'formik';
-import { InputLabel, Typography } from '@material-ui/core';
 
 import { ErrorFieldProps } from '@src/components/TypeDefinitions';
+import ErrorIcon from '@material-ui/icons/Error';
+import ErrorMessage from '../../ErrorMessage';
+import { InputLabel } from '@material-ui/core';
 import React from 'react';
+import Tooltip from '../../Tooltip';
 
 export default connect<ErrorFieldProps>(
   ({
@@ -16,11 +19,11 @@ export default connect<ErrorFieldProps>(
     const error = getIn(formik.errors, name);
 
     return error ? (
-      <InputLabel htmlFor={name}>
-        <Typography variant="caption" color="error">
-          {error}
-        </Typography>
-      </InputLabel>
+      <Tooltip title={<ErrorMessage>{error}</ErrorMessage>}>
+        <InputLabel htmlFor={name}>
+          <ErrorIcon fontSize="inherit" color="error" />
+        </InputLabel>
+      </Tooltip>
     ) : null;
   }
 );

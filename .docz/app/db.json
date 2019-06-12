@@ -47,10 +47,6 @@
       ]
     },
     {
-      "key": "src\\components\\TypeDefinitions.ts",
-      "value": []
-    },
-    {
       "key": "src\\components\\Labels\\LabelField.tsx",
       "value": [
         {
@@ -1128,6 +1124,243 @@
       ]
     },
     {
+      "key": "src\\components\\EditForm\\EditField\\FieldWrapper.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "FieldWrapper",
+          "methods": [],
+          "props": {
+            "autoFocus": {
+              "defaultValue": null,
+              "description": "",
+              "name": "autoFocus",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "defaultValue": {
+              "defaultValue": null,
+              "description": "",
+              "name": "defaultValue",
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            },
+            "disabled": {
+              "defaultValue": null,
+              "description": "",
+              "name": "disabled",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "error": {
+              "defaultValue": null,
+              "description": "",
+              "name": "error",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "fullWidth": {
+              "defaultValue": null,
+              "description": "",
+              "name": "fullWidth",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "helperText": {
+              "defaultValue": null,
+              "description": "",
+              "name": "helperText",
+              "required": false,
+              "type": {
+                "name": "ReactNode"
+              }
+            },
+            "inputRef": {
+              "defaultValue": null,
+              "description": "",
+              "name": "inputRef",
+              "required": false,
+              "type": {
+                "name": "((instance: any) => void) | RefObject<any> | null | undefined"
+              }
+            },
+            "label": {
+              "defaultValue": null,
+              "description": "",
+              "name": "label",
+              "required": false,
+              "type": {
+                "name": "ReactNode"
+              }
+            },
+            "multiline": {
+              "defaultValue": null,
+              "description": "",
+              "name": "multiline",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "name": {
+              "defaultValue": null,
+              "description": "",
+              "name": "name",
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "onChange": {
+              "defaultValue": null,
+              "description": "",
+              "name": "onChange",
+              "required": false,
+              "type": {
+                "name": "((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void) | undefined"
+              }
+            },
+            "placeholder": {
+              "defaultValue": null,
+              "description": "",
+              "name": "placeholder",
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "required": {
+              "defaultValue": null,
+              "description": "",
+              "name": "required",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "rows": {
+              "defaultValue": null,
+              "description": "",
+              "name": "rows",
+              "required": false,
+              "type": {
+                "name": "string | number | undefined"
+              }
+            },
+            "rowsMax": {
+              "defaultValue": null,
+              "description": "",
+              "name": "rowsMax",
+              "required": false,
+              "type": {
+                "name": "string | number | undefined"
+              }
+            },
+            "value": {
+              "defaultValue": null,
+              "description": "",
+              "name": "value",
+              "required": false,
+              "type": {
+                "name": "any"
+              }
+            },
+            "variant": {
+              "defaultValue": null,
+              "description": "",
+              "name": "variant",
+              "required": false,
+              "type": {
+                "name": "\"standard\" | \"filled\" | \"outlined\" | \"labeled\" | undefined"
+              }
+            },
+            "type": {
+              "defaultValue": null,
+              "description": "Input Type if not provided the input type will be decided automatically based on value type",
+              "name": "type",
+              "required": false,
+              "type": {
+                "name": "\"number\" | \"url\" | \"password\" | \"image\" | \"file\" | \"email\" | \"color\" | \"radio\" | \"checkbox\" | \"date\" | \"datetime\" | \"time\" | \"week\" | \"text\" | \"select\" | undefined"
+              }
+            },
+            "labelAlign": {
+              "defaultValue": null,
+              "description": "only apply for labeled field",
+              "name": "labelAlign",
+              "required": false,
+              "type": {
+                "name": "\"right\" | \"left\" | undefined"
+              }
+            },
+            "dateFormat": {
+              "defaultValue": null,
+              "description": "Using for DateTime picker only",
+              "name": "dateFormat",
+              "required": false,
+              "type": {
+                "name": "string | undefined"
+              }
+            },
+            "options": {
+              "defaultValue": null,
+              "description": "The options for select field",
+              "name": "options",
+              "required": false,
+              "type": {
+                "name": "SelectOption[] | undefined"
+              }
+            },
+            "multiSelection": {
+              "defaultValue": null,
+              "description": "Apply multi Selection to Select Control",
+              "name": "multiSelection",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "field": {
+              "defaultValue": null,
+              "description": "",
+              "name": "field",
+              "required": true,
+              "type": {
+                "name": "{ onChange: { (e: ChangeEvent<any>): void; <T = unknown>(field: T): T extends ChangeEvent<any> ? void : (e: unknown) => void; }; onBlur: { (e: FocusEvent<any>): void; <T = any>(fieldOrEvent: T): T extends string ? (e: any) => void : void; }; value: any; name: string; }"
+              }
+            },
+            "form": {
+              "defaultValue": null,
+              "description": "",
+              "name": "form",
+              "required": true,
+              "type": {
+                "name": "FormikProps<any>"
+              }
+            },
+            "As": {
+              "defaultValue": null,
+              "description": "",
+              "name": "As",
+              "required": false,
+              "type": {
+                "name": "Element | ComponentClass<Pick<FieldProps<any>, \"field\" | \"form\">, any> | FunctionComponent<Pick<FieldProps<any>, \"field\" | \"form\">> | undefined"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "key": "src\\components\\DetailsView\\DetailsBody\\DetailsField.tsx",
       "value": [
         {
@@ -1531,241 +1764,8 @@
       ]
     },
     {
-      "key": "src\\components\\EditForm\\EditField\\FieldWrapper.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "FieldWrapper",
-          "methods": [],
-          "props": {
-            "autoFocus": {
-              "defaultValue": null,
-              "description": "",
-              "name": "autoFocus",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "defaultValue": {
-              "defaultValue": null,
-              "description": "",
-              "name": "defaultValue",
-              "required": false,
-              "type": {
-                "name": "any"
-              }
-            },
-            "disabled": {
-              "defaultValue": null,
-              "description": "",
-              "name": "disabled",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "error": {
-              "defaultValue": null,
-              "description": "",
-              "name": "error",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "fullWidth": {
-              "defaultValue": null,
-              "description": "",
-              "name": "fullWidth",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "helperText": {
-              "defaultValue": null,
-              "description": "",
-              "name": "helperText",
-              "required": false,
-              "type": {
-                "name": "ReactNode"
-              }
-            },
-            "inputRef": {
-              "defaultValue": null,
-              "description": "",
-              "name": "inputRef",
-              "required": false,
-              "type": {
-                "name": "((instance: any) => void) | RefObject<any> | null | undefined"
-              }
-            },
-            "label": {
-              "defaultValue": null,
-              "description": "",
-              "name": "label",
-              "required": false,
-              "type": {
-                "name": "ReactNode"
-              }
-            },
-            "multiline": {
-              "defaultValue": null,
-              "description": "",
-              "name": "multiline",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "name": {
-              "defaultValue": null,
-              "description": "",
-              "name": "name",
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "onChange": {
-              "defaultValue": null,
-              "description": "",
-              "name": "onChange",
-              "required": false,
-              "type": {
-                "name": "((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void) | undefined"
-              }
-            },
-            "placeholder": {
-              "defaultValue": null,
-              "description": "",
-              "name": "placeholder",
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "required": {
-              "defaultValue": null,
-              "description": "",
-              "name": "required",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "rows": {
-              "defaultValue": null,
-              "description": "",
-              "name": "rows",
-              "required": false,
-              "type": {
-                "name": "string | number | undefined"
-              }
-            },
-            "rowsMax": {
-              "defaultValue": null,
-              "description": "",
-              "name": "rowsMax",
-              "required": false,
-              "type": {
-                "name": "string | number | undefined"
-              }
-            },
-            "value": {
-              "defaultValue": null,
-              "description": "",
-              "name": "value",
-              "required": false,
-              "type": {
-                "name": "any"
-              }
-            },
-            "variant": {
-              "defaultValue": null,
-              "description": "",
-              "name": "variant",
-              "required": false,
-              "type": {
-                "name": "\"standard\" | \"filled\" | \"outlined\" | \"labeled\" | undefined"
-              }
-            },
-            "type": {
-              "defaultValue": null,
-              "description": "Input Type if not provided the input type will be decided automatically based on value type",
-              "name": "type",
-              "required": false,
-              "type": {
-                "name": "\"number\" | \"url\" | \"password\" | \"image\" | \"file\" | \"email\" | \"color\" | \"radio\" | \"checkbox\" | \"date\" | \"datetime\" | \"time\" | \"week\" | \"text\" | \"select\" | undefined"
-              }
-            },
-            "labelAlign": {
-              "defaultValue": null,
-              "description": "only apply for labeled field",
-              "name": "labelAlign",
-              "required": false,
-              "type": {
-                "name": "\"right\" | \"left\" | undefined"
-              }
-            },
-            "dateFormat": {
-              "defaultValue": null,
-              "description": "Using for DateTime picker only",
-              "name": "dateFormat",
-              "required": false,
-              "type": {
-                "name": "string | undefined"
-              }
-            },
-            "options": {
-              "defaultValue": null,
-              "description": "The options for select field",
-              "name": "options",
-              "required": false,
-              "type": {
-                "name": "SelectOption[] | undefined"
-              }
-            },
-            "multiSelection": {
-              "defaultValue": null,
-              "description": "Apply multi Selection to Select Control",
-              "name": "multiSelection",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "field": {
-              "defaultValue": null,
-              "description": "",
-              "name": "field",
-              "required": true,
-              "type": {
-                "name": "{ onChange: { (e: ChangeEvent<any>): void; <T = unknown>(field: T): T extends ChangeEvent<any> ? void : (e: unknown) => void; }; onBlur: { (e: FocusEvent<any>): void; <T = any>(fieldOrEvent: T): T extends string ? (e: any) => void : void; }; value: any; name: string; }"
-              }
-            },
-            "form": {
-              "defaultValue": null,
-              "description": "",
-              "name": "form",
-              "required": true,
-              "type": {
-                "name": "FormikProps<any>"
-              }
-            },
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<FieldProps<any>, \"field\" | \"form\">, any> | FunctionComponent<Pick<FieldProps<any>, \"field\" | \"form\">> | undefined"
-              }
-            }
-          }
-        }
-      ]
+      "key": "src\\components\\TypeDefinitions.ts",
+      "value": []
     }
   ],
   "entries": [
@@ -1789,6 +1789,30 @@
             "slug": "i-detials-form",
             "depth": 2,
             "value": "I. Detials Form"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/ErrorMessage.mdx",
+      "value": {
+        "name": "Error Message",
+        "id": "e4512b742732cb7c1d327a2367cc562c",
+        "filepath": "src/components/ErrorMessage.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/ErrorMessage.mdx",
+        "slug": "src-components-error-message",
+        "route": "/src-components-error-message",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "error-message-component",
+            "depth": 1,
+            "value": "Error Message Component"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
           }
         ]
       }
@@ -1965,6 +1989,40 @@
       }
     },
     {
+      "key": "src/components/Labels/Label.mdx",
+      "value": {
+        "name": "Label Field",
+        "id": "a1efc69c08b450fc20bab14328403ad9",
+        "filepath": "src/components/Labels/Label.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Label.mdx",
+        "slug": "src-components-labels-label",
+        "route": "/src-components-labels-label",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "label-field",
+            "depth": 1,
+            "value": "Label Field"
+          },
+          {
+            "slug": "1-with-icon",
+            "depth": 2,
+            "value": "1. With Icon"
+          },
+          {
+            "slug": "2-without-icon",
+            "depth": 2,
+            "value": "2. Without Icon"
+          },
+          {
+            "slug": "props",
+            "depth": 2,
+            "value": "Props"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/components/Labels/Title.mdx",
       "value": {
         "name": "Title Component",
@@ -1999,40 +2057,6 @@
             "slug": "4-with-tooltip",
             "depth": 2,
             "value": "4. With Tooltip"
-          },
-          {
-            "slug": "props",
-            "depth": 2,
-            "value": "Props"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/components/Labels/Label.mdx",
-      "value": {
-        "name": "Label Field",
-        "id": "a1efc69c08b450fc20bab14328403ad9",
-        "filepath": "src/components/Labels/Label.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator\\edit\\master\\src/components/Labels/Label.mdx",
-        "slug": "src-components-labels-label",
-        "route": "/src-components-labels-label",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "label-field",
-            "depth": 1,
-            "value": "Label Field"
-          },
-          {
-            "slug": "1-with-icon",
-            "depth": 2,
-            "value": "1. With Icon"
-          },
-          {
-            "slug": "2-without-icon",
-            "depth": 2,
-            "value": "2. Without Icon"
           },
           {
             "slug": "props",

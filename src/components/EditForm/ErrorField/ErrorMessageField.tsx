@@ -1,7 +1,8 @@
 import { FormikContext, connect, getIn } from 'formik';
-import { InputLabel, Typography } from '@material-ui/core';
 
 import { ErrorFieldProps } from '@src/components/TypeDefinitions';
+import ErrorMessage from '../../ErrorMessage';
+import { InputLabel } from '@material-ui/core';
 import React from 'react';
 
 export default connect<ErrorFieldProps>(
@@ -11,15 +12,13 @@ export default connect<ErrorFieldProps>(
   }: ErrorFieldProps & {
     formik: FormikContext<any>;
   }) => {
-    if (!name) return null;
+    if (!name || !formik) return null;
 
     const error = getIn(formik.errors, name);
 
     return error ? (
       <InputLabel htmlFor={name}>
-        <Typography variant="caption" color="error">
-          {error}
-        </Typography>
+        <ErrorMessage>{error}</ErrorMessage>
       </InputLabel>
     ) : null;
   }

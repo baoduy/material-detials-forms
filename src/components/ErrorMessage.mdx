@@ -1,0 +1,24 @@
+---
+name: Error Message
+---
+
+import { Playground, Props } from 'docz';
+import ErrorMessage from './ErrorMessage';
+
+# Error Message Component
+
+The common componnet to display the Error message for each Edit Field.
+
+<Playground>
+  <ErrorMessage>
+    The Field is required. <i>(with error Icon)</i>
+  </ErrorMessage>
+  <br />
+  <ErrorMessage messageOnly>
+    The Field is required. <i>(without error Icon)</i>
+  </ErrorMessage>
+</Playground>
+
+## Props
+
+<Props of={ErrorMessage} />

@@ -2,6 +2,7 @@ import { FormikContext, connect, getIn } from 'formik';
 import { InputLabel, Theme } from '@material-ui/core';
 
 import { ErrorFieldProps } from '@src/components/TypeDefinitions';
+import ErrorMessage from '../../ErrorMessage';
 import React from 'react';
 import Tooltip from '../../Tooltip';
 import clsx from 'clsx';
@@ -36,6 +37,10 @@ export default connect<ErrorFieldProps>(
       />
     );
 
-    return error ? <Tooltip title={error}>{label}</Tooltip> : label;
+    return error ? (
+      <Tooltip title={<ErrorMessage>{error}</ErrorMessage>}>{label}</Tooltip>
+    ) : (
+      label
+    );
   }
 );

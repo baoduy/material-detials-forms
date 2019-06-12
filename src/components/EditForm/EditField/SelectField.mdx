@@ -18,7 +18,9 @@ Below is the list of build-in Selection Fileds in this library.
   <Formik
     initialValues={{}}
     validationSchema={Yup.object().shape({
-      option1: Yup.object().required('Required')
+      option1: Yup.object()
+        .required('Required')
+        .nullable()
     })}
     onSubmit={(values, actions) => {
       alert(JSON.stringify(values, null, 2));

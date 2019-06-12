@@ -4,7 +4,7 @@ import ErrorIconField from './ErrorIconField';
 import ErrorLabelField from './ErrorLabelField';
 import ErrorMessageField from './ErrorMessageField';
 import React from 'react';
-import { renderAsComponent } from '@src/commons/renderHelper';
+import { renderAsComponent } from '../../../commons/renderHelper';
 
 interface Props extends AsComponent<ErrorFieldProps> {
   variant?: 'label' | 'message' | 'icon';
