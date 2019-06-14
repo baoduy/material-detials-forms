@@ -6,6 +6,7 @@ export default {
   wrapper: '.docz/wrapper/index.tsx',
   codeSandbox: false,
   typescript: true,
+  host: '0.0.0.0',
   plugins: [
     css({
       preprocessor: 'less',
