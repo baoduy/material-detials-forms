@@ -1,4 +1,4 @@
-import { ActionMeta, GroupType, ValueType } from 'react-select/lib/types';
+import { ActionMeta, GroupType, ValueType } from 'react-select/src/types';
 import {
   FieldWrapperProps,
   SelectOption
@@ -14,7 +14,7 @@ import {
 import NoSsr from '@material-ui/core/NoSsr';
 import { Omit } from '@material-ui/types';
 import Select from 'react-select';
-import { StylesConfig } from 'react-select/lib/styles';
+import { StylesConfig } from 'react-select/src/styles';
 import components from './CustomComponents';
 import { emphasize } from '@material-ui/core/styles/colorManipulator';
 import linq from 'linq';

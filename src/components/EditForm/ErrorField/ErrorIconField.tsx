@@ -2,27 +2,37 @@ import { FormikContext, connect, getIn } from 'formik';
 
 import { ErrorFieldProps } from '@src/components/TypeDefinitions';
 import ErrorIcon from '@material-ui/icons/Error';
-import ErrorMessage from '../../ErrorMessage';
-import { InputLabel } from '@material-ui/core';
+import ErrorMessage from '../../Core/ErrorMessage';
 import React from 'react';
-import Tooltip from '../../Tooltip';
+import Tooltip from '../../Core/Tooltip';
+import { makeStyles } from '@material-ui/styles';
+
+const useStyle = makeStyles({
+  root: {
+    margin: 5
+  }
+});
 
 export default connect<ErrorFieldProps>(
   ({
     name,
-    formik
+    formik,
+    disabled,
+    ...rest
   }: ErrorFieldProps & {
     formik: FormikContext<any>;
   }) => {
-    if (!name) return null;
-
+    const classes = useStyle();
+    if (disabled || !name || !formik) return null;
     const error = getIn(formik.errors, name);
 
     return error ? (
-      <Tooltip title={<ErrorMessage>{error}</ErrorMessage>}>
-        <InputLabel htmlFor={name}>
-          <ErrorIcon fontSize="inherit" color="error" />
-        </InputLabel>
+      <Tooltip
+        className={classes.root}
+        {...rest}
+        title={<ErrorMessage>{error}</ErrorMessage>}
+      >
+        <ErrorIcon fontSize="default" color="error" />
       </Tooltip>
     ) : null;
   }

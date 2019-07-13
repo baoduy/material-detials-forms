@@ -4,6 +4,7 @@ name: Select Field
 
 import { Playground, Props } from 'docz';
 import EditField from './FieldWrapper';
+import ErrorField from '../ErrorField';
 import Button from '@material-ui/core/Button';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
@@ -31,7 +32,7 @@ Below is the list of build-in Selection Fileds in this library.
         <div style={{ margin: 10 }}>
           <EditField
             name="option1"
-            label="Select Field"
+            label="Required Select Field with Error Message Label"
             type="select"
             required
             options={[
@@ -248,6 +249,11 @@ Below is the list of build-in Selection Fileds in this library.
 <Playground>
   <Formik
     initialValues={{}}
+    validationSchema={Yup.object().shape({
+      option1: Yup.object()
+        .required('Required')
+        .nullable()
+    })}
     onSubmit={(values, actions) => {
       alert(JSON.stringify(values, null, 2));
       actions.setSubmitting(false);
@@ -258,7 +264,7 @@ Below is the list of build-in Selection Fileds in this library.
           <EditField
             name="option1"
             variant="labeled"
-            label="Select Field"
+            label="Select Field with Label Error Indicator"
             type="select"
             required
             options={[
@@ -317,6 +323,61 @@ Below is the list of build-in Selection Fileds in this library.
       </Form>
     )}
   />
+</Playground>
+
+## Custom Error Fields
+
+<Playground>
+  <Formik
+    initialValues={{}}
+    validationSchema={Yup.object().shape({
+      option1: Yup.object()
+        .required('Required')
+        .nullable()
+    })}
+    onSubmit={(values, actions) => {
+      alert(JSON.stringify(values, null, 2));
+      actions.setSubmitting(false);
+    }}
+    render={() => (
+      <Form>
+        <div style={{ margin: 10, width:'100%', display:'inline-flex', alignItems: 'center' }}>
+          <EditField
+            name="option1"
+            variant="labeled"
+            label="Select Field with Label Error Indicator"
+            type="select"
+            showError={false}
+            required
+            options={[
+              {
+                label: 'Option 1',
+                value: 1
+              },
+              {
+                label: 'Option 2',
+                value: 2
+              },
+              { divide: true },
+              {
+                label: 'Option 3',
+                value: 3
+              }
+            ]}
+          />
+          <ErrorField name="option1" variant="icon"/>
+        </div>
+
+        <div style={{ margin: 10 }}>
+          <Button color="primary" variant="contained" type="submit">
+            Submit
+          </Button>
+        </div>
+      </Form>
+    )}
+
+/>
+
 </Playground>
 
 # Props

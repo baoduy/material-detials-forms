@@ -1,18 +1,19 @@
 import { FormikContext, connect, getIn } from 'formik';
 
 import { ErrorFieldProps } from '@src/components/TypeDefinitions';
-import ErrorMessage from '../../ErrorMessage';
+import ErrorMessage from '../../Core/ErrorMessage';
 import { InputLabel } from '@material-ui/core';
 import React from 'react';
 
 export default connect<ErrorFieldProps>(
   ({
     name,
-    formik
+    formik,
+    disabled
   }: ErrorFieldProps & {
     formik: FormikContext<any>;
   }) => {
-    if (!name || !formik) return null;
+    if (disabled || !name || !formik) return null;
 
     const error = getIn(formik.errors, name);
 

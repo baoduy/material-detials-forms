@@ -175,10 +175,12 @@ export interface EditFormProps<TData> extends DetailsBodyProps<TData> {
 export interface FieldWrapperProps extends FieldProps, AsComponent<FieldProps> {
   autoFocus?: boolean;
   defaultValue?: any;
+  /** Disable Edit Field */
   disabled?: boolean;
-  error?: boolean;
+  /** Show error message from Formik. Default is true */
+  showError?: boolean;
   fullWidth?: boolean;
-  helperText?: React.ReactNode;
+  //helperText?: React.ReactNode;
   inputRef?: React.Ref<any> | React.RefObject<any>;
   label?: React.ReactNode;
   multiline?: boolean;
@@ -220,4 +222,10 @@ export interface SelectGroupOption {
 export interface ErrorFieldProps {
   className?: string;
   name?: string;
+  /** Disable Error Indicator */
+  disabled?: boolean;
+  /** only applied for ErrorLabelField */
+  required?: boolean;
+  /** only applied for ErrorLabelField */
+  children?: ReactNode;
 }

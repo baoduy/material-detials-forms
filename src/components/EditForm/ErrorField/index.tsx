@@ -6,7 +6,7 @@ import ErrorMessageField from './ErrorMessageField';
 import React from 'react';
 import { renderAsComponent } from '../../../commons/renderHelper';
 
-interface Props extends AsComponent<ErrorFieldProps> {
+interface Props extends ErrorFieldProps, AsComponent<ErrorFieldProps> {
   variant?: 'label' | 'message' | 'icon';
 }
 

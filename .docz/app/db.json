@@ -9,6 +9,7 @@
     "codeSandbox": false,
     "themeConfig": {},
     "separator": "-",
+    "theme": "docz-theme-ztopia",
     "wrapper": ".docz/wrapper/index.tsx",
     "typescript": true,
     "host": "0.0.0.0",
@@ -48,63 +49,8 @@
       ]
     },
     {
-      "key": "src/components/ErrorMessage.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "ErrorMessage",
-          "methods": [],
-          "props": {
-            "messageOnly": {
-              "defaultValue": null,
-              "description": "",
-              "name": "messageOnly",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src/components/Tooltip.tsx",
-      "value": []
-    },
-    {
       "key": "src/components/TypeDefinitions.ts",
       "value": []
-    },
-    {
-      "key": "src/components/DetailsView/DetailsFooter.tsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "DetailsFooter",
-          "methods": [],
-          "props": {
-            "hr": {
-              "defaultValue": null,
-              "description": "",
-              "name": "hr",
-              "required": false,
-              "type": {
-                "name": "boolean | undefined"
-              }
-            },
-            "As": {
-              "defaultValue": null,
-              "description": "",
-              "name": "As",
-              "required": false,
-              "type": {
-                "name": "Element | ComponentClass<Pick<DetailsFooterProps, \"children\" | \"hr\">, any> | FunctionComponent<Pick<DetailsFooterProps, \"children\" | \"hr\">> | undefined"
-              }
-            }
-          }
-        }
-      ]
     },
     {
       "key": "src/components/DetailsView/DetailsHeader.tsx",
@@ -139,6 +85,36 @@
               "required": false,
               "type": {
                 "name": "Element | ComponentClass<Pick<DetailsHeaderProps, \"hr\" | \"title\">, any> | FunctionComponent<Pick<DetailsHeaderProps, \"hr\" | \"title\">> | undefined"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/DetailsView/DetailsFooter.tsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "DetailsFooter",
+          "methods": [],
+          "props": {
+            "hr": {
+              "defaultValue": null,
+              "description": "",
+              "name": "hr",
+              "required": false,
+              "type": {
+                "name": "boolean | undefined"
+              }
+            },
+            "As": {
+              "defaultValue": null,
+              "description": "",
+              "name": "As",
+              "required": false,
+              "type": {
+                "name": "Element | ComponentClass<Pick<DetailsFooterProps, \"children\" | \"hr\">, any> | FunctionComponent<Pick<DetailsFooterProps, \"children\" | \"hr\">> | undefined"
               }
             }
           }
@@ -728,11 +704,11 @@
       ]
     },
     {
-      "key": "src/components/DetailsView/DetailsBody/GridBody.tsx",
+      "key": "src/components/DetailsView/DetailsBody/TableBody.tsx",
       "value": [
         {
           "description": "",
-          "displayName": "GridDetailsBody",
+          "displayName": "TableDetailsBody",
           "methods": [],
           "props": {
             "flat": {
@@ -785,11 +761,11 @@
       ]
     },
     {
-      "key": "src/components/DetailsView/DetailsBody/TableBody.tsx",
+      "key": "src/components/DetailsView/DetailsBody/GridBody.tsx",
       "value": [
         {
           "description": "",
-          "displayName": "TableDetailsBody",
+          "displayName": "GridDetailsBody",
           "methods": [],
           "props": {
             "flat": {
@@ -1106,17 +1082,17 @@
             },
             "disabled": {
               "defaultValue": null,
-              "description": "",
+              "description": "Disable Edit Field",
               "name": "disabled",
               "required": false,
               "type": {
                 "name": "boolean | undefined"
               }
             },
-            "error": {
+            "showError": {
               "defaultValue": null,
-              "description": "",
-              "name": "error",
+              "description": "Show error message from Formik. Default is true",
+              "name": "showError",
               "required": false,
               "type": {
                 "name": "boolean | undefined"
@@ -1129,15 +1105,6 @@
               "required": false,
               "type": {
                 "name": "boolean | undefined"
-              }
-            },
-            "helperText": {
-              "defaultValue": null,
-              "description": "",
-              "name": "helperText",
-              "required": false,
-              "type": {
-                "name": "ReactNode"
               }
             },
             "inputRef": {
@@ -1236,7 +1203,7 @@
               "name": "variant",
               "required": false,
               "type": {
-                "name": "\"filled\" | \"standard\" | \"outlined\" | \"labeled\" | undefined"
+                "name": "\"standard\" | \"filled\" | \"outlined\" | \"labeled\" | undefined"
               }
             },
             "type": {
@@ -1245,7 +1212,7 @@
               "name": "type",
               "required": false,
               "type": {
-                "name": "\"number\" | \"color\" | \"checkbox\" | \"radio\" | \"text\" | \"select\" | \"time\" | \"image\" | \"date\" | \"url\" | \"password\" | \"file\" | \"email\" | \"datetime\" | \"week\" | undefined"
+                "name": "\"number\" | \"url\" | \"password\" | \"image\" | \"file\" | \"email\" | \"color\" | \"radio\" | \"checkbox\" | \"date\" | \"datetime\" | \"time\" | \"week\" | \"text\" | \"select\" | undefined"
               }
             },
             "labelAlign": {
@@ -1254,7 +1221,7 @@
               "name": "labelAlign",
               "required": false,
               "type": {
-                "name": "\"left\" | \"right\" | undefined"
+                "name": "\"right\" | \"left\" | undefined"
               }
             },
             "dateFormat": {
@@ -1308,7 +1275,7 @@
               "name": "As",
               "required": false,
               "type": {
-                "name": "Element | ComponentClass<Pick<FieldProps<any>, \"form\" | \"field\">, any> | FunctionComponent<Pick<FieldProps<any>, \"form\" | \"field\">> | undefined"
+                "name": "Element | ComponentClass<Pick<FieldProps<any>, \"field\" | \"form\">, any> | FunctionComponent<Pick<FieldProps<any>, \"field\" | \"form\">> | undefined"
               }
             }
           }
@@ -1832,14 +1799,14 @@
       }
     },
     {
-      "key": "src/components/ErrorMessage.mdx",
+      "key": "src/components/Core/ErrorMessage.mdx",
       "value": {
-        "name": "Error Message",
-        "id": "e4512b742732cb7c1d327a2367cc562c",
-        "filepath": "src/components/ErrorMessage.mdx",
-        "link": "https://github.com/baoduy/mui-formik-generator/edit/master/src/components/ErrorMessage.mdx",
-        "slug": "src-components-error-message",
-        "route": "/src-components-error-message",
+        "name": "0. Core/Error Message",
+        "id": "03ee618c749bea5486ef37ad8435b0a7",
+        "filepath": "src/components/Core/ErrorMessage.mdx",
+        "link": "https://github.com/baoduy/mui-formik-generator/edit/master/src/components/Core/ErrorMessage.mdx",
+        "slug": "src-components-core-error-message",
+        "route": "/src-components-core-error-message",
         "menu": "",
         "headings": [
           {
@@ -2183,6 +2150,11 @@
             "slug": "labeled-fields",
             "depth": 2,
             "value": "Labeled Fields"
+          },
+          {
+            "slug": "custom-error-fields",
+            "depth": 2,
+            "value": "Custom Error Fields"
           },
           {
             "slug": "props",

@@ -47,8 +47,10 @@ function FieldWrapper(props: FieldWrapperProps) {
     disabled,
     required,
     variant,
+    showError,
     ...rest
   } = props;
+
   const classes = useStyles();
   const FieldComponent = getFieldByType(type as EditFieldTypes);
 
@@ -64,11 +66,25 @@ function FieldWrapper(props: FieldWrapperProps) {
             [classes.alignRight]: labelAlign === 'right'
           })}
         >
-          {label && (
-            <InputLabel htmlFor={name} disabled={disabled} required={required}>
-              {label}
-            </InputLabel>
-          )}
+          {label &&
+            (showError ? (
+              <ErrorField
+                variant="label"
+                name={name}
+                disabled={disabled}
+                required={required}
+              >
+                {label}
+              </ErrorField>
+            ) : (
+              <InputLabel
+                htmlFor={name}
+                disabled={disabled}
+                required={required}
+              >
+                {label}
+              </InputLabel>
+            ))}
         </Grid>
         <Grid item md={8} sm={12}>
           <Field
@@ -82,7 +98,6 @@ function FieldWrapper(props: FieldWrapperProps) {
             variant="outlined"
             component={FieldComponent}
           />
-          <ErrorField name={name} />
         </Grid>
       </Grid>
     );
@@ -101,11 +116,11 @@ function FieldWrapper(props: FieldWrapperProps) {
           variant={variant as any}
           component={FieldComponent}
         />
-        <ErrorField name={name} />
+        {showError && <ErrorField name={name} />}
       </>
     );
 }
 
-FieldWrapper.defaultProps = { labelAlign: 'right' };
+FieldWrapper.defaultProps = { labelAlign: 'right', showError: true };
 
 export default FieldWrapper;

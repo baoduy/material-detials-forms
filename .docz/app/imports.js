@@ -3,9 +3,9 @@ export const imports = {
     import(
       /* webpackPrefetch: true, webpackChunkName: "src-index" */ 'src/index.mdx'
     ),
-  'src/components/ErrorMessage.mdx': () =>
+  'src/components/Core/ErrorMessage.mdx': () =>
     import(
-      /* webpackPrefetch: true, webpackChunkName: "src-components-error-message" */ 'src/components/ErrorMessage.mdx'
+      /* webpackPrefetch: true, webpackChunkName: "src-components-core-error-message" */ 'src/components/Core/ErrorMessage.mdx'
     ),
   'src/components/DetailsView/DetailsView.mdx': () =>
     import(
